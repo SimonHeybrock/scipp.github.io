@@ -1,0 +1,1013 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Classes &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="scipp.Bins" href="../generated/classes/scipp.Bins.html" />
+    <link rel="prev" title="Datetime handling" href="../visualization/plotting/datetime_handling.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.Bins.html">scipp.Bins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.DataArray.html">scipp.DataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.Dataset.html">scipp.Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.GroupByDataArray.html">scipp.GroupByDataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.GroupByDataset.html">scipp.GroupByDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.Unit.html">scipp.Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.Variable.html">scipp.Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.typing.VariableLike.html">scipp.typing.VariableLike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/classes/scipp.typing.MetaDataMap.html">scipp.typing.MetaDataMap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#creation-functions">Creation functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.array.html">scipp.array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.arange.html">scipp.arange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.empty.html">scipp.empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.empty_like.html">scipp.empty_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.full.html">scipp.full</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.full_like.html">scipp.full_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.geomspace.html">scipp.geomspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.linspace.html">scipp.linspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.logspace.html">scipp.logspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.matrix.html">scipp.matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.matrices.html">scipp.matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.ones.html">scipp.ones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.ones_like.html">scipp.ones_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.scalar.html">scipp.scalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.vector.html">scipp.vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.vectors.html">scipp.vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.zeros.html">scipp.zeros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/functions/scipp.zeros_like.html">scipp.zeros_like</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#free-functions">Free functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.bin.html">scipp.bin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.bins.html">scipp.bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.choose.html">scipp.choose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.collapse.html">scipp.collapse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.histogram.html">scipp.histogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.logical_and.html">scipp.logical_and</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.logical_or.html">scipp.logical_or</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.logical_xor.html">scipp.logical_xor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.merge.html">scipp.merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.rebin.html">scipp.rebin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.slices.html">scipp.slices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.sort.html">scipp.sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.stddevs.html">scipp.stddevs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.to_unit.html">scipp.to_unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.transform_coords.html">scipp.transform_coords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.values.html">scipp.values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.variances.html">scipp.variances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.where.html">scipp.where</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#math">Math</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.abs.html">scipp.abs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.add.html">scipp.add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.ceil.html">scipp.ceil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.cross.html">scipp.cross</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.divide.html">scipp.divide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.dot.html">scipp.dot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.exp.html">scipp.exp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.floor.html">scipp.floor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.floor_divide.html">scipp.floor_divide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.log.html">scipp.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.log10.html">scipp.log10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.mod.html">scipp.mod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.multiply.html">scipp.multiply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.norm.html">scipp.norm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.reciprocal.html">scipp.reciprocal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.round.html">scipp.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.sqrt.html">scipp.sqrt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.subtract.html">scipp.subtract</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#shape">Shape</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.broadcast.html">scipp.broadcast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.concatenate.html">scipp.concatenate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.flatten.html">scipp.flatten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.fold.html">scipp.fold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.transpose.html">scipp.transpose</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#comparison">Comparison</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.allclose.html">scipp.allclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.allsorted.html">scipp.allsorted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.equal.html">scipp.equal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.greater.html">scipp.greater</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.greater_equal.html">scipp.greater_equal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.identical.html">scipp.identical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.isclose.html">scipp.isclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.islinspace.html">scipp.islinspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.issorted.html">scipp.issorted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.less.html">scipp.less</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.less_equal.html">scipp.less_equal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.not_equal.html">scipp.not_equal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#inf-and-nan-handling"><cite>inf</cite> and <cite>nan</cite> handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.isnan.html">scipp.isnan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.isinf.html">scipp.isinf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.isfinite.html">scipp.isfinite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.isposinf.html">scipp.isposinf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.isneginf.html">scipp.isneginf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.nan_to_num.html">scipp.nan_to_num</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#reduction">Reduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.all.html">scipp.all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.any.html">scipp.any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.cumsum.html">scipp.cumsum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.max.html">scipp.max</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.mean.html">scipp.mean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.min.html">scipp.min</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.nanmax.html">scipp.nanmax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.nanmean.html">scipp.nanmean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.nanmin.html">scipp.nanmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.nansum.html">scipp.nansum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.sum.html">scipp.sum</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#trigonometric">Trigonometric</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.sin.html">scipp.sin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.cos.html">scipp.cos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.tan.html">scipp.tan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.asin.html">scipp.asin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.acos.html">scipp.acos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.atan.html">scipp.atan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.atan2.html">scipp.atan2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#geometric">Geometric</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.geometry.position.html">scipp.geometry.position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.geometry.rotation_matrix_from_quaternion_coeffs.html">scipp.geometry.rotation_matrix_from_quaternion_coeffs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#group-by-split-apply-combine">Group-by (split-apply-combine)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Reduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../generated/functions/scipp.groupby.html">scipp.groupby</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#counts">Counts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.counts_to_density.html">scipp.counts_to_density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.density_to_counts.html">scipp.density_to_counts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visualization">Visualization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.show.html">scipp.show</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.show_graph.html">scipp.show_graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.table.html">scipp.table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.to_html.html">scipp.to_html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.plot.html">scipp.plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#compatibility">Compatibility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.to_dict.html">scipp.to_dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.from_dict.html">scipp.from_dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.compat.from_pandas.html">scipp.compat.from_pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/functions/scipp.compat.from_xarray.html">scipp.compat.from_xarray</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#modules">Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generated/modules/scipp.constants.html">scipp.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generated/modules/scipp.spatial.html">scipp.spatial</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-documentation.html">Developer Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.1">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Classes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/reference/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/classes/scipp.Bins.html#scipp.Bins" title="scipp.Bins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bins</span></code></a>(obj)</p></td>
+<td><p>Proxy for access to bin contents and operations on bins of a variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/classes/scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataArray</span></code></a></p></td>
+<td><p>Named variable with associated coords, masks, and attributes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/classes/scipp.Dataset.html#scipp.Dataset" title="scipp.Dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dataset</span></code></a></p></td>
+<td><p>Dict of data arrays with aligned dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/classes/scipp.GroupByDataArray.html#scipp.GroupByDataArray" title="scipp.GroupByDataArray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GroupByDataArray</span></code></a></p></td>
+<td><p>GroupBy object implementing to split-apply-combine mechanism.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/classes/scipp.GroupByDataset.html#scipp.GroupByDataset" title="scipp.GroupByDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GroupByDataset</span></code></a></p></td>
+<td><p>GroupBy object implementing to split-apply-combine mechanism.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/classes/scipp.Unit.html#scipp.Unit" title="scipp.Unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a></p></td>
+<td><p>A physical unit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Variable</span></code></a></p></td>
+<td><p>Array of values with dimension labels and a unit, optionally including an array of variances.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/classes/scipp.typing.VariableLike.html#scipp.typing.VariableLike" title="scipp.typing.VariableLike"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typing.VariableLike</span></code></a></p></td>
+<td><p>Any object that behaves like a scipp.Variable, that is an array with labeled dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/classes/scipp.typing.MetaDataMap.html#scipp.typing.MetaDataMap" title="scipp.typing.MetaDataMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typing.MetaDataMap</span></code></a></p></td>
+<td><p>dict-like object mapping dimension labels to Variables.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="creation-functions">
+<h1>Creation functions<a class="headerlink" href="#creation-functions" title="Permalink to this headline">¶</a></h1>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.array.html#scipp.array" title="scipp.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>(*, dims, values[, variances, unit, dtype])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with given dimensions, containing given values and optional variances.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.arange.html#scipp.arange" title="scipp.arange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arange</span></code></a>(dim, start[, stop, step, unit, dtype])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with evenly spaced values within a given interval.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.empty.html#scipp.empty" title="scipp.empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">empty</span></code></a>(*[, dims, shape, sizes, unit, dtype, ...])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with uninitialized values with given dimension labels and shape.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.empty_like.html#scipp.empty_like" title="scipp.empty_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">empty_like</span></code></a>(var)</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with the same dims, shape, unit and dtype as the input variable, but with uninitialized values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.full.html#scipp.full" title="scipp.full"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full</span></code></a>(*[, dims, shape, sizes, unit, dtype, ...])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with values initialized to the specified value with given dimension labels and shape.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.full_like.html#scipp.full_like" title="scipp.full_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full_like</span></code></a>(var, value[, variance])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with values initialized to the specified value with dimensions labels and shape provided by an existing variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.geomspace.html#scipp.geomspace" title="scipp.geomspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geomspace</span></code></a>(dim, start, stop, num, *[, unit, ...])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with values spaced evenly on a log scale (a geometric progression).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.linspace.html#scipp.linspace" title="scipp.linspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">linspace</span></code></a>(dim, start, stop, num, *[, unit, dtype])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with <cite>num</cite> evenly spaced samples, calculated over the interval <cite>[start, stop]</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.logspace.html#scipp.logspace" title="scipp.logspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logspace</span></code></a>(dim, start, stop, num, *[, unit, dtype])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with values spaced evenly on a log scale.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.matrix.html#scipp.matrix" title="scipp.matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matrix</span></code></a>(*[, unit])</p></td>
+<td><p>Constructs a zero dimensional <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> holding a single 3x3 matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.matrices.html#scipp.matrices" title="scipp.matrices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matrices</span></code></a>(*, dims[, unit])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with given dimensions holding an array of 3x3 matrices.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.ones.html#scipp.ones" title="scipp.ones"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones</span></code></a>(*[, dims, shape, sizes, unit, dtype, ...])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with values initialized to 1 with given dimension labels and shape.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.ones_like.html#scipp.ones_like" title="scipp.ones_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones_like</span></code></a>(var)</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with the same dims, shape, unit and dtype as the input variable, but with all values initialized to 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.scalar.html#scipp.scalar" title="scipp.scalar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalar</span></code></a>(value[, variance, unit, dtype])</p></td>
+<td><p>Constructs a zero dimensional <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with a unit and optional variance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.vector.html#scipp.vector" title="scipp.vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vector</span></code></a>(*[, unit])</p></td>
+<td><p>Constructs a zero dimensional <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> holding a single length-3 vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.vectors.html#scipp.vectors" title="scipp.vectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vectors</span></code></a>(*, dims[, unit])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with given dimensions holding an array of length-3 vectors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.zeros.html#scipp.zeros" title="scipp.zeros"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros</span></code></a>(*[, dims, shape, sizes, unit, dtype, ...])</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with default initialized values with given dimension labels and shape.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.zeros_like.html#scipp.zeros_like" title="scipp.zeros_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros_like</span></code></a>(var)</p></td>
+<td><p>Constructs a <a class="reference internal" href="../generated/classes/scipp.Variable.html#scipp.Variable" title="scipp.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> with the same dims, shape, unit and dtype as the input variable, but with all values initialized to 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="free-functions">
+<h1>Free functions<a class="headerlink" href="#free-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.bin.html#scipp.bin" title="scipp.bin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bin</span></code></a>(x, *[, edges, groups, erase])</p></td>
+<td><p>Create binned data by binning input along all dimensions given by edges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.bins.html#scipp.bins" title="scipp.bins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bins</span></code></a>(*, data, dim[, begin, end])</p></td>
+<td><p>Create a binned variable from bin indices.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.choose.html#scipp.choose" title="scipp.choose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">choose</span></code></a>(key, choices, dim)</p></td>
+<td><p>Choose slices of choices base on coord values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.collapse.html#scipp.collapse" title="scipp.collapse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collapse</span></code></a>(scipp_obj, keep)</p></td>
+<td><p>Slice down the input object until only the supplied <cite>keep</cite> dimension is left (effectively 'collapsing' all but one dimension), and return a <cite>dict</cite> of 1D slices.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.histogram.html#scipp.histogram" title="scipp.histogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram</span></code></a>(x, *, bins)</p></td>
+<td><p>Create dense data by histogramming data along all dimension given by edges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.logical_and.html#scipp.logical_and" title="scipp.logical_and"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_and</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.logical_or.html#scipp.logical_or" title="scipp.logical_or"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_or</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.logical_xor.html#scipp.logical_xor" title="scipp.logical_xor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_xor</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.merge.html#scipp.merge" title="scipp.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a>(lhs, rhs)</p></td>
+<td><p>Merge two datasets into one.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.rebin.html#scipp.rebin" title="scipp.rebin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rebin</span></code></a>(x, dim, bins)</p></td>
+<td><p>Rebin a dimension of a data array or dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.slices.html#scipp.slices" title="scipp.slices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slices</span></code></a>(scipp_obj, dim)</p></td>
+<td><p>Slice input along given dim, and return all the slices in a <cite>dict</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.sort.html#scipp.sort" title="scipp.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(x, key[, order])</p></td>
+<td><p>Sort variable along a dimension by a sort key or dimension label</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.stddevs.html#scipp.stddevs" title="scipp.stddevs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stddevs</span></code></a>(x)</p></td>
+<td><p>Return object containing the stddevs of the input as values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.to_unit.html#scipp.to_unit" title="scipp.to_unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_unit</span></code></a>(x, unit, *[, copy])</p></td>
+<td><p>Convert the variable to a different unit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.transform_coords.html#scipp.transform_coords" title="scipp.transform_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_coords</span></code></a>(x, coords, graph, *[, ...])</p></td>
+<td><p>Compute new coords based on transformation of input coords.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.values.html#scipp.values" title="scipp.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>(x)</p></td>
+<td><p>Return the object without variances.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.variances.html#scipp.variances" title="scipp.variances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variances</span></code></a>(x)</p></td>
+<td><p>Return object containing the variances of the input as values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.where.html#scipp.where" title="scipp.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(condition, x, y)</p></td>
+<td><p>Return elements chosen from x or y depending on condition.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="math">
+<h2>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.abs.html#scipp.abs" title="scipp.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise absolute value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.add.html#scipp.add" title="scipp.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(a, b)</p></td>
+<td><p>Element-wise addition.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.ceil.html#scipp.ceil" title="scipp.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>(x, *[, out])</p></td>
+<td><p>Round up to the nearest integer of all values passed in x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.cross.html#scipp.cross" title="scipp.cross"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross</span></code></a>(x, y)</p></td>
+<td><p>Element-wise cross product.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.divide.html#scipp.divide" title="scipp.divide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">divide</span></code></a>(dividend, divisor)</p></td>
+<td><p>Element-wise true division.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.dot.html#scipp.dot" title="scipp.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a>(x, y)</p></td>
+<td><p>Element-wise dot product.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.exp.html#scipp.exp" title="scipp.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise exponential.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.floor.html#scipp.floor" title="scipp.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a>(x, *[, out])</p></td>
+<td><p>Round down to the nearest integer of all values passed in x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.floor_divide.html#scipp.floor_divide" title="scipp.floor_divide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor_divide</span></code></a>(dividend, divisor)</p></td>
+<td><p>Element-wise floor division.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.log.html#scipp.log" title="scipp.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise natural logarithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.log10.html#scipp.log10" title="scipp.log10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log10</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise base 10 logarithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.mod.html#scipp.mod" title="scipp.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a>(dividend, divisor)</p></td>
+<td><p>Element-wise remainder.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.multiply.html#scipp.multiply" title="scipp.multiply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multiply</span></code></a>(a, b)</p></td>
+<td><p>Element-wise product.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.norm.html#scipp.norm" title="scipp.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a>(x)</p></td>
+<td><p>Element-wise norm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.reciprocal.html#scipp.reciprocal" title="scipp.reciprocal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reciprocal</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise reciprocal.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.round.html#scipp.round" title="scipp.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(x, *[, out])</p></td>
+<td><p>Round to the nearest integer if all values passed in x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.sqrt.html#scipp.sqrt" title="scipp.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise square-root.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.subtract.html#scipp.subtract" title="scipp.subtract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subtract</span></code></a>(minuend, subtrahend)</p></td>
+<td><p>Element-wise difference.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="shape">
+<h2>Shape<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.broadcast.html#scipp.broadcast" title="scipp.broadcast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">broadcast</span></code></a>(x, dims, shape)</p></td>
+<td><p>Broadcast a variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.concatenate.html#scipp.concatenate" title="scipp.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a>(x, y, dim)</p></td>
+<td><p>Concatenate input arrays along the given dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.flatten.html#scipp.flatten" title="scipp.flatten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatten</span></code></a>(x[, dims, to])</p></td>
+<td><p>Flatten multiple dimensions of a variable or data array into a single dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.fold.html#scipp.fold" title="scipp.fold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fold</span></code></a>(x, dim[, sizes, dims, shape])</p></td>
+<td><p>Fold a single dimension of a variable or data array into multiple dims.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.transpose.html#scipp.transpose" title="scipp.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(x[, dims])</p></td>
+<td><p>Transpose dimensions of a variable, an data array, or a dataset.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="comparison">
+<h2>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h2>
+<p>Comparison operators compare element-wise and <em>ignore variances</em>.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.allclose.html#scipp.allclose" title="scipp.allclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allclose</span></code></a>(x, y[, rtol, atol, equal_nan])</p></td>
+<td><p>Verifies that ALL element-wise comparisons meet the condition:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.allsorted.html#scipp.allsorted" title="scipp.allsorted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allsorted</span></code></a>(x, dim[, order])</p></td>
+<td><p>Check if the values of a variable are sorted.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.equal.html#scipp.equal" title="scipp.equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equal</span></code></a>(x, y)</p></td>
+<td><p>Element-wise '==' (equal).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.greater.html#scipp.greater" title="scipp.greater"><code class="xref py py-obj docutils literal notranslate"><span class="pre">greater</span></code></a>(x, y)</p></td>
+<td><p>Element-wise '&gt;' (greater).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.greater_equal.html#scipp.greater_equal" title="scipp.greater_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">greater_equal</span></code></a>(x, y)</p></td>
+<td><p>Element-wise '&gt;=' (greater_equal).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.identical.html#scipp.identical" title="scipp.identical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">identical</span></code></a>(x, y)</p></td>
+<td><p>Full comparison of x and y.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.isclose.html#scipp.isclose" title="scipp.isclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isclose</span></code></a>(x, y, *[, rtol, atol, equal_nan])</p></td>
+<td><p>Compares values (x, y) element by element against absolute and relative tolerances (non-symmetric).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.islinspace.html#scipp.islinspace" title="scipp.islinspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">islinspace</span></code></a>(x[, dim])</p></td>
+<td><p>Check if the values of a variable are evenly spaced.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.issorted.html#scipp.issorted" title="scipp.issorted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issorted</span></code></a>(x, dim[, order])</p></td>
+<td><p>Check if the values of a variable are sorted.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.less.html#scipp.less" title="scipp.less"><code class="xref py py-obj docutils literal notranslate"><span class="pre">less</span></code></a>(x, y)</p></td>
+<td><p>Element-wise '&lt;' (less).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.less_equal.html#scipp.less_equal" title="scipp.less_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">less_equal</span></code></a>(x, y)</p></td>
+<td><p>Element-wise '&lt;=' (less_equal).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.not_equal.html#scipp.not_equal" title="scipp.not_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">not_equal</span></code></a>(x, y)</p></td>
+<td><p>Element-wise '!=' (not_equal).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="inf-and-nan-handling">
+<h2><cite>inf</cite> and <cite>nan</cite> handling<a class="headerlink" href="#inf-and-nan-handling" title="Permalink to this headline">¶</a></h2>
+<p>Special-value (<cite>inf</cite> and <cite>nan</cite>) checks.
+<cite>inf</cite> and <cite>nan</cite> in the <em>variances is ignored</em>.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.isnan.html#scipp.isnan" title="scipp.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a>(x)</p></td>
+<td><p>Element-wise isnan (true if an element is nan).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.isinf.html#scipp.isinf" title="scipp.isinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isinf</span></code></a>(x)</p></td>
+<td><p>Element-wise isinf (true if an element is inf).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.isfinite.html#scipp.isfinite" title="scipp.isfinite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isfinite</span></code></a>(x)</p></td>
+<td><p>Element-wise isfinite (true if an element is finite).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.isposinf.html#scipp.isposinf" title="scipp.isposinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isposinf</span></code></a>(x)</p></td>
+<td><p>Element-wise isposinf (true if an element is a positive infinity).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.isneginf.html#scipp.isneginf" title="scipp.isneginf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isneginf</span></code></a>(x)</p></td>
+<td><p>Element-wise isneginf (true if an element is a negative infinity).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.nan_to_num.html#scipp.nan_to_num" title="scipp.nan_to_num"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nan_to_num</span></code></a>(x, *[, nan, posinf, neginf, out])</p></td>
+<td><p>Element-wise special value replacement.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="reduction">
+<h2>Reduction<a class="headerlink" href="#reduction" title="Permalink to this headline">¶</a></h2>
+<p>Reduction operations are operations to remove one or more dimension, e.g., by performing a sum over all elements along a dimension.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.all.html#scipp.all" title="scipp.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise AND over the specified dimension or all dimensions if not provided.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.any.html#scipp.any" title="scipp.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">any</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise OR over the specified dimension or all dimensions if not provided.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.cumsum.html#scipp.cumsum" title="scipp.cumsum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cumsum</span></code></a>(a[, dim, mode])</p></td>
+<td><p>Return the cumulative sum along the specified dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.max.html#scipp.max" title="scipp.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise max over the specified dimension or all dimensions if not provided.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.mean.html#scipp.mean" title="scipp.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise mean over the specified dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.min.html#scipp.min" title="scipp.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise min over the specified dimension or all dimensions if not provided.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.nanmax.html#scipp.nanmax" title="scipp.nanmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanmax</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise max ignoring not a number values over the specified dimension or all dimensions if not provided.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.nanmean.html#scipp.nanmean" title="scipp.nanmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanmean</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise mean over the specified dimension ignoring NaNs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.nanmin.html#scipp.nanmin" title="scipp.nanmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanmin</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise min ignoring not at number values over the specified dimension or all dimensions if not provided.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.nansum.html#scipp.nansum" title="scipp.nansum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nansum</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise sum over the specified dimension; NaNs are treated as zero.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.sum.html#scipp.sum" title="scipp.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(x[, dim, out])</p></td>
+<td><p>Element-wise sum over the specified dimension.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="trigonometric">
+<h2>Trigonometric<a class="headerlink" href="#trigonometric" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.sin.html#scipp.sin" title="scipp.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise sine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.cos.html#scipp.cos" title="scipp.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise cosine.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.tan.html#scipp.tan" title="scipp.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise tangent.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.asin.html#scipp.asin" title="scipp.asin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asin</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise inverse sine.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.acos.html#scipp.acos" title="scipp.acos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">acos</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise inverse cosine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.atan.html#scipp.atan" title="scipp.atan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atan</span></code></a>(x, *[, out])</p></td>
+<td><p>Element-wise inverse tangent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.atan2.html#scipp.atan2" title="scipp.atan2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atan2</span></code></a>(*, y, x[, out])</p></td>
+<td><p>Element-wise inverse tangent of y/x determining the correct quadrant.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="geometric">
+<h2>Geometric<a class="headerlink" href="#geometric" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.geometry.position.html#scipp.geometry.position" title="scipp.geometry.position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geometry.position</span></code></a>(x, y, z)</p></td>
+<td><p>Element-wise zip functionality to produce a 3 element vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.geometry.rotation_matrix_from_quaternion_coeffs.html#scipp.geometry.rotation_matrix_from_quaternion_coeffs" title="scipp.geometry.rotation_matrix_from_quaternion_coeffs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geometry.rotation_matrix_from_quaternion_coeffs</span></code></a>(value)</p></td>
+<td><p>Construct a rotation matrix from quaternions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="group-by-split-apply-combine">
+<h2>Group-by (split-apply-combine)<a class="headerlink" href="#group-by-split-apply-combine" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Reduction<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a>(data, group, *[, bins])</p></td>
+<td><p>Group dataset or data array based on values of specified labels.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="counts">
+<h2>Counts<a class="headerlink" href="#counts" title="Permalink to this headline">¶</a></h2>
+<p>“Counts” refers to the default unit of data after histogramming.
+It is also known as frequency.
+This can be converted into a counts (frequency) density, e.g., for visualization purposes.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.counts_to_density.html#scipp.counts_to_density" title="scipp.counts_to_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">counts_to_density</span></code></a>(x, dim)</p></td>
+<td><p>Converts counts to count density on a given dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.density_to_counts.html#scipp.density_to_counts" title="scipp.density_to_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">density_to_counts</span></code></a>(x, dim)</p></td>
+<td><p>Converts counts to count density on a given dimension.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.show.html#scipp.show" title="scipp.show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show</span></code></a>(container)</p></td>
+<td><p>Show a graphical representation of a variable or dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.show_graph.html#scipp.show_graph" title="scipp.show_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_graph</span></code></a>(graph[, size, simplified])</p></td>
+<td><p>Show graphical representation of a graph as required by <a class="reference internal" href="../generated/functions/scipp.transform_coords.html#scipp.transform_coords" title="scipp.transform_coords"><code class="xref py py-func docutils literal notranslate"><span class="pre">transform_coords()</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.table.html#scipp.table" title="scipp.table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">table</span></code></a>(scipp_obj)</p></td>
+<td><p>Create a html table from the contents of a Dataset (0D and 1D Variables only), DataArray, Variable or raw numpy array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.to_html.html#scipp.to_html" title="scipp.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a>(container)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.plot.html#scipp.plot" title="scipp.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Plot a Scipp object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="compatibility">
+<h2>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.to_dict.html#scipp.to_dict" title="scipp.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>(scipp_obj)</p></td>
+<td><p>Convert a scipp object (Variable, DataArray or Dataset) to a python dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.from_dict.html#scipp.from_dict" title="scipp.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a>(dict_obj)</p></td>
+<td><p>Convert a python dict to a scipp Variable, DataArray or Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/functions/scipp.compat.from_pandas.html#scipp.compat.from_pandas" title="scipp.compat.from_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compat.from_pandas</span></code></a>(pd_obj)</p></td>
+<td><p>Converts a pandas.DataFrame or pandas.Series object into a scipp Dataset or DataArray respectively.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/functions/scipp.compat.from_xarray.html#scipp.compat.from_xarray" title="scipp.compat.from_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compat.from_xarray</span></code></a>(obj)</p></td>
+<td><p>Convenience method to convert an xarray object into the corresponding scipp object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/modules/scipp.constants.html#module-scipp.constants" title="scipp.constants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constants</span></code></a></p></td>
+<td><p>Physical and mathematical constants with units.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/modules/scipp.spatial.html#module-scipp.spatial" title="scipp.spatial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../generated/classes/scipp.Bins.html" class="btn btn-neutral float-right" title="scipp.Bins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../visualization/plotting/datetime_handling.html" class="btn btn-neutral float-left" title="Datetime handling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+scipp.GroupByDataset.all
+========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataset.all

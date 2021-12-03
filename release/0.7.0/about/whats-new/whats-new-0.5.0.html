@@ -1,0 +1,836 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>What’s new in scipp 0.5.0 &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="What’s new in scipp 0.6.0 and scippneutron 0.1.0" href="whats-new-0.6.0.html" />
+    <link rel="prev" title="What’s new in scipp" href="../whats-new.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/developer-documentation.html">Developer Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About scipp</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../whats-new.html">What’s new in scipp</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">What’s new in scipp 0.5.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Run-logs-now-stored-natively">Run logs now stored natively</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Improved-instrument-view">Improved instrument view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Improved-plotting">Improved plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Creation-functions">Creation functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Label-based-indexing">Label-based indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Dataset-items-and-masks">Dataset items and masks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#HDF5-I/O">HDF5 I/O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Event-data">Event data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="whats-new-0.6.0.html">What’s new in scipp 0.6.0 and scippneutron 0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats-new-0.7.0.html">What’s new in scipp 0.7.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.7.0">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../whats-new.html">What’s new in scipp</a> &raquo;</li>
+        
+      <li>What’s new in scipp 0.5.0</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/about/whats-new/whats-new-0.5.0.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p><a class="reference external" href="https://raw.githubusercontent.com/scipp/scipp/main/docs/about/whats-new/whats-new-0.5.0.ipynb">Download this Jupyter notebook</a></p>
+<hr class="docutils" />
+<div class="section" id="What’s-new-in-scipp-0.5.0">
+<h1>What’s new in scipp 0.5.0<a class="headerlink" href="#What’s-new-in-scipp-0.5.0" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://scipp.github.io/about/release-notes.html#v0-5-january-2021">Release Notes</a></p>
+<p>Due to two big internal and external changes this release cycle has been very long, with many significant changes. We generally aim for shorter cycles in the future.</p>
+<p>Download <a class="reference external" href="http://198.74.56.37/ftp/external-data/MD5/d5ae38871d0a09a28ae01f85d969de1e">PG3_4844_event.nxs</a> (and rename after download) to run this notebook.</p>
+<ul class="simple">
+<li><p>We made a <code class="docutils literal notranslate"><span class="pre">mantid-framework</span></code> MacOS <code class="docutils literal notranslate"><span class="pre">conda</span></code> package available, so installation of <code class="docutils literal notranslate"><span class="pre">scipp</span></code> in combination with Mantid is now possible without the need for a special hand-distributed package.</p></li>
+<li><p>Windows is still a problem, we currently recommend using WSL.</p></li>
+</ul>
+<div class="section" id="Run-logs-now-stored-natively">
+<h2>Run logs now stored natively<a class="headerlink" href="#Run-logs-now-stored-natively" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Previously we stored Mantid’s <code class="docutils literal notranslate"><span class="pre">Run</span></code> and <code class="docutils literal notranslate"><span class="pre">Sample</span></code> as a scalar variable holding the Mantid object as a <code class="docutils literal notranslate"><span class="pre">PyObject</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Run</span></code> is now converted into individual attributes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sample</span></code> still <code class="docutils literal notranslate"><span class="pre">PyObject</span></code></p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">scipp</span> <span class="k">as</span> <span class="nn">sc</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">sc</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;0.5&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;This notebook was made for scipp-0.5 and will likely not work with your version (</span><span class="si">{</span><span class="n">sc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">).&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;PG3_4844_event&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s1">.nxs&#39;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<p>Many time-dependent logs are just data arrays, so we can access, modify, plot, … them. Remember that the <code class="docutils literal notranslate"><span class="pre">value</span></code> property has to be used to access the only value of a scalar variable:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;proton_charge&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Improved-instrument-view">
+<h2>Improved instrument view<a class="headerlink" href="#Improved-instrument-view" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Align camera to axis buttons</p></li>
+<li><p>Cut surface tools</p></li>
+<li><p>Bug fixes, such as pixel sizes on high-res displays</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">instrument_view</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Improved-plotting">
+<h2>Improved plotting<a class="headerlink" href="#Improved-plotting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">logx</span></code>, <code class="docutils literal notranslate"><span class="pre">logy</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code>, and transpose buttons in toolbar</p></li>
+<li><p>now available as method in addition to free function, <code class="docutils literal notranslate"><span class="pre">data.plot()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">sc.plot.plot(data)</span></code></p></li>
+<li><p>profile plot/picking for 3-D (and higher) data</p></li>
+<li><p>Cleaned up widgets for 3-D (and higher) data</p></li>
+<li><p>Performance improvements</p></li>
+<li><p>Dynamic event data resampling (see below)</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># This cell is just for setup, ignore, or see below for `sc.bin`</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">bins</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;pulse-time&#39;</span><span class="p">]</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="n">stop</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="n">time_edges</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pulse-time&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">tof_edges</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">us</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">17000</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">binned</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">bin</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="p">[</span><span class="n">time_edges</span><span class="p">])</span>
+<span class="n">hist</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">binned</span><span class="p">,</span> <span class="n">tof_edges</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Slider and “Profile” button show up when data is 3-D (or higher):</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">hist</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">axes</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="s1">&#39;tof&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="s1">&#39;spectrum&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Creation-functions">
+<h2>Creation functions<a class="headerlink" href="#Creation-functions" title="Permalink to this headline">¶</a></h2>
+<p>For convenience and similarity to <code class="docutils literal notranslate"><span class="pre">numpy</span></code> we added <a class="reference external" href="https://scipp.github.io/python-reference/api.html#creation-functions">functions that create variables</a>. Our intention is to fully replace the need to use <code class="docutils literal notranslate"><span class="pre">sc.Variable</span></code> directly, but at this point this has not been rolled out to our documentation pages.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">scalar</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>All of these also take keyword arguments. Note that we can still support creating scalars by multiplying with a unit:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="mf">1.2</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Label-based-indexing">
+<h2>Label-based indexing<a class="headerlink" href="#Label-based-indexing" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Works just like position indexing (with integers).</p></li>
+<li><p>Use a scalar variable as index (instead of integer) to use label-based indexing</p></li>
+<li><p>Works with single values as well as slices (<code class="docutils literal notranslate"><span class="pre">:</span></code> notation)</p></li>
+</ul>
+<p>See <a class="reference external" href="https://scipp.github.io/user-guide/slicing.html#Label-based-indexing">Label-based indexing</a> for more details.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">hist</span><span class="p">[</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="n">sc</span><span class="o">.</span><span class="n">scalar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)])</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">hist</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">us</span><span class="p">])</span> <span class="c1"># selects bin containing this value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Dataset-items-and-masks">
+<h2>Dataset items and masks<a class="headerlink" href="#Dataset-items-and-masks" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Previously masks for global for a dataset, masking items individually was not supported.</p></li>
+<li><p>Applications require item-specific masks.</p></li>
+<li><p>Removed support for dataset masks, only item masks are supported now, since having both causes conceptual problems.</p></li>
+<li><p>See <a class="reference external" href="https://scipp.github.io/developer/adr/0001-remove-dataset-masking-support.html">ADR0001</a> for details.</p></li>
+<li><p>Common masks must be set individually.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">hist</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">tof_edges</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">({</span><span class="s1">&#39;sample1&#39;</span><span class="p">:</span><span class="n">hist</span><span class="p">,</span> <span class="s1">&#39;sample2&#39;</span><span class="p">:</span><span class="n">hist</span><span class="o">+</span><span class="n">hist</span><span class="p">})</span>
+<span class="n">tof_mask</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">][</span><span class="s1">&#39;tof&#39;</span><span class="p">,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3333</span><span class="o">*</span><span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">us</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;sample1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tof_mask</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;sample2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tof_mask</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;sample2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span><span class="p">[</span><span class="s1">&#39;tof2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">~</span><span class="n">tof_mask</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="HDF5-I/O">
+<h2>HDF5 I/O<a class="headerlink" href="#HDF5-I/O" title="Permalink to this headline">¶</a></h2>
+<p>Scipp can now <a class="reference external" href="https://scipp.github.io/user-guide/reading-and-writing-files.html">write and read its data structures</a> using <code class="docutils literal notranslate"><span class="pre">h5py</span></code>. - At this point we do not make any promises about compatibilty of the file layout with future version, so we do not encourage usage for storing data long-term. - Loading event data via Mantid converter is quite slow, so loading raw data once and storing natively can provide a UX boost when working on debugging a reduction workflow in a notebook. - Note the
+warning message about <code class="docutils literal notranslate"><span class="pre">PyObject</span></code>, since we cannot write Mantid’s <code class="docutils literal notranslate"><span class="pre">Sample</span></code> object, apart from this caveat everything else is saved.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data</span><span class="o">.</span><span class="n">to_hdf5</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s1">-scipp.hdf5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data2</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">open_hdf5</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s1">-scipp.hdf5&#39;</span><span class="p">)</span>
+<span class="n">data2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Event-data">
+<h2>Event data<a class="headerlink" href="#Event-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Event data is the main use case of the new <a class="reference external" href="https://scipp.github.io/user-guide/binned-data.html">Binned Data</a> support.</p></li>
+<li><p>Old special “event list” <code class="docutils literal notranslate"><span class="pre">dtype</span></code> and “realigned data support” have been replaced and removed.</p></li>
+<li><p>Much more flexible and generic, with a more natural interface.</p>
+<ul>
+<li><p>Will be able to support multi-dimensional event data with this new data layout (for single-crystal and inelastic data).</p></li>
+</ul>
+</li>
+<li><p>Plotting with on-the-fly resampling.</p></li>
+</ul>
+<p>See documentation for more details and how to work with binned event data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="s1">&#39;event&#39;</span><span class="p">,:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="whats-new-0.6.0.html" class="btn btn-neutral float-right" title="What’s new in scipp 0.6.0 and scippneutron 0.1.0" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../whats-new.html" class="btn btn-neutral float-left" title="What’s new in scipp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

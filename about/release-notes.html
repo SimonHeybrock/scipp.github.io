@@ -1,0 +1,2232 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Release Notes &#8212; scipp  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Contributing to scipp" href="contributing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-large-v4.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting-started/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting-started/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting-started/quick-start.html">
+   Quick start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting-started/faq.html">
+   Frequently Asked Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/data-structures.html">
+   Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/slicing.html">
+   Slicing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/computation.html">
+   Computation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/masking.html">
+   Masking
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../user-guide/binned-data.html">
+   Binned Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user-guide/binned-data/binned-data.html">
+     Binned Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user-guide/binned-data/computation.html">
+     Computation with Binned Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user-guide/binned-data/filtering.html">
+     Filtering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user-guide/binned-data/histogramming-grouping-and-binning.html">
+     Histogramming, grouping, and binning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/coordinate-transformations.html">
+   Coordinate transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/reading-and-writing-files.html">
+   Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/how_to.html">
+   How to…
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user-guide/tips-tricks-and-anti-patterns.html">
+   Tips, tricks, and anti-patterns
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../visualization/representations-and-tables.html">
+   Representations and Tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../visualization/plotting-overview.html">
+   Plotting Overview
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../visualization/plotting-in-depth.html">
+   Plotting in depth
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../visualization/plotting/plotting-1d-data.html">
+     Plotting 1-D data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../visualization/plotting/plotting-2d-data.html">
+     Plotting 2-D data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../visualization/plotting/plotting-nd-data.html">
+     Plotting N-D data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../visualization/plotting/customizing-figures.html">
+     Customizing figures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../visualization/plotting/datetime_handling.html">
+     Datetime handling
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../reference/classes.html">
+   Classes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.Bins.html">
+     scipp.Bins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.DataArray.html">
+     scipp.DataArray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.Dataset.html">
+     scipp.Dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.GroupByDataArray.html">
+     scipp.GroupByDataArray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.GroupByDataset.html">
+     scipp.GroupByDataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.Unit.html">
+     scipp.Unit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.Variable.html">
+     scipp.Variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.typing.VariableLike.html">
+     scipp.typing.VariableLike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/classes/scipp.typing.MetaDataMap.html">
+     scipp.typing.MetaDataMap
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../reference/creation-functions.html">
+   Creation functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.array.html">
+     scipp.array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.arange.html">
+     scipp.arange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.empty.html">
+     scipp.empty
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.empty_like.html">
+     scipp.empty_like
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.full.html">
+     scipp.full
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.full_like.html">
+     scipp.full_like
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.geomspace.html">
+     scipp.geomspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.linspace.html">
+     scipp.linspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.logspace.html">
+     scipp.logspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.matrix.html">
+     scipp.matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.matrices.html">
+     scipp.matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.ones.html">
+     scipp.ones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.ones_like.html">
+     scipp.ones_like
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.scalar.html">
+     scipp.scalar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.vector.html">
+     scipp.vector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.vectors.html">
+     scipp.vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.zeros.html">
+     scipp.zeros
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.zeros_like.html">
+     scipp.zeros_like
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../reference/free-functions.html">
+   Free functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.bin.html">
+     scipp.bin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.bins.html">
+     scipp.bins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.bins_like.html">
+     scipp.bins_like
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.choose.html">
+     scipp.choose
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.collapse.html">
+     scipp.collapse
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.histogram.html">
+     scipp.histogram
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.logical_and.html">
+     scipp.logical_and
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.logical_or.html">
+     scipp.logical_or
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.logical_xor.html">
+     scipp.logical_xor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.lookup.html">
+     scipp.lookup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.merge.html">
+     scipp.merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.rebin.html">
+     scipp.rebin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.reduce.html">
+     scipp.reduce
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.slices.html">
+     scipp.slices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.sort.html">
+     scipp.sort
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.stddevs.html">
+     scipp.stddevs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.to_unit.html">
+     scipp.to_unit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.transform_coords.html">
+     scipp.transform_coords
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.values.html">
+     scipp.values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.variances.html">
+     scipp.variances
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.where.html">
+     scipp.where
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.abs.html">
+     scipp.abs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.add.html">
+     scipp.add
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.ceil.html">
+     scipp.ceil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.cross.html">
+     scipp.cross
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.divide.html">
+     scipp.divide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.dot.html">
+     scipp.dot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.erf.html">
+     scipp.erf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.erfc.html">
+     scipp.erfc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.exp.html">
+     scipp.exp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.floor.html">
+     scipp.floor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.floor_divide.html">
+     scipp.floor_divide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.log.html">
+     scipp.log
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.log10.html">
+     scipp.log10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.mod.html">
+     scipp.mod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.multiply.html">
+     scipp.multiply
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.norm.html">
+     scipp.norm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.reciprocal.html">
+     scipp.reciprocal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.round.html">
+     scipp.round
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.sqrt.html">
+     scipp.sqrt
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.subtract.html">
+     scipp.subtract
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.broadcast.html">
+     scipp.broadcast
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.concat.html">
+     scipp.concat
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.concatenate.html">
+     scipp.concatenate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.flatten.html">
+     scipp.flatten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.fold.html">
+     scipp.fold
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.transpose.html">
+     scipp.transpose
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.allclose.html">
+     scipp.allclose
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.allsorted.html">
+     scipp.allsorted
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.equal.html">
+     scipp.equal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.greater.html">
+     scipp.greater
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.greater_equal.html">
+     scipp.greater_equal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.identical.html">
+     scipp.identical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.isclose.html">
+     scipp.isclose
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.islinspace.html">
+     scipp.islinspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.issorted.html">
+     scipp.issorted
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.less.html">
+     scipp.less
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.less_equal.html">
+     scipp.less_equal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.not_equal.html">
+     scipp.not_equal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.isnan.html">
+     scipp.isnan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.isinf.html">
+     scipp.isinf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.isfinite.html">
+     scipp.isfinite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.isposinf.html">
+     scipp.isposinf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.isneginf.html">
+     scipp.isneginf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.nan_to_num.html">
+     scipp.nan_to_num
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.all.html">
+     scipp.all
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.any.html">
+     scipp.any
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.cumsum.html">
+     scipp.cumsum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.max.html">
+     scipp.max
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.mean.html">
+     scipp.mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.min.html">
+     scipp.min
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.nanmax.html">
+     scipp.nanmax
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.nanmean.html">
+     scipp.nanmean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.nanmin.html">
+     scipp.nanmin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.nansum.html">
+     scipp.nansum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.sum.html">
+     scipp.sum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.sin.html">
+     scipp.sin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.cos.html">
+     scipp.cos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.tan.html">
+     scipp.tan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.asin.html">
+     scipp.asin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.acos.html">
+     scipp.acos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.atan.html">
+     scipp.atan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.atan2.html">
+     scipp.atan2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.geometry.position.html">
+     scipp.geometry.position
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.geometry.rotation_matrix_from_quaternion_coeffs.html">
+     scipp.geometry.rotation_matrix_from_quaternion_coeffs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.groupby.html">
+     scipp.groupby
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.counts_to_density.html">
+     scipp.counts_to_density
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.density_to_counts.html">
+     scipp.density_to_counts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.show.html">
+     scipp.show
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.show_graph.html">
+     scipp.show_graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.table.html">
+     scipp.table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.to_html.html">
+     scipp.to_html
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.plot.html">
+     scipp.plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.to_dict.html">
+     scipp.to_dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.from_dict.html">
+     scipp.from_dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.compat.from_pandas.html">
+     scipp.compat.from_pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.compat.from_xarray.html">
+     scipp.compat.from_xarray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.get_logger.html">
+     scipp.get_logger
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../generated/functions/scipp.display_logs.html">
+     scipp.display_logs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../reference/modules.html">
+   Modules
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../generated/modules/scipp.constants.html">
+     scipp.constants
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.constants.physical_constants.html">
+       scipp.constants.physical_constants
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../generated/modules/scipp.spatial.html">
+     scipp.spatial
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../generated/modules/scipp.spatial.transform.html">
+       scipp.spatial.transform
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../generated/modules/scipp.spatial.transform.as_rotvec.html">
+         scipp.spatial.transform.as_rotvec
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../generated/modules/scipp.spatial.transform.from_rotvec.html">
+         scipp.spatial.transform.from_rotvec
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../generated/modules/scipp.logging.html">
+     scipp.logging
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.clear_log_widget.html">
+       scipp.logging.clear_log_widget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.display_logs.html">
+       scipp.logging.display_logs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.get_log_widget.html">
+       scipp.logging.get_log_widget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.get_logger.html">
+       scipp.logging.get_logger
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.get_widget_handler.html">
+       scipp.logging.get_widget_handler
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.make_log_widget.html">
+       scipp.logging.make_log_widget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.make_stream_handler.html">
+       scipp.logging.make_stream_handler
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.make_widget_handler.html">
+       scipp.logging.make_widget_handler
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../generated/modules/scipp.logging.WidgetHandler.html">
+       scipp.logging.WidgetHandler
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/linear-algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/dtype.html">
+   Data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/units.html">
+   Physical units
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/error-propagation.html">
+   Propagation of uncertainties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/ownership-mechanism-and-readonly-flags.html">
+   Ownership mechanism and readonly flags
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/logging.html">
+   Logging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/runtime-configuration.html">
+   Runtime Configuration
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../reference/developer-documentation.html">
+   Developer Documentation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/getting-started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/api.html">
+     API Reference
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/developer/architecture-decision-records.html">
+     Architecture Decision Records
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0001-remove-dataset-masking-support.html">
+       ADR 0001: Remove dataset masking support
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0002-remove-instrument-view-projection-options.html">
+       ADR 0002: Remove instrument view 2D projection options
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0003-refactor-plotting-code-with-mvc-pattern.html">
+       ADR 0003: Refactor plotting code to use Model-View-Controller design pattern
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0004-use-ipympl-backend-for-matplotlib.html">
+       ADR 0004: Use the ipympl backend for Matplotlib figures in Jupyter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0005-remove-need-for-bins-property-when-calling-bin-or-histogram.html">
+       ADR 0005: Remove need for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bins
+        </span>
+       </code>
+       property when calling
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bin
+        </span>
+       </code>
+       or
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         histogram
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0006-add-readonly-flags.html">
+       ADR 0006: Add read-only flags
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0007-do-not-support-args-referencing-x-or-y.html">
+       ADR 0007: Do not support arguments referring to
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         x
+        </span>
+       </code>
+       or
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         y
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0008-consistent-multi-dimensional-coords.html">
+       ADR 0008: Consistent multi-dimensional coords
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0009-handle-dimensionless-as-non-counts.html">
+       ADR 0009: Handle dimensionless as non-counts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/developer/adr/0010-acknowledge-stability-and-maintainability-tasks.html">
+       ADR 0010: Acknowledge stability and maintainability tasks
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/coding-conventions.html">
+     Coding conventions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/concepts.html">
+     Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/constructing_variables.html">
+     C++ API for constructing variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/customizing.html">
+     Customizing Scipp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/dependencies.html">
+     Dependencies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/deployment.html">
+     Deployment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/how-to.html">
+     How To…
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/multi_dimensional_indexing.html">
+     Multi-Dimensional Indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/tooling.html">
+     Tooling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/transform.html">
+     Transforming data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/developer/variable_implementation.html">
+     Implementation of class Variable
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/introduction.html">
+   1-D datasets and tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/multi-d-datasets.html">
+   Multi-dimensional datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   About scipp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="whats-new.html">
+   What’s new in scipp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="roadmap.html">
+   Roadmap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contributing.html">
+   Contributing to scipp
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Release Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<!-- Minimally modifed from original theme to specify "download" attribute in <a> so ipynb is downloaded instead of opened by browser. -->
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/about/release-notes.rst" download><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/scipp/scipp"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/scipp/scipp/issues/new?title=Issue%20on%20page%20%2Fabout/release-notes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/scipp/scipp/edit/main/docs/about/release-notes.rst"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Here, we override the default launchbuttons.html by replacing it with our
+     version selection menu, since we do not intend to use the launchbuttons.
+     This allows us to add the version selection menu in some unused white space
+     that is always visible. -->
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" style="font-size: 1em;padding-top:0.33rem;">Scipp version
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-buttons" style="transform:translate(10%);">
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io"><button type="button"
+                class="btn btn-secondary topbarbtn">latest</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.9.0"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.9</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.8.4"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.8</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.7.1"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.7</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.6.1"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.6</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.5.0"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.5</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.4.0"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.4</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.3.0"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.3</button></a>
+    </div>
+</div>
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" style="font-size: 1em;padding-top:0.33rem;">Related projects
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-buttons" style="transform:translate(10%);">
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io"><button type="button"
+                class="btn btn-secondary topbarbtn">scipp</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/scippneutron"><button type="button"
+                class="btn btn-secondary topbarbtn">scippneutron</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/ess"><button type="button"
+                class="btn btn-secondary topbarbtn">ess</button></a>
+    </div>
+</div>
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-10-0-unreleased">
+   v0.10.0 (unreleased)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#breaking-changes">
+     Breaking changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bugfixes">
+     Bugfixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deprecations">
+     Deprecations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stability-maintainability-and-testing">
+     Stability, Maintainability, and Testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contributors">
+     Contributors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-9-0-november-2021">
+   v0.9.0 (November 2021)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Breaking changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     Bugfixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     Deprecations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     Stability, Maintainability, and Testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id30">
+     Contributors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-8-3-september-2021">
+   v0.8.3 (September 2021)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id31">
+     Bugfixes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-8-0-september-2021">
+   v0.8.0 (September 2021)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id33">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id50">
+     Breaking changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id66">
+     Bugfixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id70">
+     Deprecations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id71">
+     Contributors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-7-2-september-2021">
+   v0.7.2 (September 2021)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id72">
+     Bugfixes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-7-0-june-2021">
+   v0.7.0 (June 2021)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id74">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id87">
+     Bugfixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id89">
+     Breaking changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id93">
+     Contributors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-6-1-april-2021">
+   v0.6.1 (April 2021)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id94">
+     Bugfixes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-6-0-march-2021">
+   v0.6.0 (March 2021)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id97">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id113">
+     Breaking changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id116">
+     Contributors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-5-0-january-2021">
+   v0.5.0 (January 2021)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id117">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id118">
+     Breaking changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id119">
+     Contributors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-4-july-2020">
+   v0.4 (July 2020)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id120">
+     Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#noteable-bug-fixes">
+     Noteable bug fixes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id121">
+     Breaking changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id122">
+     Contributors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-3-march-2020">
+   v0.3 (March 2020)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-2-december-2019">
+   v0.2 (December 2019)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v0-1-september-2019">
+   v0.1 (September 2019)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing-organizations">
+   Contributing Organizations
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="release-notes">
+<span id="id1"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-10-0-unreleased">
+<h2>v0.10.0 (unreleased)<a class="headerlink" href="#v0-10-0-unreleased" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add support for auto-completions for slices and metadata access in Jupyter <a class="reference external" href="https://github.com/scipp/scipp/pull/2304">#2304</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="breaking-changes">
+<h3>Breaking changes<a class="headerlink" href="#breaking-changes" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bugfixes">
+<h3>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix kernel crash or poor performance when using <code class="docutils literal notranslate"><span class="pre">bin</span></code> or <code class="docutils literal notranslate"><span class="pre">da.bins.concat</span></code> along an inner dimension in the presence of a long outer dimension <a class="reference external" href="https://github.com/scipp/scipp/pull/2278">#2278</a>.</p></li>
+<li><p>Improved the rendering of cut slices in 3d plots where some strange artifacts could appear depending on the order in which the pixels were being drawn <a class="reference external" href="https://github.com/scipp/scipp/pull/2287">#2287</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="deprecations">
+<h3>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The deprecated <code class="docutils literal notranslate"><span class="pre">events</span></code> property has been removed.</p></li>
+</ul>
+</div>
+<div class="section" id="stability-maintainability-and-testing">
+<h3>Stability, Maintainability, and Testing<a class="headerlink" href="#stability-maintainability-and-testing" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="contributors">
+<h3>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h3>
+<p>Simon Heybrock:sup:<cite>a</cite>,
+Neil Vaytet:sup:<cite>a</cite>,
+Tom Willemsen:sup:<cite>b, c</cite>,
+and Jan-Lukas Wynen:sup:<cite>a</cite></p>
+</div>
+</div>
+<div class="section" id="v0-9-0-november-2021">
+<h2>v0.9.0 (November 2021)<a class="headerlink" href="#v0-9-0-november-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Features<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">erf</span></code> and <code class="docutils literal notranslate"><span class="pre">erfc</span></code> functions <a class="reference external" href="https://github.com/scipp/scipp/pull/2195">#2195</a>.</p></li>
+<li><p>Reduction operations such as <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">nansum</span></code>, and <code class="docutils literal notranslate"><span class="pre">cumsum</span></code> of single precision (float32) data now use double precision (float64) internally to reduce rounding errors <a class="reference external" href="https://github.com/scipp/scipp/pull/2218">#2218</a>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">bins_like</span></code> for broadcasting dense variables to binned variables, e.g., for converting bin coordinates into event coordinates <a class="reference external" href="https://github.com/scipp/scipp/pull/2225">#2225</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">groupby</span></code> now also supports grouping by attributes instead of just by coordinates <a class="reference external" href="https://github.com/scipp/scipp/pull/2227">#2227</a>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">concat</span></code> to replace <code class="docutils literal notranslate"><span class="pre">concatenate</span></code>. In contrast to the now deprecated <code class="docutils literal notranslate"><span class="pre">concatenate</span></code>, <code class="docutils literal notranslate"><span class="pre">concat</span></code> supports concatenation of lists of objects instead of just two objects <a class="reference external" href="https://github.com/scipp/scipp/pull/2232">#2232</a>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">dim</span></code> property to <code class="docutils literal notranslate"><span class="pre">Variable</span></code> and <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/2251">#2251</a>.</p></li>
+<li><p>Added preconfigured logging support including a widget for output to notebooks <a class="reference external" href="https://github.com/scipp/scipp/pull/2255">#2255</a>, <a class="reference external" href="https://github.com/scipp/scipp/pull/2267">#2267</a>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">reduce</span></code> for setting up reductions across a list of inputs <a class="reference external" href="https://github.com/scipp/scipp/pull/2267">#2267</a>.</p></li>
+<li><p>Added toggle buttons for hiding/showing the 3d axes and outline box in 3d plots <a class="reference external" href="https://github.com/scipp/scipp/pull/2265">#2265</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>Breaking changes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Name changes of arguments of <code class="docutils literal notranslate"><span class="pre">transform_coords</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/2267">#2267</a>.</p></li>
+<li><p>Graphs in <code class="docutils literal notranslate"><span class="pre">transform_coords</span></code> must now name all outputs of functions or else the outputs are discarded <a class="reference external" href="https://github.com/scipp/scipp/pull/2267">#2267</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h3>Bugfixes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix bugs in <code class="docutils literal notranslate"><span class="pre">rebin</span></code> if data and/or edges had strides other than 1 along rebinned dimension, typically only occuring with multi-dimensional (ragged) coordinates <a class="reference external" href="https://github.com/scipp/scipp/pull/2211">#2211</a>.</p></li>
+<li><p>Fix exception that was thrown when importing empty datasets from HDF5 files using <code class="docutils literal notranslate"><span class="pre">open_hdf5</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/2216">#2216</a>.</p></li>
+<li><p>Fix exception in <code class="docutils literal notranslate"><span class="pre">astype</span></code> when called with binned data that does not require conversion <a class="reference external" href="https://github.com/scipp/scipp/pull/2222">#2222</a>.</p></li>
+<li><p>Fix bug in <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> that could lead to masks being shared with input rather than being copied <a class="reference external" href="https://github.com/scipp/scipp/pull/2232">#2232</a>.</p></li>
+<li><p>Fix exception in <code class="docutils literal notranslate"><span class="pre">bin</span></code> when binning in a new dimension but with an existing bin coord <a class="reference external" href="https://github.com/scipp/scipp/pull/2237">#2237</a>.</p></li>
+<li><p>Fix exception when plotting data with masks in presence of multi-dimensional coords <a class="reference external" href="https://github.com/scipp/scipp/pull/2269">#2269</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h3>Deprecations<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">concatenate</span></code> and <code class="docutils literal notranslate"><span class="pre">groupby(..).concatenate</span></code> are deprecated. Use <code class="docutils literal notranslate"><span class="pre">concat</span></code> and <code class="docutils literal notranslate"><span class="pre">groupby(..).concat</span></code> instead.</p></li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h3>Stability, Maintainability, and Testing<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>More thorough unit testing for low-level code underlying most operations on dense as well as binned data <a class="reference external" href="https://github.com/scipp/scipp/pull/1900">#1900</a>, by Jan-Lukas Wynen.</p></li>
+<li><p>Switch to Jupyter Book theme for documentation, avoiding a number of issues with the RTD theme <a class="reference external" href="https://github.com/scipp/scipp/pull/2233">#2233</a>, by Neil Vaytet.</p></li>
+<li><p>Added <a class="reference external" href="https://scipp.github.io/scipp-benchmarks/">benchmark suite</a> to allow for identification of performance regressions, by Samuel Jones.</p></li>
+<li><p>Added <a class="reference external" href="https://scipp.github.io/scipp-coverage/">code coverage</a> tooling to allow for identification of dark spots in our test coverage, by Simon Heybrock.</p></li>
+</ul>
+</div>
+<div class="section" id="id30">
+<h3>Contributors<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<p>Owen Arnold <sup>b, c</sup>,
+Simon Heybrock <sup>a</sup>,
+Samuel Jones <sup>b</sup>,
+Neil Vaytet <sup>a</sup>,
+Tom Willemsen <sup>b, c</sup>,
+and Jan-Lukas Wynen <sup>a</sup></p>
+</div>
+</div>
+<div class="section" id="v0-8-3-september-2021">
+<h2>v0.8.3 (September 2021)<a class="headerlink" href="#v0-8-3-september-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id31">
+<h3>Bugfixes<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix serious correctness bug in <code class="docutils literal notranslate"><span class="pre">groupby.sum</span></code> and <code class="docutils literal notranslate"><span class="pre">groupby.mean</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/2200">#2200</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v0-8-0-september-2021">
+<h2>v0.8.0 (September 2021)<a class="headerlink" href="#v0-8-0-september-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id33">
+<h3>Features<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">sizes</span></code> argument to <code class="docutils literal notranslate"><span class="pre">zeros</span></code>, <code class="docutils literal notranslate"><span class="pre">ones</span></code>, and <code class="docutils literal notranslate"><span class="pre">empty</span></code> variable creation functions <a class="reference external" href="https://github.com/scipp/scipp/pull/1951">#1951</a>.</p></li>
+<li><p>Slicing syntax now supports ellipsis, e.g., <code class="docutils literal notranslate"><span class="pre">da.data[...]</span> <span class="pre">=</span> <span class="pre">var</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/1961">#1961</a>.</p></li>
+<li><p>Added bound method equivalents to many free functions which take a single Variable or DataArray <a class="reference external" href="https://github.com/scipp/scipp/pull/1969">#1969</a>.</p></li>
+<li><p>Variables can now be constructed directly from multi dimensional lists and tuples <a class="reference external" href="https://github.com/scipp/scipp/pull/1977">#1977</a>.</p></li>
+<li><p>Plotting 1-D event data is now supported <a class="reference external" href="https://github.com/scipp/scipp/pull/2018">#2018</a>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">transform_coords</span></code> for (multi-step) transformations based on existing coords, with support of event coords <a class="reference external" href="https://github.com/scipp/scipp/pull/2058">#2058</a>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">from_pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">from_xarray</span></code> for conversion of pandas dataframes, xarray data arrays and dataset to scipp objects <a class="reference external" href="https://github.com/scipp/scipp/pull/2054">#2054</a>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">full</span></code> and <code class="docutils literal notranslate"><span class="pre">full_like</span></code> variable creation functions <a class="reference external" href="https://github.com/scipp/scipp/pull/2069">#2069</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">islinspace</span></code> can now take multi-dimensional variables aslong as you pass the dimension to be checked <a class="reference external" href="https://github.com/scipp/scipp/pull/2094">#2094</a>.</p></li>
+<li><p>Added a power function and support for the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator <a class="reference external" href="https://github.com/scipp/scipp/pull/2083">#2083</a>.</p></li>
+<li><p>Binned data now has a <code class="docutils literal notranslate"><span class="pre">mean</span></code> method as well as <code class="docutils literal notranslate"><span class="pre">sum</span></code>, which returns the mean of each element within a bin.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">scipp.constants</span></code> module for physical constants <a class="reference external" href="https://github.com/scipp/scipp/pull/2101">#2101</a>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">scipp.spatial.transform</span></code> module providing <code class="docutils literal notranslate"><span class="pre">from_rotvec</span></code> and <code class="docutils literal notranslate"><span class="pre">as_rotvec</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/2102">#2102</a>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">cross</span></code> function to complementing existing <code class="docutils literal notranslate"><span class="pre">dot</span></code> function <a class="reference external" href="https://github.com/scipp/scipp/pull/2109">#2109</a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">fields</span></code> property of structured variables (vector and matrix dtypes) can now be iterated and provides dict-like access <a class="reference external" href="https://github.com/scipp/scipp/pull/2116">#2116</a>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">where</span></code> function.</p></li>
+<li><p>Unary operations such as <code class="docutils literal notranslate"><span class="pre">sin</span></code> are now available for datasets as well <a class="reference external" href="https://github.com/scipp/scipp/pull/2112">#2112</a>.</p></li>
+<li><p>Add rounding functions <code class="docutils literal notranslate"><span class="pre">floor</span></code>, <code class="docutils literal notranslate"><span class="pre">ceil</span></code>, and <code class="docutils literal notranslate"><span class="pre">round</span></code> that performs similarly to numpy equivelants <a class="reference external" href="https://github.com/scipp/scipp/pull/2147">#2147</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id50">
+<h3>Breaking changes<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Changed names of arithmetic functions to match numpy’s names: <code class="docutils literal notranslate"><span class="pre">plus</span></code> → <a class="reference internal" href="../generated/functions/scipp.add.html#scipp.add" title="scipp.add"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.add()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">minus</span></code> → <a class="reference internal" href="../generated/functions/scipp.subtract.html#scipp.subtract" title="scipp.subtract"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.subtract()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">times</span></code> → <a class="reference internal" href="../generated/functions/scipp.multiply.html#scipp.multiply" title="scipp.multiply"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.multiply()</span></code></a> <a class="reference external" href="https://github.com/scipp/scipp/pull/1999">#1999</a>.</p></li>
+<li><p>Changed Variable init method, all arguments are keyword-only, special overloads which default-initialize data were removed <a class="reference external" href="https://github.com/scipp/scipp/pull/1994">#1994</a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">axes</span></code> keyword arg of <code class="docutils literal notranslate"><span class="pre">plot</span></code> has been removed.
+Use <code class="docutils literal notranslate"><span class="pre">labels</span></code> to define labels and <code class="docutils literal notranslate"><span class="pre">transpose</span></code> to transpose instead <a class="reference external" href="https://github.com/scipp/scipp/pull/2018">#2018</a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">redraw</span></code> method of plots does not support replacing data variables of data arrays any more, but only updates of data values <a class="reference external" href="https://github.com/scipp/scipp/pull/2018">#2018</a>.</p></li>
+<li><p>Made most arguments of <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> constructors keyword-only <a class="reference external" href="https://github.com/scipp/scipp/pull/2008">#2008</a>.</p></li>
+<li><p>Made arguments of many functions keyword-only, e.g. constructors of <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>, <code class="docutils literal notranslate"><span class="pre">bin</span></code>, and <code class="docutils literal notranslate"><span class="pre">atan2</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/1983">#1983</a>, <a class="reference external" href="https://github.com/scipp/scipp/pull/2008">#2008</a>, <a class="reference external" href="https://github.com/scipp/scipp/pull/2012">#2012</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">astype</span></code> and <code class="docutils literal notranslate"><span class="pre">to_unit</span></code> now copy the input by default even when no transformation is required, use the new <code class="docutils literal notranslate"><span class="pre">copy</span></code> argument to avoid <a class="reference external" href="https://github.com/scipp/scipp/pull/2016">#2016</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rename_dims</span></code> does not rename dimension-coords any more, only dims will be renamed <a class="reference external" href="https://github.com/scipp/scipp/pull/2058">#2058</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rename_dims</span></code> does not modify the input anymore but returns a new object with renamed dims <a class="reference external" href="https://github.com/scipp/scipp/pull/2058">#2058</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issorted</span></code> and <code class="docutils literal notranslate"><span class="pre">islinspace</span></code> return a variable of type boolean instead of a boolean <a class="reference external" href="https://github.com/scipp/scipp/pull/2094">#2094</a>.</p></li>
+<li><p>Multi-dimensional coordinates are no longer associated with their inner dimension, which affects the behavior when slicing:
+Such coords will no longer be turned into attributes during a slice operation on the inner dimension <a class="reference external" href="https://github.com/scipp/scipp/pull/2098">#2098</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckets.map(histogram,</span> <span class="pre">da.data,</span> <span class="pre">'time')</span></code> has been replaced by <code class="docutils literal notranslate"><span class="pre">lookup(histogram,</span> <span class="pre">'time')[da.bins.coords['time']]</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/2112">#2112</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rebin</span></code> and <code class="docutils literal notranslate"><span class="pre">histogram</span></code> now support any unit. <code class="docutils literal notranslate"><span class="pre">plot()</span></code> guesses which resampling mode to use and provides a button to toggle this <a class="reference external" href="https://github.com/scipp/scipp/pull/2180">#2180</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id66">
+<h3>Bugfixes<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Various fixes in <code class="docutils literal notranslate"><span class="pre">plot</span></code>, see  <a class="reference external" href="https://github.com/scipp/scipp/pull/2018">#2018</a> for details.</p></li>
+<li><p>Operations with Python floats to long interpret the float as 32-bit float <a class="reference external" href="https://github.com/scipp/scipp/pull/2101">#2101</a>.</p></li>
+<li><p>Multi-dimensional bin-edge coordinates may now be edges for a non-inner dimension <a class="reference external" href="https://github.com/scipp/scipp/pull/2098">#2098</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id70">
+<h3>Deprecations<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">events</span></code> property is deprecated and is scheduled for removal with v0.9.</p></li>
+</ul>
+</div>
+<div class="section" id="id71">
+<h3>Contributors<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
+<p>Owen Arnold <sup>b, c</sup>,
+Simon Heybrock <sup>a</sup>,
+Samuel Jones <sup>b</sup>,
+Greg Tucker <sup>a</sup>,
+Neil Vaytet <sup>a</sup>,
+Tom Willemsen <sup>b, c</sup>,
+and Jan-Lukas Wynen <sup>a</sup></p>
+</div>
+</div>
+<div class="section" id="v0-7-2-september-2021">
+<h2>v0.7.2 (September 2021)<a class="headerlink" href="#v0-7-2-september-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id72">
+<h3>Bugfixes<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix serious correctness bug in <code class="docutils literal notranslate"><span class="pre">groupby.sum</span></code> and <code class="docutils literal notranslate"><span class="pre">groupby.mean</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/2200">#2200</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v0-7-0-june-2021">
+<h2>v0.7.0 (June 2021)<a class="headerlink" href="#v0-7-0-june-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id74">
+<h3>Features<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Licence changed from GPLv3 to BSD-3-Clause.</p></li>
+<li><p>Can now control the position and visibility of the legend in 1d plots with <code class="docutils literal notranslate"><span class="pre">plot(da,</span> <span class="pre">legend={&quot;show&quot;:</span> <span class="pre">True,</span> <span class="pre">&quot;loc&quot;:</span> <span class="pre">4})</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/1790">#1790</a>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">zeros_like</span></code>, <code class="docutils literal notranslate"><span class="pre">ones_like</span></code> and <code class="docutils literal notranslate"><span class="pre">empty_like</span></code> functions <a class="reference external" href="https://github.com/scipp/scipp/pull/1864">#1864</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sort</span></code> is now considerably faster for data with more rows <a class="reference external" href="https://github.com/scipp/scipp/pull/1872">#1872</a>.</p></li>
+<li><p>Added numpy-like <code class="docutils literal notranslate"><span class="pre">linspace</span></code>, <code class="docutils literal notranslate"><span class="pre">logspace</span></code>, <code class="docutils literal notranslate"><span class="pre">geomspace</span></code>, and <code class="docutils literal notranslate"><span class="pre">arange</span></code> variable creation functions <a class="reference external" href="https://github.com/scipp/scipp/pull/1871">#1871</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">to_unit</span></code> now supports binned data <a class="reference external" href="https://github.com/scipp/scipp/pull/1841">#1841</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">broadcast</span></code> now returns a view instead of copying <a class="reference external" href="https://github.com/scipp/scipp/pull/1861">#1861</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fold</span></code> now returns a view instead of copying <a class="reference external" href="https://github.com/scipp/scipp/pull/1861">#1861</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fold</span></code> now works for binned data <a class="reference external" href="https://github.com/scipp/scipp/pull/1861">#1861</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flatten</span></code> now returns a view of the input buffer if the input data is contiguous <a class="reference external" href="https://github.com/scipp/scipp/pull/1861">#1861</a>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">redraw</span></code> method to plot which enables an easy update on a figure when the underlying data has been modified <a class="reference external" href="https://github.com/scipp/scipp/pull/1907">#1907</a>.</p></li>
+<li><p>Several improvements for work with (3-D position) vectors and (3-D rotation) matrices <a class="reference external" href="https://github.com/scipp/scipp/pull/1905">#1905</a>:</p>
+<ul>
+<li><p>Add creation functions <code class="docutils literal notranslate"><span class="pre">vector</span></code>, <code class="docutils literal notranslate"><span class="pre">vectors</span></code>, <code class="docutils literal notranslate"><span class="pre">matrix</span></code>, <code class="docutils literal notranslate"><span class="pre">matrices</span></code>.</p></li>
+<li><p>Direct creation and initialization of 2-D (or higher) arrays of matrices and vectors is now possible from numpy arrays.</p></li>
+<li><p>Fix extremely slow initialization of array of vectors or matrices from numpy arrays.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">values</span></code> property now returns a numpy array with <code class="docutils literal notranslate"><span class="pre">ndim+1</span></code> (vectors) or <code class="docutils literal notranslate"><span class="pre">ndim+2`</span></code> (matrices) axes, with the inner 1 (vectors) or 2 (matrices) axes corresponding o the vector or matrix axes.</p></li>
+<li><p>Vector or matrix element can now be accessed and modified directly using the new <code class="docutils literal notranslate"><span class="pre">fields</span></code> property of <code class="docutils literal notranslate"><span class="pre">Variable</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">fields</span></code> property provides properties <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code> (for variables containing vectors) or <code class="docutils literal notranslate"><span class="pre">xx</span></code>, <code class="docutils literal notranslate"><span class="pre">xy</span></code>, …, <code class="docutils literal notranslate"><span class="pre">zz</span></code> (for matrices) that can be read as well as set.</p></li>
+</ul>
+</li>
+<li><p>Reduction operations such as <code class="docutils literal notranslate"><span class="pre">sum</span></code> and <code class="docutils literal notranslate"><span class="pre">mean</span></code> are now also multi-threaded and thus considerably faster <a class="reference external" href="https://github.com/scipp/scipp/pull/1923">#1923</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id87">
+<h3>Bugfixes<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Profile plots are no longer disabled for binned data with only a single bin in the 3rd dimension <a class="reference external" href="https://github.com/scipp/scipp/pull/1936">#1936</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id89">
+<h3>Breaking changes<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Scipp’s data structures now behave mostly like normal nested Python objects, i.e., copies are shallow by default <a class="reference external" href="https://github.com/scipp/scipp/pull/1823">#1823</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">split</span></code> removed. Identical functionality can be achieved using <code class="docutils literal notranslate"><span class="pre">groupby</span></code> and/or slicing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reshape</span></code> has been removed. Use <code class="docutils literal notranslate"><span class="pre">fold</span></code> and <code class="docutils literal notranslate"><span class="pre">flatten</span></code> instead <a class="reference external" href="https://github.com/scipp/scipp/pull/1861">#1861</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry.x</span></code>, <code class="docutils literal notranslate"><span class="pre">geometry.y</span></code>, and <code class="docutils literal notranslate"><span class="pre">geometry.z</span></code> have been removed. Use the <code class="docutils literal notranslate"><span class="pre">Variable.fields</span></code> property instead <a class="reference external" href="https://github.com/scipp/scipp/pull/1925">#1925</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id93">
+<h3>Contributors<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h3>
+<p>Owen Arnold <sup>b, c</sup>,
+Simon Heybrock <sup>a</sup>,
+Matthew D. Jones <sup>b, c</sup>,
+Neil Vaytet <sup>a</sup>,
+and Jan-Lukas Wynen <sup>a</sup></p>
+</div>
+</div>
+<div class="section" id="v0-6-1-april-2021">
+<h2>v0.6.1 (April 2021)<a class="headerlink" href="#v0-6-1-april-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id94">
+<h3>Bugfixes<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code> operations as well as <code class="docutils literal notranslate"><span class="pre">histogram</span></code> for binned data now also work with <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/1834">#1834</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin</span></code> now works on previously binned data with 2-D edges, even if the outer dimensions(s) are not rebinned <a class="reference external" href="https://github.com/scipp/scipp/pull/1836">#1836</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">histogram</span></code> now work with <code class="docutils literal notranslate"><span class="pre">int32</span></code>-valued coordinates and support binning with <code class="docutils literal notranslate"><span class="pre">int64</span></code>- or <code class="docutils literal notranslate"><span class="pre">int32</span></code>-valued bin edges.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v0-6-0-march-2021">
+<h2>v0.6.0 (March 2021)<a class="headerlink" href="#v0-6-0-march-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id97">
+<h3>Features<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">sizes</span></code> properties, an ordered <code class="docutils literal notranslate"><span class="pre">dict</span></code> to lookup the size of a specific dimension <a class="reference external" href="https://github.com/scipp/scipp/pull/1636">#1636</a>.</p></li>
+<li><p>Add access to data, coords, attrs, and masks of bins via the <code class="docutils literal notranslate"><span class="pre">bins</span></code> property, e.g., <code class="docutils literal notranslate"><span class="pre">obj.bins.coords['x']</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/1752">#1752</a>.</p></li>
+<li><p>Add more functions for data arrays that were previously available only for variables <a class="reference external" href="https://github.com/scipp/scipp/pull/1638">#1638</a> <a class="reference external" href="https://github.com/scipp/scipp/pull/1660">#1660</a>.</p></li>
+<li><p>Add named versions of operators such as <code class="docutils literal notranslate"><span class="pre">logical_and</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/1660">#1660</a>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">to_unit</span></code> to converter variables, e.g., between <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">mm</span></code> <a class="reference external" href="https://github.com/scipp/scipp/pull/1756">#1756</a>.</p></li>
+<li><p>Add modulo operations <a class="reference external" href="https://github.com/scipp/scipp/pull/1660">#1660</a>.</p></li>
+<li><p>Add scaling operations for Variables of type <code class="docutils literal notranslate"><span class="pre">vector_3_float64</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum</span></code> and <code class="docutils literal notranslate"><span class="pre">mean</span></code> implemented for Variables of type <code class="docutils literal notranslate"><span class="pre">vector_3_float64</span></code>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">fold</span></code> and <code class="docutils literal notranslate"><span class="pre">flatten</span></code> which allow to reshape dimensions of a Variable or DataArray <a class="reference external" href="https://github.com/scipp/scipp/pull/1676">#1676</a>.</p></li>
+<li><p>It is now possible to reshape a Variable also with <code class="docutils literal notranslate"><span class="pre">sc.reshape(var,</span> <span class="pre">sizes={'x':</span> <span class="pre">2,</span> <span class="pre">'y':</span> <span class="pre">3})</span></code>, in addition to <code class="docutils literal notranslate"><span class="pre">sc.reshape(var,</span> <span class="pre">dims=['x',</span> <span class="pre">'y'],</span> <span class="pre">shape=(2,</span> <span class="pre">3))</span></code>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">ones</span></code> and <code class="docutils literal notranslate"><span class="pre">empty</span></code> creation functions, similar to what is known from numpy <a class="reference external" href="https://github.com/scipp/scipp/pull/1732">#1732</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code> has been removed and is replaced by <a class="reference external" href="https://scipp.github.io/scippneutron">scippneutron</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code> (now <code class="docutils literal notranslate"><span class="pre">scippneutron</span></code>)</p>
+<ul>
+<li><p>Support unit conversion to energy transfer, for inelastic TOF experiments <a class="reference external" href="https://github.com/scipp/scipp/pull/1635">#1635</a>.</p></li>
+<li><p>Support loading/converting Mantid <code class="docutils literal notranslate"><span class="pre">WorkspaceGroup</span></code>, this will produce a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of data arrays <a class="reference external" href="https://github.com/scipp/scipp/pull/1654">#1654</a>.</p></li>
+<li><p>Fixes to support loading/converting <code class="docutils literal notranslate"><span class="pre">McStasNexus</span></code> files <a class="reference external" href="https://github.com/scipp/scipp/pull/1659">#1659</a>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isclose</span></code> added (<code class="docutils literal notranslate"><span class="pre">is_approx</span></code> removed). Fuzzy data comparison <code class="docutils literal notranslate"><span class="pre">isclose</span></code> is an analogue to numpy’s <code class="docutils literal notranslate"><span class="pre">isclose</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stddevs</span></code> added <a class="reference external" href="https://github.com/scipp/scipp/pull/1762">#1762</a>.</p></li>
+<li><p>Support for datetime</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sc.dtype.datetime64</span></code> with copy-less casting between numpy and scipp where possible. <a class="reference external" href="https://github.com/scipp/scipp/pull/1639">#1639</a></p></li>
+<li><p>Binning with datetime edges <a class="reference external" href="https://github.com/scipp/scipp/pull/1739">#1739</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id113">
+<h3>Breaking changes<a class="headerlink" href="#id113" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">plot</span></code> module has been renamed to <code class="docutils literal notranslate"><span class="pre">plotting</span></code>, and plotting is now achieved via <code class="docutils literal notranslate"><span class="pre">sc.plot(data)</span></code>. Wrapper functions <code class="docutils literal notranslate"><span class="pre">superplot</span></code>, <code class="docutils literal notranslate"><span class="pre">image</span></code>, and <code class="docutils literal notranslate"><span class="pre">scatter3d</span></code> have been dropped <a class="reference external" href="https://github.com/scipp/scipp/pull/1696">#1696</a>.</p></li>
+<li><p>Properties <code class="docutils literal notranslate"><span class="pre">dim</span></code>, <code class="docutils literal notranslate"><span class="pre">begin</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span></code>, and <code class="docutils literal notranslate"><span class="pre">data</span></code> of the <code class="docutils literal notranslate"><span class="pre">bins</span></code> property of and object are now accessible as a dict via <code class="docutils literal notranslate"><span class="pre">obj.bins.constituents</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code> has been removed and is replaced by <a class="reference external" href="https://scipp.github.io/scippneutron">scippneutron</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code> (now <code class="docutils literal notranslate"><span class="pre">scippneutron</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_equal</span></code> renamed <code class="docutils literal notranslate"><span class="pre">identical</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_linspace</span></code> renamed <code class="docutils literal notranslate"><span class="pre">islinspace</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_sorted</span></code> renamed <code class="docutils literal notranslate"><span class="pre">issorted</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_approx</span></code> superseded by <code class="docutils literal notranslate"><span class="pre">isclose</span></code>. <code class="docutils literal notranslate"><span class="pre">is_approx</span></code> removed.</p></li>
+<li><p>Removed support for facility-specific <code class="docutils literal notranslate"><span class="pre">convert_with_calibration</span></code> and <code class="docutils literal notranslate"><span class="pre">load_calibration</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="id116">
+<h3>Contributors<a class="headerlink" href="#id116" title="Permalink to this headline">¶</a></h3>
+<p>Matthew Andrew,
+Owen Arnold,
+Simon Heybrock,
+Matthew D. Jones,
+Andrew McCluskey,
+Neil Vaytet,
+and Jan-Lukas Wynen</p>
+</div>
+</div>
+<div class="section" id="v0-5-0-january-2021">
+<h2>v0.5.0 (January 2021)<a class="headerlink" href="#v0-5-0-january-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id117">
+<h3>Features<a class="headerlink" href="#id117" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>New <code class="docutils literal notranslate"><span class="pre">profile</span></code> plotting functionality where one of the slider dimensions can be displayed as a profile in a subplot (1-D and 2-D projections only).</p></li>
+<li><p>Sliders have a thickness slider associated with them and can be used to show slices of arbitrary thickness.</p></li>
+<li><p>Can hide/show individual masks on plots.</p></li>
+<li><p>Can toggle log scale of axes and colorbar with buttons in figure toolbar.</p></li>
+<li><p>Add binned data support, replacing “event list” dtypes as well as “realign” support.</p></li>
+<li><p>Plotting of event data (binned data) with dynamic resampling with “infinite zoom” functionality.</p></li>
+<li><p>Value-based slicing support.</p></li>
+<li><p>Possibility to plot Scipp objects using <code class="docutils literal notranslate"><span class="pre">my_data_array.plot()</span></code> in addition to the classical <code class="docutils literal notranslate"><span class="pre">plot()</span></code> free function.</p></li>
+<li><p>Support for saving and loading scipp data structures to HDF5.</p></li>
+<li><p>More functions such as <code class="docutils literal notranslate"><span class="pre">nanmean</span></code> for better handling of special values such as <code class="docutils literal notranslate"><span class="pre">INF</span></code> and <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p></li>
+<li><p>TBB (multi-threading) support for MacOS.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code></p>
+<ul>
+<li><p>Improved instrument view, e.g., with buttons to align camera with an axis.</p></li>
+<li><p>Experiment logs (previously using Mantid’s <code class="docutils literal notranslate"><span class="pre">Run</span></code>) are now represented as native scipp objects, e.g., as scalar attributes holding a data array representing a time-series such as a temperature log.</p></li>
+<li><p>Support conversion of <code class="docutils literal notranslate"><span class="pre">mantid.MaskWorkspace</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id118">
+<h3>Breaking changes<a class="headerlink" href="#id118" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dataset</span></code> does not have a <code class="docutils literal notranslate"><span class="pre">masks</span></code> property any more.
+Use <code class="docutils literal notranslate"><span class="pre">ds['item'].masks</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dataset</span></code> does not support attributes any more.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and dataset item attributes are now are now handled as “unaligned” coords.
+Use <code class="docutils literal notranslate"><span class="pre">ds['item'].coords</span></code> or <code class="docutils literal notranslate"><span class="pre">array.attrs</span></code> to access these.</p></li>
+<li><p>API for log scale on axes and colors has changed.
+Use <code class="docutils literal notranslate"><span class="pre">plot(da,</span> <span class="pre">scale={'tof':</span> <span class="pre">'log'})</span></code> to set a log scale on a coordinate axis, and use <code class="docutils literal notranslate"><span class="pre">plot(da,</span> <span class="pre">norm='log')</span></code> to have a log image colorscale or a log y axis on a 1d plot.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code> now represent absolute values instead of exponents when <code class="docutils literal notranslate"><span class="pre">norm='log'</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ipympl</span></code> matplotlib backend is now required for using inside Jupyter notebooks.
+This has been added as a dependency.
+It is also the only interactive backend that works in JupyterLab.</p></li>
+<li><p>Removed support for <code class="docutils literal notranslate"><span class="pre">event_list</span></code> <code class="docutils literal notranslate"><span class="pre">dtype</span></code>, use binned data instead.</p></li>
+<li><p>Removed support for “realigned” data. This is replaced by the more flexible and generic support for “binned” data.</p></li>
+</ul>
+</div>
+<div class="section" id="id119">
+<h3>Contributors<a class="headerlink" href="#id119" title="Permalink to this headline">¶</a></h3>
+<p>Matthew Andrew,
+Owen Arnold,
+Thibault Chatel,
+Simon Heybrock,
+Matthew D. Jones,
+Daniel Nixon,
+Piotr Rozyczko,
+Neil Vaytet,
+and Jan-Lukas Wynen</p>
+</div>
+</div>
+<div class="section" id="v0-4-july-2020">
+<h2>v0.4 (July 2020)<a class="headerlink" href="#v0-4-july-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id120">
+<h3>Features<a class="headerlink" href="#id120" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>New realign functionality.</p></li>
+<li><p>Support for event-filtering.</p></li>
+<li><p>Support for subtraction and addition for (realigned) event data.</p></li>
+<li><p>Non-range slicing changed to preserve coords as attrs rather than dropping</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code>: Instrument view with advanced geometry support, showing correct pixel shapes.</p></li>
+<li><p>Instrument view working on doc pages.</p></li>
+<li><p>Made it simpler to add new <code class="docutils literal notranslate"><span class="pre">dtype</span></code> and support <code class="docutils literal notranslate"><span class="pre">transform</span></code> for all types.</p></li>
+<li><p>Comparison functions such as <code class="docutils literal notranslate"><span class="pre">less</span></code>, <code class="docutils literal notranslate"><span class="pre">greater_equal</span></code>, …</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">any</span></code> can work over all dimensions as well as explicitly provided dimension argument</p></li>
+<li><p>It is now possible to convert between Scipp objects and Python dictionaries using <code class="docutils literal notranslate"><span class="pre">to_dict</span></code> and <code class="docutils literal notranslate"><span class="pre">from_dict</span></code>.</p></li>
+<li><p>New functions <code class="docutils literal notranslate"><span class="pre">collapse</span></code> and <code class="docutils literal notranslate"><span class="pre">slices</span></code> can be use to split one or more dimensions of a DataArray to a dict of DataArrays.</p></li>
+<li><p>You can now inspect the global object list of via the <code class="docutils literal notranslate"><span class="pre">repr</span></code> for scipp showing Datasets, DataArrays and Variables</p></li>
+<li><p>Internal cleanup and documentation additions.</p></li>
+</ul>
+</div>
+<div class="section" id="noteable-bug-fixes">
+<h3>Noteable bug fixes<a class="headerlink" href="#noteable-bug-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Several fixes in the plotting (non-regular bins, colorbar limits, axes tick labels from unaligned coordinates, etc…)</p></li>
+</ul>
+</div>
+<div class="section" id="id121">
+<h3>Breaking changes<a class="headerlink" href="#id121" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Coord and attributes names for neutron data have been standardized, now using hyphens instead of underscore, except for subscripts. Affected examples: <code class="docutils literal notranslate"><span class="pre">pulse-time</span></code> (previously <code class="docutils literal notranslate"><span class="pre">pulse_times</span></code>), <code class="docutils literal notranslate"><span class="pre">source-position</span></code> (previously <code class="docutils literal notranslate"><span class="pre">source_position</span></code>), <code class="docutils literal notranslate"><span class="pre">sample-position</span></code> (previously <code class="docutils literal notranslate"><span class="pre">sample_position</span></code>), <code class="docutils literal notranslate"><span class="pre">detector-info</span></code> (previously <code class="docutils literal notranslate"><span class="pre">detector_info</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron.load</span></code> must use <code class="docutils literal notranslate"><span class="pre">advanced_geometry=True</span></code> option for loading <code class="docutils literal notranslate"><span class="pre">detector-info</span></code> and pixel shapes.</p></li>
+<li><p>Normalization of event data cannot be done directly any more, must use <code class="docutils literal notranslate"><span class="pre">realign</span></code>.</p></li>
+<li><p>Plotting variances in 2D has been removed, and the API for using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> axes has been simplified slightly, since we no longer have axes for variances:</p>
+<ul>
+<li><p>Before: <code class="docutils literal notranslate"><span class="pre">plot(...,</span> <span class="pre">mpl_axes={&quot;ax&quot;:</span> <span class="pre">myax0,</span> <span class="pre">&quot;cax&quot;:</span> <span class="pre">myax1})</span></code></p></li>
+<li><p>After: <code class="docutils literal notranslate"><span class="pre">plot(...,</span> <span class="pre">ax=myax0,</span> <span class="pre">cax=myax1)</span></code></p></li>
+</ul>
+</li>
+<li><p>Plot with keyword argument <code class="docutils literal notranslate"><span class="pre">collapse</span></code> has been removed in favor of two more generic free functions that return a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of data arrays that can then directly be passed to the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">collapse(d,</span> <span class="pre">keep='x')</span></code> slices all dimensions away to keep only <code class="docutils literal notranslate"><span class="pre">'x'</span></code>, thus always returning 1D slices.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slices(d,</span> <span class="pre">dim='x')</span></code> slices along dimension <code class="docutils literal notranslate"><span class="pre">'x'</span></code>, returning slices with <code class="docutils literal notranslate"><span class="pre">ndim-1</span></code> dimensions contaiing all dimensions other than <code class="docutils literal notranslate"><span class="pre">'x'</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id122">
+<h3>Contributors<a class="headerlink" href="#id122" title="Permalink to this headline">¶</a></h3>
+<p>Owen Arnold,
+David Fairbrother,
+Simon Heybrock,
+Daniel Nixon,
+Pawel Ptasznik,
+Piotr Rozyczko,
+and Neil Vaytet</p>
+</div>
+</div>
+<div class="section" id="v0-3-march-2020">
+<h2>v0.3 (March 2020)<a class="headerlink" href="#v0-3-march-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Many bug fixes and small additions</p></li>
+<li><p>Multi-threading with TBB for many operations.</p></li>
+<li><p>Performance improvements in hotspots</p></li>
+<li><p>Remove <code class="docutils literal notranslate"><span class="pre">Dim</span></code> labels in favor of plain strings. Connected to this, the <code class="docutils literal notranslate"><span class="pre">labels</span></code> property for data arrays and datasets has been removed. Use <code class="docutils literal notranslate"><span class="pre">coords</span></code> instead.</p></li>
+<li><p>Start to support <code class="docutils literal notranslate"><span class="pre">out</span></code> arguments (not everywhere yet)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code>: Instrument view added</p></li>
+</ul>
+<p>Contributors in this release:
+Owen Arnold,
+Simon Heybrock,
+Daniel Nixon,
+Dimitar Tasev,
+and Neil Vaytet</p>
+</div>
+<div class="section" id="v0-2-december-2019">
+<h2>v0.2 (December 2019)<a class="headerlink" href="#v0-2-december-2019" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Support for masks stored in <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></li>
+<li><p>Support for <code class="docutils literal notranslate"><span class="pre">groupby</span></code>, implementing a split-apply-combine approach as known from pandas.</p></li>
+<li><p>Enhanced support for event data:</p>
+<ul>
+<li><p>Histogramming with “weighted” data.</p></li>
+<li><p>Multiplication/division operators between event data and histogram.</p></li>
+</ul>
+</li>
+<li><p>Enhanced plotting support:</p>
+<ul>
+<li><p>Now focussing on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p></li>
+<li><p>Multi-dimensional plots with interactive sliders, and much more.</p></li>
+</ul>
+</li>
+<li><p>Significant performance improvements for majority of operations. Typically performance is now in the same ballpark as what the memory bandwidth on a single CPU core can support.</p></li>
+<li><p>Fancy <code class="docutils literal notranslate"><span class="pre">_repr_html_</span></code> for quick views of datasets in Jupyter notebooks.</p></li>
+<li><p>Conda packages now also available for Windows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code> gets improved converters from Mantid, supporting neutron monitors, sample information, and run information stored as attributes.</p></li>
+</ul>
+<p>Contributors in this release:
+Owen Arnold,
+Igor Gudich,
+Simon Heybrock,
+Daniel Nixon,
+Dimitar Tasev,
+and Neil Vaytet</p>
+</div>
+<div class="section" id="v0-1-september-2019">
+<h2>v0.1 (September 2019)<a class="headerlink" href="#v0-1-september-2019" title="Permalink to this headline">¶</a></h2>
+<p>This is the first official release of <code class="docutils literal notranslate"><span class="pre">scipp</span></code>.
+It is not yet meant for production-use, but marks a big step for us in terms of usability and features.
+The API may change without notice in future releases.</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>All key data structures (<code class="docutils literal notranslate"><span class="pre">Variable</span></code>, <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>, and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>).</p></li>
+<li><p>Slicing.</p></li>
+<li><p>Basic arithmetic operations.</p></li>
+<li><p>Physical units.</p></li>
+<li><p>Propagation of uncertainties.</p></li>
+<li><p>Event data.</p></li>
+</ul>
+<p>Limitations:</p>
+<ul class="simple">
+<li><p>Limited performance and no parallelization.</p></li>
+<li><p>Numerous “edge cases” not supported yet.</p></li>
+<li><p>While tested, probably far from bug-free.</p></li>
+</ul>
+</div>
+<div class="section" id="contributing-organizations">
+<h2>Contributing Organizations<a class="headerlink" href="#contributing-organizations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><sup>a</sup> <a class="reference external" href="https://europeanspallationsource.se/">European Spallation Source ERIC</a>, Sweden</p></li>
+<li><p><sup>b</sup> <a class="reference external" href="https://www.ukri.org/councils/stfc/">Science and Technology Facilities Council</a>, UK</p></li>
+<li><p><sup>c</sup> <a class="reference external" href="https://www.tessella.com/">Tessella</a>, UK</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="contributing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Contributing to scipp</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Scipp contributors<br/>
+        
+            &copy; Copyright 2021 Scipp contributors.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

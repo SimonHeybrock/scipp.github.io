@@ -1,0 +1,6 @@
+﻿scipp.neutron.to\_mantid
+========================
+
+.. currentmodule:: scipp.neutron
+
+.. autofunction:: to_mantid

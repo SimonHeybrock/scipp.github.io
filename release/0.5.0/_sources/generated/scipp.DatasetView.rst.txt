@@ -1,0 +1,38 @@
+﻿scipp.DatasetView
+=================
+
+.. currentmodule:: scipp
+
+.. autoclass:: DatasetView
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DatasetView.__init__
+      ~DatasetView.copy
+      ~DatasetView.items
+      ~DatasetView.keys
+      ~DatasetView.plot
+      ~DatasetView.to_hdf5
+      ~DatasetView.values
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DatasetView.bins
+      ~DatasetView.coords
+      ~DatasetView.dims
+      ~DatasetView.meta
+      ~DatasetView.shape
+   
+   

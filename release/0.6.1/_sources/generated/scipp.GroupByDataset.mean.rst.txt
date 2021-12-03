@@ -1,0 +1,6 @@
+﻿scipp.GroupByDataset.mean
+=========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataset.mean

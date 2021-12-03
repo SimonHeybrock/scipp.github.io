@@ -1,0 +1,44 @@
+scipp.DataArrayView
+===================
+
+.. currentmodule:: scipp
+
+.. autoclass:: DataArrayView
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataArrayView.__init__
+      ~DataArrayView.astype
+      ~DataArrayView.copy
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DataArrayView.attrs
+      ~DataArrayView.coords
+      ~DataArrayView.data
+      ~DataArrayView.dims
+      ~DataArrayView.dtype
+      ~DataArrayView.labels
+      ~DataArrayView.masks
+      ~DataArrayView.name
+      ~DataArrayView.shape
+      ~DataArrayView.unaligned
+      ~DataArrayView.unit
+      ~DataArrayView.value
+      ~DataArrayView.values
+      ~DataArrayView.variance
+      ~DataArrayView.variances
+   
+   

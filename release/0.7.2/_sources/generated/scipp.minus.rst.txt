@@ -1,0 +1,6 @@
+﻿scipp.minus
+===========
+
+.. currentmodule:: scipp
+
+.. autofunction:: minus

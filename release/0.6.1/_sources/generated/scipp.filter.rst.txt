@@ -1,0 +1,6 @@
+﻿scipp.filter
+============
+
+.. currentmodule:: scipp
+
+.. autofunction:: filter

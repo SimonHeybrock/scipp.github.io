@@ -1,0 +1,6 @@
+﻿scipp.is\_linspace
+==================
+
+.. currentmodule:: scipp
+
+.. autofunction:: is_linspace

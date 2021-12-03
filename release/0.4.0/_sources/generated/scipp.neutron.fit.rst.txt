@@ -1,0 +1,6 @@
+scipp.neutron.fit
+=================
+
+.. currentmodule:: scipp.neutron
+
+.. autofunction:: fit

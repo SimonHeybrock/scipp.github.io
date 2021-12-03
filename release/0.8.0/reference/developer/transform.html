@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Transforming data &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Implementation of class Variable" href="variable_implementation.html" />
+    <link rel="prev" title="Tooling" href="tooling.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#modules">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developer-documentation.html">Developer Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture-decision-records.html">Architecture Decision Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coding-conventions.html">Coding conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructing_variables.html">C++ API for constructing variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html">Customizing Scipp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to.html">How To…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transforming data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1">Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2">Example 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#recommended-usage">Recommended usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="variable_implementation.html">Implementation of class Variable</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.0">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../developer-documentation.html">Developer Documentation</a> &raquo;</li>
+        
+      <li>Transforming data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/reference/developer/transform.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="transforming-data">
+<h1>Transforming data<a class="headerlink" href="#transforming-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Scipp can apply custom operations to the elements of one or more variables.
+This is essentially are more advanced version of <code class="docutils literal notranslate"><span class="pre">std::transform</span></code>.</p>
+<p>Two alternatives are provided:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">transform_in_place</span></code> transforms its first argument.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transform</span></code> returns a new <code class="docutils literal notranslate"><span class="pre">Variable</span></code>.</p></li>
+</ul>
+<p>Both variants support:</p>
+<ul class="simple">
+<li><p>Automatic broadcasting and alignment based on dimension labels.
+This does also include event data, and operations mixing events and dense data are supported.</p></li>
+<li><p>Automatic propagation of uncertainties, provided that the user-provided operation is built from known existing operations.</p></li>
+<li><p>Operations between different data types, and operations that produce outputs with a new data type.</p></li>
+<li><p>Handling of units.</p></li>
+</ul>
+</div>
+<div class="section" id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<p>Transform requires:</p>
+<ul class="simple">
+<li><p>A list of types (or type-combinations) to support.
+Code is only instantiated for variables of those types.</p></li>
+<li><p>A functor, typically a lambda or an “overloaded” lambda.
+This can also be used to pass special flags, e.g., for disabling code generation for arguments that have variances, generating a runtime failure instead.</p></li>
+</ul>
+<div class="section" id="example-1">
+<h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<p>Transform two variables with two type combinations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> of type <code class="docutils literal notranslate"><span class="pre">double</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> of type <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> of type <code class="docutils literal notranslate"><span class="pre">double</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> of type <code class="docutils literal notranslate"><span class="pre">double</span></code></p></li>
+</ul>
+<p>Since <code class="docutils literal notranslate"><span class="pre">+</span></code> is defined for <code class="docutils literal notranslate"><span class="pre">units::Unit</span></code> the same lambda can be used for data and unit.
+If we needed to handle the unit manually (for example no operator which accepts it) we can use
+<code class="docutils literal notranslate"><span class="pre">overloaded</span></code> as shown in example 2.</p>
+<p>This call to <code class="docutils literal notranslate"><span class="pre">transform</span></code> will add the two variables (or variable views) <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> and return a new variable.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">transform</span><span class="o">&lt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a_</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a_</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b_</span><span class="p">;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2">
+<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<p>This call to <code class="docutils literal notranslate"><span class="pre">transform_in_place</span></code> accepts two variables (or variable views) <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.
+<code class="docutils literal notranslate"><span class="pre">a</span></code> is modified in-place, no new variable is returned. The example also has
+special unit handling using <code class="docutils literal notranslate"><span class="pre">overloaded</span></code>, to define an “overloaded” lambda.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">transform_in_place</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">overloaded</span><span class="p">{[](</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a_</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">               </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">units</span><span class="o">::</span><span class="n">Unit</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">units</span><span class="o">::</span><span class="n">Unit</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                 </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<span class="w">                   </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;Unit must match&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">               </span><span class="p">}});</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">transform_in_place</span></code> modifies its first argument.
+Note that the template argument <code class="docutils literal notranslate"><span class="pre">std::tuple&lt;bool&gt;</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">std::tuple&lt;std::tuple&lt;bool,</span> <span class="pre">bool&gt;&gt;</span></code>, i.e., both arguments are require have element type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
+</div>
+</div>
+<div class="section" id="recommended-usage">
+<h2>Recommended usage<a class="headerlink" href="#recommended-usage" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>For improved testability and maintainability it is recommended to define the operator stand-alone instead of inline.</p></li>
+<li><p>Specifying types on the element wise operator allows them to be omitted from <code class="docutils literal notranslate"><span class="pre">transform</span></code> and <code class="docutils literal notranslate"><span class="pre">transform_in_place</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">arg_list</span></code> to define list of supported type combinations as shown below.</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// This will accept two arguments of</span>
+<span class="c1">// (a) double and bool,</span>
+<span class="c1">// (b) float and int64_t,</span>
+<span class="c1">// (c) int32_t and double, and</span>
+<span class="c1">// (d) double and double.</span>
+<span class="c1">// Note the special last argument to `arg_list`, which could be written also as</span>
+<span class="c1">// `std::tuple&lt;double, double&gt;`: If all arguments are the same it suffices to list</span>
+<span class="c1">// it directly instead of providing a tuple.</span>
+<span class="c1">// More type tuples can be listed as required.</span>
+<span class="n">overloaded</span><span class="p">{</span><span class="n">arg_list</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">                    </span><span class="p">[](</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Get double/bool...etc. pairs here */</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">                    </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">units</span><span class="o">::</span><span class="n">Unit</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">units</span><span class="o">::</span><span class="n">Unit</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Unit handling */</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">           </span><span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Flags in <code class="docutils literal notranslate"><span class="pre">transform_flags.h</span></code> can be used to, e.g., prevent code generation if an argument has variances.</p></li>
+</ul>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>If operation is added to <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">scipp::variable</span></code>, define:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// In scipp/core/include/scipp/core/element/my_op.h:</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">scipp</span><span class="o">::</span><span class="nn">core</span><span class="o">::</span><span class="nn">element</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">my_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">overloaded</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">arg_list</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">int32_t</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">transform_flags</span><span class="o">::</span><span class="n">expect_no_variance_arg</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">}};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// In scipp/core/include/scipp/variable/my_op.h:</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">scipp</span><span class="o">::</span><span class="nn">variable</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="n">Variable</span><span class="w"> </span><span class="nf">my_op</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">VariableConstView</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">VariableConstView</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">transform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">core</span><span class="o">::</span><span class="n">element</span><span class="o">::</span><span class="n">my_op</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Here, variances for the first argument are disabled explicitly.</p></li>
+<li><p>Unit tests should be written independently for <code class="docutils literal notranslate"><span class="pre">scipp::core::element::my_op</span></code>.</p></li>
+<li><p>The lambdas for <code class="docutils literal notranslate"><span class="pre">overloaded</span></code> can be tested separately, i.e. test unit handling then test value handling for supported types</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp::variable::my_op</span></code> should only have essential tests relying on correctness of <code class="docutils literal notranslate"><span class="pre">transform</span></code> and <code class="docutils literal notranslate"><span class="pre">scipp::core::element::my_op</span></code>.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="variable_implementation.html" class="btn btn-neutral float-right" title="Implementation of class Variable" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tooling.html" class="btn btn-neutral float-left" title="Tooling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

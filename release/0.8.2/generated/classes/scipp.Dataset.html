@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scipp.Dataset &mdash; scipp  documentation</title>
+      <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="scipp.GroupByDataArray" href="scipp.GroupByDataArray.html" />
+    <link rel="prev" title="scipp.DataArray" href="scipp.DataArray.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/api.html">Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scipp.Bins.html">scipp.Bins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.DataArray.html">scipp.DataArray</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">scipp.Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.GroupByDataArray.html">scipp.GroupByDataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.GroupByDataset.html">scipp.GroupByDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.Unit.html">scipp.Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.Variable.html">scipp.Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.typing.VariableLike.html">scipp.typing.VariableLike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.typing.MetaDataMap.html">scipp.typing.MetaDataMap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#modules">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/developer-documentation.html">Developer Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.2">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scipp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/api.html">Classes</a> &raquo;</li>
+      <li>scipp.Dataset</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/generated/classes/scipp.Dataset.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="scipp-dataset">
+<h1>scipp.Dataset<a class="headerlink" href="#scipp-dataset" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="scipp.Dataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">scipp.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><a class="headerlink" href="#scipp.Dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict of data arrays with aligned dimensions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><span class="pre">scipp._scipp.core.Variable</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">scipp._scipp.core.Dim</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><span class="pre">scipp._scipp.core.Variable</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#scipp.Dataset.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>__init__(self, data: Dict[str, Union[Variable, DataArray]] = {}, coords: Dict[str, Variable] = {}) -&gt; None</p>
+<blockquote>
+<div><blockquote>
+<div><p>Dataset initializer.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">param data</dt>
+<dd class="field-odd"><p>Dictionary of name and data pairs.</p>
+</dd>
+<dt class="field-even">param coords</dt>
+<dd class="field-even"><p>Dictionary of name and coord pairs.</p>
+</dd>
+<dt class="field-odd">type data</dt>
+<dd class="field-odd"><p>Dict[str, Union[Variable, DataArray]]</p>
+</dd>
+<dt class="field-even">type coords</dt>
+<dd class="field-even"><p>Dict[str, Variable]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.__init__" title="scipp.Dataset.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(self, *[, data, coords])</p></td>
+<td><p>__init__(self, data: Dict[str, Union[Variable, DataArray]] = {}, coords: Dict[str, Variable] = {}) -&gt; None</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.clear" title="scipp.Dataset.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>(self)</p></td>
+<td><p>Removes all data, preserving coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.copy" title="scipp.Dataset.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self[, deep])</p></td>
+<td><p>Return a (by default deep) copy.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.get" title="scipp.Dataset.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(key[, default])</p></td>
+<td><p>Get the value associated with the provided key from a <cite>dict</cite>-like object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.groupby" title="scipp.Dataset.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a>(group, *[, bins])</p></td>
+<td><p>Group dataset or data array based on values of specified labels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.items" title="scipp.Dataset.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a>(self)</p></td>
+<td><p>view on self's items</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.keys" title="scipp.Dataset.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>(self)</p></td>
+<td><p>view on self's keys</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.plot" title="scipp.Dataset.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(**kwargs)</p></td>
+<td><p>Plot a Scipp object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code>(name[, default])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.rename_dims" title="scipp.Dataset.rename_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_dims</span></code></a>(self, dims_dict)</p></td>
+<td><p>Rename dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.to_hdf5" title="scipp.Dataset.to_hdf5"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf5</span></code></a>(filename)</p></td>
+<td><p>Writes object out to file in hdf5 format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.transform_coords" title="scipp.Dataset.transform_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_coords</span></code></a>(coords, graph, *[, ...])</p></td>
+<td><p>Compute new coords based on transformation of input coords.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.underlying_size" title="scipp.Dataset.underlying_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">underlying_size</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.values" title="scipp.Dataset.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>(self)</p></td>
+<td><p>view on self's values</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.bins" title="scipp.Dataset.bins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bins</span></code></a></p></td>
+<td><p>Returns helper <a class="reference internal" href="scipp.Bins.html#scipp.Bins" title="scipp.Bins"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipp.Bins</span></code></a> allowing bin-wise operations to be performed or <cite>None</cite> if not binned data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.coords" title="scipp.Dataset.coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coords</span></code></a></p></td>
+<td><p>Dict of coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.dims" title="scipp.Dataset.dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dims</span></code></a></p></td>
+<td><p>List of dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.meta" title="scipp.Dataset.meta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta</span></code></a></p></td>
+<td><p>Dict of coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Dataset.shape" title="scipp.Dataset.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a></p></td>
+<td><p>List of shapes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Dataset.sizes" title="scipp.Dataset.sizes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sizes</span></code></a></p></td>
+<td><p>Makes a dictionary of dimensions labels to dimension sizes</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Dataset.bins">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bins</span></span><a class="headerlink" href="#scipp.Dataset.bins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns helper <a class="reference internal" href="scipp.Bins.html#scipp.Bins" title="scipp.Bins"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipp.Bins</span></code></a> allowing bin-wise operations
+to be performed or <cite>None</cite> if not binned data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#scipp.Dataset.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all data, preserving coordinates.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Dataset.coords">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">coords</span></span><a class="headerlink" href="#scipp.Dataset.coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict of coordinates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></span><a class="headerlink" href="#scipp.Dataset.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a (by default deep) copy.</p>
+<p>If <cite>deep=True</cite> (the default), a deep copy is made. Otherwise, a shallow
+copy is made, and the returned data (and meta data) values are new views
+of the data and meta data values of this object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Dataset.dims">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dims</span></span><a class="headerlink" href="#scipp.Dataset.dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of dimensions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Dataset.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value associated with the provided key from a <cite>dict</cite>-like object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – dictlike
+Any object with <cite>__contains__()</cite> or <cite>__iter__()</cite> and <cite>__getitem__()</cite>
+methods which accept <cite>key</cite></p></li>
+<li><p><strong>key</strong> – The key to extract from the provided <cite>dict</cite>-like object`</p></li>
+<li><p><strong>default</strong> – A default value to return if the provided key is not present</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Either the value associated with the key or the default if the key
+is missing. If he object does not implement the required methods an
+error will be thrown.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.groupby">
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Dataset.groupby" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group dataset or data array based on values of specified labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Seealso</dt>
+<dd class="field-odd"><p>Details in <a class="reference internal" href="../functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-meth docutils literal notranslate"><span class="pre">scipp.groupby()</span></code></a></p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>data</strong> (<em>Union</em><em>[</em><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><em>scipp._scipp.core.DataArray</em></a><em>, </em><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><em>scipp._scipp.core.Dataset</em></a><em>]</em>) – </p></li>
+<li><p><strong>group</strong> (<em>Union</em><em>[</em><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><em>scipp._scipp.core.Variable</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em>) – </p></li>
+<li><p><strong>bins</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><em>scipp._scipp.core.Variable</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="scipp.GroupByDataArray.html#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray">scipp._scipp.core.GroupByDataArray</a>, <a class="reference internal" href="scipp.GroupByDataset.html#scipp.GroupByDataset" title="scipp._scipp.core.GroupByDataset">scipp._scipp.core.GroupByDataset</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">scipp._scipp.core.Dataset_items_view</span></span></span><a class="headerlink" href="#scipp.Dataset.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>view on self’s items</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">scipp._scipp.core.Dataset_keys_view</span></span></span><a class="headerlink" href="#scipp.Dataset.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>view on self’s keys</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Dataset.meta">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">meta</span></span><a class="headerlink" href="#scipp.Dataset.meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict of coordinates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Dataset.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a Scipp object.</p>
+<p>Possible inputs are:
+- Variable
+- DataArray
+- Dataset
+- dict of Variables
+- dict of DataArrays</p>
+<p>For more details, see
+<a class="reference external" href="https://scipp.github.io/visualization/plotting-overview.html">https://scipp.github.io/visualization/plotting-overview.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aspect</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Specify the aspect ratio for 2d images.
+Possible values are <cite>“auto”</cite> or <cite>“equal”</cite>.
+Defaults to <cite>“auto”</cite>.</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib.axes.Axes</em><em>, </em><em>optional</em>) – Attach returned plot to supplied Matplotlib axes (1d and 2d
+only). Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>labels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a><em>, </em><em>optional</em>) – Dict specifying which coordinate should be used to label
+the tics for a dimension. If not specifified the dimension coordinate
+is used. <cite>labels={“time”: “time-labels”}</cite>. Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>cax</strong> (<em>matplotlib.axes.Axes</em><em>, </em><em>optional</em>) – Attach colorbar to supplied Matplotlib axes.
+Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>cmap</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Matplotlib colormap (2d and 3d only).
+See <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html">https://matplotlib.org/tutorials/colors/colormaps.html</a>.
+Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Matplotlib line color (1d only).
+See <a class="reference external" href="https://matplotlib.org/tutorials/colors/colors.html">https://matplotlib.org/tutorials/colors/colors.html</a>.
+Defaults to None.</p></li>
+<li><p><strong>errorbars</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a><em>, </em><em>optional</em>) – Show errorbars if <cite>True</cite>, hide them if <cite>False</cite> (1d only).
+Defaults to <cite>True</cite>. This can also be a dict of <cite>bool</cite> where the keys
+correspond to data entries.</p></li>
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a><em>, </em><em>optional</em>) – The size of the figure in inches (1d and 2d only).
+See
+<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html">https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html</a>.
+Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – If specified, the figure will be saved to disk. Possible
+file extensions are <cite>.jpg</cite>, <cite>.png</cite> and <cite>.pdf</cite>. The default directory
+for writing the file is the same as the directory where the script or
+notebook is running. Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>grid</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>, </em><em>optional</em>) – Show grid on axes if <cite>True</cite>. Defaults to <cite>False</cite>.</p></li>
+<li><p><strong>linestyle</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Matplotlib linestyle (1d only).
+See
+<a class="reference external" href="https://matplotlib.org/gallery/lines_bars_and_markers/linestyles.html">https://matplotlib.org/gallery/lines_bars_and_markers/linestyles.html</a>.
+Defaults to “none”.</p></li>
+<li><p><strong>marker</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Matplotlib line marker (1d only).
+See <a class="reference external" href="https://matplotlib.org/api/markers_api.html">https://matplotlib.org/api/markers_api.html</a>.
+Defaults to <cite>‘o’</cite>.</p></li>
+<li><p><strong>masks</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a><em>, </em><em>optional</em>) – A dict to hold display parameters for masks such as a <cite>color</cite>
+or a <cite>cmap</cite>. Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>norm</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Normalization of the data. Possible choices are <cite>“linear”</cite> and
+<cite>“log”</cite>. Defaults to <cite>“linear”</cite>.</p></li>
+<li><p><strong>pax</strong> (<em>matplotlib.axes.Axes</em><em>, </em><em>optional</em>) – Attach profile plot to supplied Matplotlib axes.
+Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>pixel_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Specify the size of the pixels to be used for the point
+cloud (3d only). If none is supplied, the size is guessed based on the
+extents of the data in the 3d space. Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>positions</strong> (<a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp.Variable"><em>Variable</em></a><em>, </em><em>optional</em>) – Specify an array of position vectors to be used as
+scatter points positions (3d only). Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>projection</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Specify the projection to be used. Possible choices are
+<cite>“1d”</cite>, <cite>“2d”</cite>, or <cite>“3d”</cite>. Defaults to <cite>“2d”</cite> if the number of
+dimensions of the input is &gt;= 2.</p></li>
+<li><p><strong>resampling_mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Resampling mode. Possible choices are <cite>“sum”</cite> and
+<cite>“mean”</cite>. This applies only to binned event data and non-1d data.
+Defaults to <cite>“mean”</cite> unless the unit is ‘counts’ or ‘dimensionless’.</p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a><em>, </em><em>optional</em>) – Specify the scale (<cite>“linear”</cite> or <cite>“log”</cite>) for a displayed
+dimension axis. E.g. <cite>scale={“tof”: “log”}</cite>. Defaults to None.</p></li>
+<li><p><strong>vmin</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Minimum value for the y-axis (1d) or colorscale (2d and 3d).
+Defaults to None.</p></li>
+<li><p><strong>vmax</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Maximum value for the y-axis (1d) or colorscale (2d and 3d).
+Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.rename_dims">
+<span class="sig-name descname"><span class="pre">rename_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">scipp._scipp.core.Dim</span><span class="p"><span class="pre">,</span> </span><span class="pre">scipp._scipp.core.Dim</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></span><a class="headerlink" href="#scipp.Dataset.rename_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rename dimensions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Dataset.shape">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#scipp.Dataset.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of shapes.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Dataset.sizes">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sizes</span></span><a class="headerlink" href="#scipp.Dataset.sizes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a dictionary of dimensions labels to dimension sizes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.to_hdf5">
+<span class="sig-name descname"><span class="pre">to_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Dataset.to_hdf5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes object out to file in hdf5 format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>VariableLike</em>) – </p></li>
+<li><p><strong>filename</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.9)"><em>pathlib.Path</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.transform_coords">
+<span class="sig-name descname"><span class="pre">transform_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_aliases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_intermediate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_inputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Dataset.transform_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute new coords based on transformation of input coords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Seealso</dt>
+<dd class="field-odd"><p>Details in <a class="reference internal" href="../functions/scipp.transform_coords.html#scipp.transform_coords" title="scipp.transform_coords"><code class="xref py py-meth docutils literal notranslate"><span class="pre">scipp.transform_coords()</span></code></a></p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>x</strong> (<em>Union</em><em>[</em><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><em>scipp._scipp.core.DataArray</em></a><em>, </em><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><em>scipp._scipp.core.Dataset</em></a><em>]</em>) – </p></li>
+<li><p><strong>coords</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>]</em><em>]</em>) – </p></li>
+<li><p><strong>graph</strong> (<em>Dict</em><em>[</em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>...</em><em>]</em><em>]</em><em>, </em><em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>Callable</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray">scipp._scipp.core.DataArray</a>, <a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset">scipp._scipp.core.Dataset</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.underlying_size">
+<span class="sig-name descname"><span class="pre">underlying_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#scipp.Dataset.underlying_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Dataset.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.Dataset" title="scipp._scipp.core.Dataset"><span class="pre">scipp._scipp.core.Dataset</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">scipp._scipp.core.Dataset_values_view</span></span></span><a class="headerlink" href="#scipp.Dataset.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>view on self’s values</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scipp.DataArray.html" class="btn btn-neutral float-left" title="scipp.DataArray" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scipp.GroupByDataArray.html" class="btn btn-neutral float-right" title="scipp.GroupByDataArray" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 Scipp contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

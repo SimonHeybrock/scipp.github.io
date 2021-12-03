@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Runtime Configuration &mdash; scipp  documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer Documentation" href="developer-documentation.html" />
+    <link rel="prev" title="Propagation of uncertainties" href="error-propagation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#modules">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Runtime Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#List-of-configuration-options">List of configuration options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#config.plot"><code class="docutils literal notranslate"><span class="pre">config.plot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config.colors:"><code class="docutils literal notranslate"><span class="pre">config.colors</span></code>:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Other">Other</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer-documentation.html">Developer Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.2">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scipp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Runtime Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/reference/runtime-configuration.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p><a class="reference external" href="https://raw.githubusercontent.com/scipp/scipp/main/docs/reference/runtime-configuration.ipynb">Download this Jupyter notebook</a></p>
+<hr class="docutils" />
+<div class="section" id="Runtime-Configuration">
+<h1>Runtime Configuration<a class="headerlink" href="#Runtime-Configuration" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">scipp</span></code> Python module supports several configuration options which may be set based on preference. Most of these are related to layout of items in Jupyter Notebooks and plotting.</p>
+<p>The location of the configuration file varies between operating systems. To determine where it is located on a particular installation the following Python may be used:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">scipp</span> <span class="k">as</span> <span class="nn">sc</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">user_configuration_filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+/home/vsts/.config/scipp/config.yaml
+</pre></div></div>
+</div>
+<p>When the <code class="docutils literal notranslate"><span class="pre">scipp</span></code> module is imported and no configuration file exists a default one is created. If a configuration file already exists it will not be modified, i.e. new options will not automatically be added to it when Scipp is updated.</p>
+<p>Values may be set via Python as follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Old value:&#39;</span><span class="p">,</span> <span class="n">sc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;plot.width&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;New value:&#39;</span><span class="p">,</span> <span class="n">sc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Old value: 700
+New value: 300
+</pre></div></div>
+</div>
+<p>Note that changes made via the Python API are not persisted in the configuration file. Permanent changes must be made to the file directly.</p>
+<div class="admonition warning">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Warning</strong></p>
+<p>The fields in the configuration file are not strictly defined and may vary between Scipp versions. For this reason it is advised to browse this file to determine what options are available.</p>
+</div>
+<div class="section" id="List-of-configuration-options">
+<h2>List of configuration options<a class="headerlink" href="#List-of-configuration-options" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="config.plot">
+<h3><code class="docutils literal notranslate"><span class="pre">config.plot</span></code><a class="headerlink" href="#config.plot" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>: The list of default line colors for one-dimensional plots. When multiple lines are on the same plot, the first line will use the first color, the second line will use the second color, and so on.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">[&quot;#1f77b4&quot;,</span> <span class="pre">&quot;#ff7f0e&quot;,</span> <span class="pre">&quot;#2ca02c&quot;,</span> <span class="pre">&quot;#d62728&quot;,</span> <span class="pre">&quot;#9467bd&quot;,</span> <span class="pre">&quot;#8c564b&quot;,</span> <span class="pre">&quot;#e377c2&quot;,</span> <span class="pre">&quot;#7f7f7f&quot;,</span> <span class="pre">&quot;#bcbd22&quot;,</span> <span class="pre">&quot;#17becf&quot;]</span></code>.</p></li>
+<li><p>Allowed: A list of html color codes or names (see <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">https://matplotlib.org/stable/gallery/color/named_colors.html</a>).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params</span></code>: The colorbar properties.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.cmap</span></code>: The matplotlib colormap.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;viridis&quot;</span></code>.</p></li>
+<li><p>Allowed: Any matplotlib colormap name (see <a class="reference external" href="https://matplotlib.org/stable/gallery/color/colormap_reference.html">https://matplotlib.org/stable/gallery/color/colormap_reference.html</a>).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.norm</span></code>: The normalization for y values (1d plots) or color values (2+d plots).</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code>.</p></li>
+<li><p>Allowed: <code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;log&quot;</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.vmin</span></code>: Set the minimum value for the y-axis (1d plots) or the colorbar (2+d plots).</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Allowed: A numeric value.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.vmax</span></code>: Set the maximum value for the y-axis (1d plots) or the colorbar (2+d plots).</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Allowed: A numeric value.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.color</span></code>: The default line color. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, a value will be chosen from the <code class="docutils literal notranslate"><span class="pre">config.plot.color</span></code> list above.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.cbar</span></code>: Show the colorbar if <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p>Allowed: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.nan_color</span></code>: The colormap color for NaN values.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#d3d3d3&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.under_color</span></code>: The colormap color for underflow values.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#9467bd&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params.over_color</span></code>: The colormap color for underflow values.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#8c564b&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code>: The figure height (in pixels).</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">467</span></code>.</p></li>
+<li><p>Allowed: An integer number &gt; 0.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>: The figure width (in pixels).</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">700</span></code>.</p></li>
+<li><p>Allowed: An integer number &gt; 0.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dpi</span></code>: The figure resolution.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">96</span></code>.</p></li>
+<li><p>Allower: An integer number &gt; 0.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aspect</span></code>: Aspect ratio for images: <code class="docutils literal notranslate"><span class="pre">&quot;equal&quot;</span></code> will conserve the aspect ratio, while <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> will stretch the image to the size of the figure.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code>.</p></li>
+<li><p>Allowed: <code class="docutils literal notranslate"><span class="pre">&quot;auto&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;equal&quot;</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code>: List of matplotlib line markers. When multiple lines are on the same plot, the first line will use the first marker, the second line will use the second marker, and so on.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">&quot;o&quot;,</span> <span class="pre">&quot;^&quot;,</span> <span class="pre">&quot;s&quot;,</span> <span class="pre">&quot;d&quot;,</span> <span class="pre">&quot;*&quot;,</span> <span class="pre">&quot;1&quot;,</span> <span class="pre">&quot;P&quot;,</span> <span class="pre">&quot;h&quot;,</span> <span class="pre">&quot;X&quot;,</span> <span class="pre">&quot;v&quot;,</span> <span class="pre">&quot;&lt;&quot;,</span> <span class="pre">&quot;&gt;&quot;,</span> <span class="pre">&quot;2&quot;,</span> <span class="pre">&quot;3&quot;,</span> <span class="pre">&quot;4&quot;,</span> <span class="pre">&quot;8&quot;,</span> <span class="pre">&quot;p&quot;,</span> <span class="pre">&quot;H&quot;,</span> <span class="pre">&quot;+&quot;,</span> <span class="pre">&quot;x&quot;,</span> <span class="pre">&quot;D&quot;]</span></code>.</p></li>
+<li><p>Allowed: A list of matplotlib markers (see <a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html">https://matplotlib.org/stable/api/markers_api.html</a>).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code>: Line widths for one-dimensional plots.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">[1.5]</span></code>.</p></li>
+<li><p>Allowed: A list of integers or floats.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code>: Line styles for one-dimensional histogram plots.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">[&quot;none&quot;]</span></code>.</p></li>
+<li><p>Allowed: A list of line styles (see <a class="reference external" href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html">https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html</a>).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: Padding around figure axes.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">[0.05,</span> <span class="pre">0.02,</span> <span class="pre">1,</span> <span class="pre">1]</span></code>.</p></li>
+<li><p>Allowed: A list of 4 numbers representing the left, bottom, right, and top edges, respectively.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pixel_ratio</span></code>: Monitor pixel ratio (see <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio">https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio</a>). This affects the size of the points in three-dimensional plots. Set to &gt; 1 for high density (e.g. retina) displays</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p></li>
+<li><p>Allowed: A numeric value.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="config.colors:">
+<h3><code class="docutils literal notranslate"><span class="pre">config.colors</span></code>:<a class="headerlink" href="#config.colors:" title="Permalink to this headline">¶</a></h3>
+<p>The color scheme for the <code class="docutils literal notranslate"><span class="pre">scipp.table</span></code> and <code class="docutils literal notranslate"><span class="pre">scipp.show</span></code> functions, and the control buttons around the plots.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attrs</span></code>: Color for attributes.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#ff5555&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coords</span></code>: Color for coordinates.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#c6e590&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: Color for data.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#f6d028&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">masks</span></code>: Color for masks.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#c8c8c8&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hover</span></code>: Color for hovering on table rows.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#d6eaf8&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">header_text</span></code>: Color for table header text.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#111111&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">button</span></code>: Color for plot control button.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#bdbdbd49&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">button_selected</span></code>: Color for selected plot control button.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">&quot;#bdbdbdbb&quot;</span></code>.</p></li>
+<li><p>Allowed: A html color code or name.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="Other">
+<h3>Other<a class="headerlink" href="#Other" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config.table_max_size</span></code>: The maximum number of rows to display in tables generated by <code class="docutils literal notranslate"><span class="pre">sc.table()</span></code>.</p>
+<ul>
+<li><p>Default: <code class="docutils literal notranslate"><span class="pre">50</span></code>.</p></li>
+<li><p>Allowed: An integer &gt; 1.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="error-propagation.html" class="btn btn-neutral float-left" title="Propagation of uncertainties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="developer-documentation.html" class="btn btn-neutral float-right" title="Developer Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 Scipp contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

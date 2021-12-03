@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Deployment &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How To…" href="how-to.html" />
+    <link rel="prev" title="Dependencies" href="dependencies.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#modules">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developer-documentation.html">Developer Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture-decision-records.html">Architecture Decision Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coding-conventions.html">Coding conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructing_variables.html">C++ API for constructing variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html">Customizing Scipp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Deployment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-on-github-pages">Documentation on Github Pages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="how-to.html">How To…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">Transforming data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_implementation.html">Implementation of class Variable</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.0">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../developer-documentation.html">Developer Documentation</a> &raquo;</li>
+        
+      <li>Deployment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/reference/developer/deployment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="deployment">
+<span id="id1"></span><h1>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="documentation-on-github-pages">
+<h2>Documentation on Github Pages<a class="headerlink" href="#documentation-on-github-pages" title="Permalink to this headline">¶</a></h2>
+<p>The procedure below describes the steps to follow in order to publish documentation pages from a new repository in the Scipp organisation to the scipp.github.io website.</p>
+<p>In this example, we assume that the new repository is named <code class="docutils literal notranslate"><span class="pre">ess</span></code> (the full path including organisation is hence <code class="docutils literal notranslate"><span class="pre">scipp/ess</span></code>).</p>
+<p>All documentation must go in a <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder located at the root of the repository.
+We use <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> (and <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code>) to transform <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files and Jupyter notebooks into html pages.</p>
+<ol class="arabic simple">
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">ess</span></code> repository: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;github.com:scipp/ess.git</span></code></p></li>
+<li><p>Create a <cite>gh-pages</cite> branch on the repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">gh-pages</span></code></p></li>
+<li><p>On Github, go to the repository <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">&gt;</span> <span class="pre">Pages</span></code> (you will need admin rights to see the <code class="docutils literal notranslate"><span class="pre">Settings</span></code> tab). You should see that it is now saying “Your site is published at <code class="docutils literal notranslate"><span class="pre">https://scipp.github.io/ess/</span></code>”. It should also be saying it is using the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch and the <code class="docutils literal notranslate"><span class="pre">/root</span></code> folder.</p></li>
+<li><p>On your local machine, generate a ssh key, without an email or passphrase: <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span> <span class="pre">-b</span> <span class="pre">4096</span></code>. When prompted for a file name, use <code class="docutils literal notranslate"><span class="pre">azure-ess-key</span></code> (where <code class="docutils literal notranslate"><span class="pre">ess</span></code> is the name of the github repository).</p></li>
+<li><p>Go to the repository’s <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">&gt;</span> <span class="pre">Deploy</span> <span class="pre">keys</span></code>. Add a new key, and copy the contents of the <code class="docutils literal notranslate"><span class="pre">azure-ess-key.pub</span></code> file. Remember to also give the key <code class="docutils literal notranslate"><span class="pre">write</span></code> access to the repository.</p></li>
+<li><p>Go to the project page on Azure. Go to <code class="docutils literal notranslate"><span class="pre">Pipelines</span> <span class="pre">&gt;</span> <span class="pre">Library</span> <span class="pre">&gt;</span> <span class="pre">Secure</span> <span class="pre">Files</span></code>. Upload the <code class="docutils literal notranslate"><span class="pre">azure-ess-key</span></code> (the private key of the pair without the <code class="docutils literal notranslate"><span class="pre">.pub</span></code>) file as a secure file.</p></li>
+<li><p>On your local machine, to back to where you cloned the <code class="docutils literal notranslate"><span class="pre">ess</span></code> git repository. Create a new branch starting from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code> then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">deploy_docs</span></code>.</p></li>
+<li><p>In that new branch, create a <code class="docutils literal notranslate"><span class="pre">.azure-pipelines/documentation_deploy.yml</span></code> script. The easiest way is to copy one from another repository, e.g. <a class="reference external" href="https://github.com/scipp/ess-notebooks/blob/main/.azure-pipelines/documentation_deploy.yml">ess-notebooks</a>.</p></li>
+<li><p>In that <code class="docutils literal notranslate"><span class="pre">.azure-pipelines/documentation_deploy.yml</span></code> file, replace the <code class="docutils literal notranslate"><span class="pre">sshPublicKey</span></code> with the contents of azure-ess-key.pub. Change the <code class="docutils literal notranslate"><span class="pre">sshKeySecureFile</span></code> to <code class="docutils literal notranslate"><span class="pre">azure-ess-key</span></code>. Change <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;github.com:scipp/ess-notebooks</span></code> to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;github.com:scipp/ess</span></code>.</p></li>
+<li><p>Push the changes to github (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">deploy_docs</span></code>) and create a pull request. Hopefully, once the pull request is merged into <code class="docutils literal notranslate"><span class="pre">main</span></code> the pages will show up on <a class="reference external" href="https://scipp.github.io/ess">https://scipp.github.io/ess</a>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An alternative to this last step is, instead of waiting for the PR to be merged, one can just change the “branches trigger” in the <code class="docutils literal notranslate"><span class="pre">main.yml</span></code> and at the same time disable publishing of new packages as a temporary change.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some useful links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/developers/overview/managing-deploy-keys">https://docs.github.com/en/developers/overview/managing-deploy-keys</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/install-ssh-key?view=azure-devops">https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/install-ssh-key?view=azure-devops</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="how-to.html" class="btn btn-neutral float-right" title="How To…" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dependencies.html" class="btn btn-neutral float-left" title="Dependencies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

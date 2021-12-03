@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dependencies &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Coding conventions" href="coding-conventions.html" />
+    <link rel="prev" title="Tooling" href="tooling.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quick-start.html">Quick start</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/unaligned-data.html">Unaligned and Realigned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Event data</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../event-data/overview.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event-data/overview.html#Arithmetic-operations">Arithmetic operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event-data/filtering.html">Filtering</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-1d-data.html">Plotting 1-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-2d-data.html">Plotting 2-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-nd-data.html">Plotting N-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/customizing-figures.html">Customizing figures</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/neutron-diffraction.html">Neutron Powder Diffraction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/runtime-configuration.html">Runtime Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Neutron-scattering</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/overview.html">Overview: scipp.neutron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/diffraction.html">Diffraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/from-mantid-to-scipp.html">From Mantid to Scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/instrument-view.html">Instrument view</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tooling.html">Tooling</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conda-packages">Conda packages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build">Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run">Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test">Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-build">Documentation Build</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coding-conventions.html">Coding conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to.html">How To…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transform.html">Transforming data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructing_variables.html">C++ API for constructing variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable_implementation.html">Implementation of class Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customizing.html">Customizing Scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Dependencies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/developer/dependencies.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="dependencies">
+<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
+<p>Places where dependencies are specified:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Conda package build (<a class="reference external" href="https://github.com/scipp/scipp/blob/master/conda/meta.yaml">conda/meta.yml</a>)</p></li>
+<li><p>Developer environment (<a class="reference external" href="https://github.com/scipp/scipp/blob/master/scipp-developer.yml">scipp-developer.yml</a>)</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="conda-packages">
+<h2>Conda packages<a class="headerlink" href="#conda-packages" title="Permalink to this headline">¶</a></h2>
+<p>Those marked with “*” are optional.
+Some functionality may be missing (e.g. some unit tests skipped) but core functionality is not changed.</p>
+<div class="section" id="build">
+<h3>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tbb-devel</span></code> (Intel TBB headers, used for single node multithreading)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="run">
+<h3>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">appdirs</span></code> (system application directory helper, used in user configuration loading)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipyevents</span></code> * (HID event processor, used for Jupyter notebook widgets)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipyvolume</span></code> * (3D plotting library)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> * (interactive Jupyter notebook widgets)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mantid-framework</span></code> * (used for Mantid interoperability)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> * (plotting library)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> &gt;=1.15.3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python-configuration</span></code> (configuration file parser, used in user configuration loading)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyyaml</span></code> (YAML parser, used for ?)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbb</span></code> (Intel TBB runtime, used for single node multithreading)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="test">
+<h3>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>all (including optional) dependecies of <em>Run</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code> (HTML parser, used for testing of HTML representation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mantid-framework</span></code> * (Mantid interoperability tests are skipped if not present)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psutil</span></code> (used to determine if host has enough memory for certain unit tests)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> (test framework)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="documentation-build">
+<h3>Documentation Build<a class="headerlink" href="#documentation-build" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>all (including optional) dependecies of <em>Run</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipython</span></code> 7.2.0 (used for ?)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandoc</span></code> (used for ?)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx</span></code> &gt;=1.6 (documentation build framework)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx_rtd_theme</span></code> (Sphinx theme)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> (Jupyter notebook Sphinx extension)</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="coding-conventions.html" class="btn btn-neutral float-right" title="Coding conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tooling.html" class="btn btn-neutral float-left" title="Tooling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020 Scipp contributors
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: 1100px; }
+  </style>
+
+
+
+</body>
+</html>

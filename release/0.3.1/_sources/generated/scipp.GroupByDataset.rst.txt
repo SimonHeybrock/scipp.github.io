@@ -1,0 +1,29 @@
+scipp.GroupByDataset
+====================
+
+.. currentmodule:: scipp
+
+.. autoclass:: GroupByDataset
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~GroupByDataset.__init__
+      ~GroupByDataset.all
+      ~GroupByDataset.any
+      ~GroupByDataset.flatten
+      ~GroupByDataset.max
+      ~GroupByDataset.mean
+      ~GroupByDataset.min
+      ~GroupByDataset.sum
+   
+   
+
+   
+   
+   

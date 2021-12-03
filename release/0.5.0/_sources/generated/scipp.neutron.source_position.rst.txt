@@ -1,0 +1,6 @@
+﻿scipp.neutron.source\_position
+==============================
+
+.. currentmodule:: scipp.neutron
+
+.. autofunction:: source_position

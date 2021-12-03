@@ -1,0 +1,6 @@
+scipp.GroupByDataset.max
+========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataset.max

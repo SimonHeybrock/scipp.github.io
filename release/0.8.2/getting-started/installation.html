@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; scipp  documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quick start" href="quick-start.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conda">Conda</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#with-the-provided-environment-file">With the provided environment file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#without-the-provided-environment-file">Without the provided environment file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#from-source">From source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/api.html#modules">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/developer-documentation.html">Developer Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.2">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scipp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting-started/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>Scipp requires Python 3.7 or above.</p>
+<div class="section" id="conda">
+<h2>Conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to install <code class="docutils literal notranslate"><span class="pre">scipp</span></code> is using <a class="reference external" href="https://docs.conda.io">conda</a>.
+Packages from <a class="reference external" href="https://conda.anaconda.org/scipp">Anaconda Cloud</a> are available for Linux, macOS, and Windows.
+It is recommended to create an environment rather than installing individual packages.</p>
+<div class="section" id="with-the-provided-environment-file">
+<h3>With the provided environment file<a class="headerlink" href="#with-the-provided-environment-file" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Download <a class="reference download internal" download="" href="../_downloads/e85d8706af3fe2e161bf9b5ed34bd8ae/scipp.yml"><code class="xref download docutils literal notranslate"><span class="pre">scipp.yml</span></code></a> for the stable release version of scipp.
+Use <a class="reference download internal" download="" href="../_downloads/d370f523731075521fe631b5044629c6/scipp-latest.yml"><code class="xref download docutils literal notranslate"><span class="pre">scipp-latest.yml</span></code></a> for the latest development version.</p></li>
+<li><p>In a terminal run:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda activate
+conda env create -f scipp.yml
+conda activate scipp
+jupyter lab
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> ensures that you are in your <code class="docutils literal notranslate"><span class="pre">base</span></code> environment.
+This will take a few minutes.
+Above, replace <code class="docutils literal notranslate"><span class="pre">scipp.yml</span></code> with the path to the download location you used to download the environment.
+Open the link printed by Jupyter in a browser if it does not open automatically.</p>
+</li>
+</ol>
+<p>If you are new to scipp, continue reading with <a class="reference internal" href="quick-start.html"><span class="doc">Quick Start</span></a> and <a class="reference internal" href="../user-guide/data-structures.html"><span class="doc">Data Structures</span></a>.</p>
+<p>If you have previously installed scipp with conda we nevertheless recommend creating a fresh environment rather than trying to <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span></code>.
+You may want to remove your old environment first, e.g.,</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda activate
+conda env remove -n scipp
+</pre></div>
+</div>
+<p>and then proceed as per instructions above.
+The <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> ensures that you are in your <code class="docutils literal notranslate"><span class="pre">base</span></code> environment.</p>
+</div>
+<div class="section" id="without-the-provided-environment-file">
+<h3>Without the provided environment file<a class="headerlink" href="#without-the-provided-environment-file" title="Permalink to this headline">¶</a></h3>
+<p>To create a new conda environment with scipp:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda create -n env_with_scipp -c conda-forge -c scipp scipp
+</pre></div>
+</div>
+<p>To add scipp to an existing conda environment:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge -c scipp scipp
+</pre></div>
+</div>
+<p>For a more up-to-date version, the <cite>scipp/label/dev</cite> channel can be used instead:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge -c scipp/label/dev scipp
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installing <code class="docutils literal notranslate"><span class="pre">scipp</span></code> on Windows requires <code class="docutils literal notranslate"><span class="pre">Microsoft</span> <span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">2019</span> <span class="pre">C++</span> <span class="pre">Runtime</span></code> installed.
+Visit <a class="reference external" href="https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0">https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0</a> for the up to date version of the library.</p>
+</div>
+<p>After installation the module <code class="docutils literal notranslate"><span class="pre">scipp</span></code> can be imported in Python.
+Note that only the bare essential dependencies are installed.
+If you wish to use plotting functionality you will also need to install <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code>.</p>
+<p>To update or remove <code class="docutils literal notranslate"><span class="pre">scipp</span></code> use <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/commands/update.html">conda update</a> and <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/commands/remove.html">conda remove</a>.</p>
+</div>
+</div>
+<div class="section" id="from-source">
+<h2>From source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../reference/developer/getting-started.html"><span class="doc">developer getting started</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quick-start.html" class="btn btn-neutral float-right" title="Quick start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 Scipp contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

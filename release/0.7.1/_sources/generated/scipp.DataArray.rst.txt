@@ -1,0 +1,50 @@
+﻿scipp.DataArray
+===============
+
+.. currentmodule:: scipp
+
+.. autoclass:: DataArray
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DataArray.__init__
+      ~DataArray.astype
+      ~DataArray.copy
+      ~DataArray.plot
+      ~DataArray.rename_dims
+      ~DataArray.to_hdf5
+      ~DataArray.underlying_size
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DataArray.attrs
+      ~DataArray.bins
+      ~DataArray.coords
+      ~DataArray.data
+      ~DataArray.dims
+      ~DataArray.dtype
+      ~DataArray.events
+      ~DataArray.masks
+      ~DataArray.meta
+      ~DataArray.name
+      ~DataArray.shape
+      ~DataArray.sizes
+      ~DataArray.unit
+      ~DataArray.value
+      ~DataArray.values
+      ~DataArray.variance
+      ~DataArray.variances
+   
+   

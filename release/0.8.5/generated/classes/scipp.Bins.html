@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>scipp.Bins &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="scipp.DataArray" href="scipp.DataArray.html" />
+    <link rel="prev" title="Classes" href="../../reference/api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/api.html">Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">scipp.Bins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.DataArray.html">scipp.DataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.Dataset.html">scipp.Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.GroupByDataArray.html">scipp.GroupByDataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.GroupByDataset.html">scipp.GroupByDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.Unit.html">scipp.Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.Variable.html">scipp.Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.typing.VariableLike.html">scipp.typing.VariableLike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.typing.MetaDataMap.html">scipp.typing.MetaDataMap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#modules">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/developer-documentation.html">Developer Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.1">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../reference/api.html">Classes</a> &raquo;</li>
+        
+      <li>scipp.Bins</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/generated/classes/scipp.Bins.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="scipp-bins">
+<h1>scipp.Bins<a class="headerlink" href="#scipp-bins" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="scipp.Bins">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">scipp.</span></span><span class="sig-name descname"><span class="pre">Bins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Bins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Proxy for access to bin contents and operations on bins of a variable.</p>
+<p>This class is returned from the <cite>bins</cite> property of variables and should
+generally not be created directly.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Bins.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Bins.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Bins.__init__" title="scipp.Bins.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(obj)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Bins.concatenate" title="scipp.Bins.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a>([other, dim, out])</p></td>
+<td><p>Concatenate bins element-wise by concatenating bin contents along their internal bin dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Bins.mean" title="scipp.Bins.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>()</p></td>
+<td><p>Mean of each bin.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Bins.size" title="scipp.Bins.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a>()</p></td>
+<td><p>Number of events or elements in a bin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Bins.sum" title="scipp.Bins.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>()</p></td>
+<td><p>Sum of each bin.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Bins.attrs" title="scipp.Bins.attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">attrs</span></code></a></p></td>
+<td><p>Coords of the bins</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Bins.constituents" title="scipp.Bins.constituents"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constituents</span></code></a></p></td>
+<td><p>Constituents of binned data, as supported by <code class="xref py py-func docutils literal notranslate"><span class="pre">sc.bins()</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Bins.coords" title="scipp.Bins.coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coords</span></code></a></p></td>
+<td><p>Coords of the bins</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Bins.data" title="scipp.Bins.data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code></a></p></td>
+<td><p>Data of the bins</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.Bins.masks" title="scipp.Bins.masks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">masks</span></code></a></p></td>
+<td><p>Masks of the bins</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.Bins.meta" title="scipp.Bins.meta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta</span></code></a></p></td>
+<td><p>Coords and attrs of the bins</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Bins.attrs">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">attrs</span></span><em class="property"><span class="pre">:</span> <span class="pre">MutableMapping</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><span class="pre">scipp._scipp.core.Variable</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#scipp.Bins.attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coords of the bins</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Bins.concatenate">
+<span class="sig-name descname"><span class="pre">concatenate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Bins.concatenate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concatenate bins element-wise by concatenating bin contents along
+their internal bin dimension.</p>
+<p>This can be used as a binary operation, or a reduction operation: The
+bins to concatenate are either obtained element-wise from <cite>self</cite>
+and <cite>other</cite>, or, if <cite>dim</cite> but not <cite>other</cite> is given, from all bins
+along the given dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>other</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><em>scipp._scipp.core.Variable</em></a><em>, </em><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><em>scipp._scipp.core.DataArray</em></a><em>]</em><em>]</em>) – Optional input containing bins.</p></li>
+<li><p><strong>dim</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>]</em>) – Optional dimension along which to merge bins. If not given
+and <cite>other</cite> is <cite>None</cite>, the bins are merged along all
+dimensions.</p></li>
+<li><p><strong>out</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><em>scipp._scipp.core.DataArray</em></a><em>]</em>) – Optional output buffer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>If <cite>other</cite> is not binned data.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The bins of the two inputs merged.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Union[<a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable">scipp._scipp.core.Variable</a>, <a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray">scipp._scipp.core.DataArray</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Bins.constituents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">constituents</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><span class="pre">scipp._scipp.core.Variable</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#scipp.Bins.constituents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constituents of binned data, as supported by <code class="xref py py-func docutils literal notranslate"><span class="pre">sc.bins()</span></code>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Bins.coords">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">coords</span></span><em class="property"><span class="pre">:</span> <span class="pre">MutableMapping</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><span class="pre">scipp._scipp.core.Variable</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#scipp.Bins.coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coords of the bins</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Bins.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><span class="pre">scipp._scipp.core.Variable</span></a></em><a class="headerlink" href="#scipp.Bins.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data of the bins</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Bins.masks">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">masks</span></span><em class="property"><span class="pre">:</span> <span class="pre">MutableMapping</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><span class="pre">scipp._scipp.core.Variable</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#scipp.Bins.masks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Masks of the bins</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Bins.mean">
+<span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Bins.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean of each bin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The mean of each of the input bins.</p>
+</dd>
+<dt class="field-even">Seealso</dt>
+<dd class="field-even"><p><a class="reference internal" href="../functions/scipp.mean.html#scipp.mean" title="scipp.mean"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.mean()</span></code></a> for calculating the mean of non-bin data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable">scipp._scipp.core.Variable</a>, <a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray">scipp._scipp.core.DataArray</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scipp.Bins.meta">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">meta</span></span><em class="property"><span class="pre">:</span> <span class="pre">MutableMapping</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable"><span class="pre">scipp._scipp.core.Variable</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#scipp.Bins.meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coords and attrs of the bins</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Bins.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Bins.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of events or elements in a bin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of elements in each of the input bins.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Union[<a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable">scipp._scipp.core.Variable</a>, <a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray">scipp._scipp.core.DataArray</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.Bins.sum">
+<span class="sig-name descname"><span class="pre">sum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scipp.Bins.sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum of each bin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The sum of each of the input bins.</p>
+</dd>
+<dt class="field-even">Seealso</dt>
+<dd class="field-even"><p><a class="reference internal" href="../functions/scipp.sum.html#scipp.sum" title="scipp.sum"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.sum()</span></code></a> for summing non-bin data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="scipp.Variable.html#scipp.Variable" title="scipp._scipp.core.Variable">scipp._scipp.core.Variable</a>, <a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray">scipp._scipp.core.DataArray</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="scipp.DataArray.html" class="btn btn-neutral float-right" title="scipp.DataArray" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../reference/api.html" class="btn btn-neutral float-left" title="Classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

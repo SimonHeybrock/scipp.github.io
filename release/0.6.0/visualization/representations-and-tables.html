@@ -1,0 +1,3407 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Representations and Tables &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plotting Overview" href="plotting-overview.html" />
+    <link rel="prev" title="Tips, tricks, and anti-patterns" href="../user-guide/tips-tricks-and-anti-patterns.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quick-start.html">Quick start</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visualization</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Representations and Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#HTML-represenation">HTML represenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SVG-representation">SVG representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Table-representation">Table representation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting-1d-data.html">Plotting 1-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting-2d-data.html">Plotting 2-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting-nd-data.html">Plotting N-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customizing-figures.html">Customizing figures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datetime_handling.html">Datetime handling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/runtime-configuration.html">Runtime Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/tooling.html">Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/coding-conventions.html">Coding conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/how-to.html">How To…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/transform.html">Transforming data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/constructing_variables.html">C++ API for constructing variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/variable_implementation.html">Implementation of class Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/customizing.html">Customizing Scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/architecture-decision-records.html">Architecture Decision Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/deployment.html">Deployment</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="https://scipp.github.io" selected>latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.6.0">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Representations and Tables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/visualization/representations-and-tables.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p><a class="reference external" href="https://raw.githubusercontent.com/scipp/scipp/main/docs/visualization/representations-and-tables.ipynb">Download this Jupyter notebook</a></p>
+<hr class="docutils" />
+<div class="section" id="Representations-and-Tables">
+<h1>Representations and Tables<a class="headerlink" href="#Representations-and-Tables" title="Permalink to this headline">¶</a></h1>
+<p>Scipp provides a number of options for visualizing the structure and contents of variables, data arrays, and datasets in Jupyter notebooks:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.to_html</span></code> produces a HTML representation. This is also bound to <code class="docutils literal notranslate"><span class="pre">_repr_html_</span></code>, i.e., Jupyter will display this when the name of a scipp object is typed at the end of a cell.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.show</span></code> draws a SVG representation of the contained items and their shapes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipp.table</span></code> outputs a table representation of 0-D and 1-D data.</p></li>
+</ul>
+<p>In all cases, these can be called with variable, data array, and dataset, as well as slices or items of any of the former. While the outputs are mostly self-explanatory we discuss some details below.</p>
+<div class="section" id="HTML-represenation">
+<h2>HTML represenation<a class="headerlink" href="#HTML-represenation" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">scipp.to_html</span></code> is used to define <code class="docutils literal notranslate"><span class="pre">_repr_html_</span></code>. This special property is used by Jupyter in place of <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipp</span> <span class="k">as</span> <span class="nn">sc</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+var kernel = IPython.notebook.kernel; if (kernel) {var value = window.devicePixelRatio; var command = 'devicePixelRatio = ' + value; kernel.execute(command);}
+</script></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,))</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,))</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;y_label&#39;</span><span class="p">:</span><span class="n">labels</span><span class="p">})</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">variances</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">angstrom</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">kg</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;x_attr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;x_attr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;b_attr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<p>Simply typing the name of a variable, data array, or dataset will show the HTML representation:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div><!-- Original source from -->
+<!-- https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/html/icons-svg-inline.html -->
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<title>Show/Hide data repr</title>
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<title>Show/Hide attributes</title>
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg><style>/* CSS stylesheet for displaying scipp objects in jupyterlab.
+* Original source from
+* https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/css/style.css
+*/
+
+.sc-wrap {
+  font-size: 14px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+/* The CSS styling for the inline attributes table */
+.sc-var-attrs .sc-wrap{
+  padding-left: 3em;
+}
+
+.sc-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px #ddd;
+}
+
+.sc-header > div,
+.sc-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-obj-type,
+.sc-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.sc-obj-type {
+  color: #555;
+}
+
+.sc-array-name {
+  color: #000;
+}
+
+.sc-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto auto 1fr 20px 20px;
+}
+
+.sc-section-item {
+  display: contents;
+}
+
+.sc-section-item input {
+  display: none;
+}
+
+.sc-section-item input + label {
+  color: #ccc;
+}
+
+.sc-section-item input:enabled + label {
+  cursor: pointer;
+  color: #555;
+}
+
+.sc-section-item input:enabled + label:hover {
+  color: #000;
+}
+
+.sc-section-summary {
+  grid-column: 1 ;
+  color: #555;
+  font-weight: 500;
+}
+
+.sc-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.sc-section-summary-in:disabled + label {
+  color: #555;
+}
+
+.sc-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.sc-section-summary-in:disabled + label:before {
+  color: #ccc;
+}
+
+.sc-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.sc-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.sc-section-summary,
+.sc-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sc-section-inline-details {
+  grid-column: 2 / 5;
+}
+
+.sc-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.sc-section-summary-in:checked ~ .sc-section-details {
+  display: contents;
+}
+
+.sc-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.sc-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.sc-preview {
+  color: #888;
+}
+
+.sc-array-preview,
+.sc-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.sc-array-data,
+.sc-array-in:checked ~ .sc-array-preview {
+  display: none;
+}
+
+.sc-array-in:checked ~ .sc-array-data,
+.sc-array-preview {
+  display: inline-block;
+}
+
+.sc-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.sc-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0!important;
+}
+
+.sc-dim-list:before {
+  content: '(';
+}
+
+.sc-dim-list:after {
+  content: ')';
+}
+
+.sc-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.sc-has-index {
+  font-weight: bold;
+}
+
+.sc-var-list,
+.sc-var-item {
+  display: contents;
+}
+
+.sc-var-item > div,
+.sc-var-item label,
+.sc-var-item > .sc-var-name span {
+  background-color: #fcfcfc;
+  margin-bottom: 0;
+}
+
+.sc-var-item > .sc-var-name:hover span {
+  padding-right: 5px;
+}
+
+.sc-var-list > li:nth-child(odd) > div,
+.sc-var-list > li:nth-child(odd) > label,
+.sc-var-list > li:nth-child(odd) > .sc-var-name span {
+  background-color: #efefef;
+}
+
+.sc-var-name {
+  grid-column: 1;
+}
+
+.sc-var-dims {
+  grid-column: 2;
+}
+
+.sc-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: #555;
+}
+.sc-var-unit{
+  grid-column: 4;
+  text-align: left;
+  color: #222;
+}
+.sc-value-preview {
+  grid-column: 5;
+}
+.sc-var-preview-variances{
+  text-align:right;
+}
+
+.sc-sections .sc-section-item .sc-section-summary,
+.sc-sections .sc-section-item .sc-section-inline-details,
+.sc-section-item .sc-var-list .sc-var-item > div,
+.sc-section-item .sc-var-list .sc-var-item > label,
+.sc-section-details .sc-var-list .sc-var-item > div,
+.sc-section-details .sc-var-list .sc-var-item > label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-var-name,
+.sc-var-dims,
+.sc-var-dtype,
+.sc-var-unit,
+.sc-preview,
+.sc-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.sc-var-name:hover,
+.sc-var-dims:hover,
+.sc-var-dtype:hover,
+.sc-var-unit:hover,
+.sc-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.sc-var-attrs {
+  display: block;
+}
+.sc-var-data {
+  display: none;
+}
+.sc-var-attrs,
+.sc-var-data {
+  background-color: #fff !important;
+  padding-bottom: 5px !important;
+}
+
+.sc-var-attrs-in:checked ~ .sc-var-attrs {
+  display: none;
+}
+.sc-var-data-in:checked ~ .sc-var-data {
+  display: block;
+}
+
+.sc-var-data > table {
+  float: right;
+}
+
+.sc-var-name span,
+.sc-var-data,
+.sc-attrs {
+  padding-left: 25px !important;
+}
+
+.sc-attrs,
+.sc-var-attrs,
+.sc-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.sc-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.sc-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.sc-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.sc-attrs dt:hover span {
+  display: inline-block;
+  background: #fff;
+  padding-right: 10px;
+}
+
+.sc-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.sc-icon-database,
+.sc-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+label.sc-hide-icon svg{
+  opacity: 0;
+}
+
+.sc-standalone-var-name{
+  grid-column: 1/3;
+}
+
+.sc-standalone-var-name span{
+  padding-left: 25px;
+  padding-right:10px;
+}
+</style><div class='sc-wrap'><div class='sc-header'><div class='sc-obj-type'>scipp.Dataset (320 Bytes)</div></div><ul class='sc-sections'><li class='sc-section-item'><input id='section-cf0ba0af-e44a-41c2-9780-fa5cb0996a16' class='sc-section-summary-in' type='checkbox' disabled ><label for='section-cf0ba0af-e44a-41c2-9780-fa5cb0996a16' class='sc-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='sc-section-inline-details'><ul class='sc-dim-list'><li><span class='sc-has-index'>x</span>: 2</li><li><span class='sc-has-index'>y</span>: 3</li></ul></div><div class='sc-section-details'></div></li><li class='sc-section-item'><input id='section-ce51ba6a-0303-4e88-9224-18c1dcc5e34f' class='sc-section-summary-in' type='checkbox'  checked><label for='section-ce51ba6a-0303-4e88-9224-18c1dcc5e34f' class='sc-section-summary' >Coordinates: <span>(3)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span class='sc-has-index'>x</span></div><div class='sc-var-dims'>(x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-0a855f0d-8a6d-4cb4-b1e6-25cce7613517' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-0a855f0d-8a6d-4cb4-b1e6-25cce7613517' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5c45f150-cb38-4edc-a0b4-68bd72e5d6f5' class='sc-var-data-in' type='checkbox'><label for='data-5c45f150-cb38-4edc-a0b4-68bd72e5d6f5' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></span></li><li class='sc-var-item'><div class='sc-var-name'><span class='sc-has-index'>y</span></div><div class='sc-var-dims'>(y [bin-edge])</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>m</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, 0.0, 0.0</div></span></div><input id='attrs-cfe092b7-6d69-4e21-81d9-1b748313225e' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-cfe092b7-6d69-4e21-81d9-1b748313225e' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dc3c7e8b-d8a6-430b-a99f-3e6cf204cd01' class='sc-var-data-in' type='checkbox'><label for='data-dc3c7e8b-d8a6-430b-a99f-3e6cf204cd01' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0., 0., 0.])</pre></span></li><li class='sc-var-item'><div class='sc-var-name'><span>y_label</span></div><div class='sc-var-dims'>(y [bin-edge])</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, 0.0, 0.0</div></span></div><input id='attrs-45374cf5-026b-4e36-836b-6aec9114c631' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-45374cf5-026b-4e36-836b-6aec9114c631' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ce5aced8-e83c-47ce-8cd6-dbf77c98ff9f' class='sc-var-data-in' type='checkbox'><label for='data-ce5aced8-e83c-47ce-8cd6-dbf77c98ff9f' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0., 0., 0.])</pre></span></li></ul></div></li><li class='sc-section-item'><input id='section-e555f000-7537-4573-b622-e3faafb7d710' class='sc-section-summary-in' type='checkbox'  checked><label for='section-e555f000-7537-4573-b622-e3faafb7d710' class='sc-section-summary' >Data: <span>(3)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span>a</span></div><div class='sc-var-dims'>(y, x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>Å</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, ..., 0.0, 0.0</div></span><span><div>σ² = 0.0, 0.0, ..., 0.0, 0.0</div></span></div><input id='attrs-201437de-0636-4a28-8b7f-6e2e999a18b3' class='sc-var-attrs-in' type='checkbox' ><label for='attrs-201437de-0636-4a28-8b7f-6e2e999a18b3' class='' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4008b5a2-dffe-478b-8c24-b4a3af4e1184' class='sc-var-data-in' type='checkbox'><label for='data-4008b5a2-dffe-478b-8c24-b4a3af4e1184' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='sc-var-attrs'><div class='sc-wrap'><ul class='sc-sections'><li class='sc-section-item sc-subsection'><input id='section-756b636a-55c5-4881-aaa9-75224b575b4b' class='sc-section-summary-in' type='checkbox'  checked><label for='section-756b636a-55c5-4881-aaa9-75224b575b4b' class='sc-section-summary' >Attributes: <span>(1)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span>x_attr</span></div><div class='sc-var-dims'>(x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-3497d165-05cf-4f8b-bfa1-dcca8eb575ee' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-3497d165-05cf-4f8b-bfa1-dcca8eb575ee' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d1da420b-61d0-4f57-a0d7-4735aecba5e6' class='sc-var-data-in' type='checkbox'><label for='data-d1da420b-61d0-4f57-a0d7-4735aecba5e6' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></li></ul></div></li></ul></div></div><pre class='sc-var-data'>Values:<br>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])<br><br>Variances:<br>                       <div>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])</div></pre></li><li class='sc-var-item'><div class='sc-var-name'><span>b</span></div><div class='sc-var-dims'>(y, x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>Å</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, ..., 0.0, 0.0</div></span><span><div>σ² = 0.0, 0.0, ..., 0.0, 0.0</div></span></div><input id='attrs-ce44195e-ea96-46b2-b9c7-1be149313308' class='sc-var-attrs-in' type='checkbox' ><label for='attrs-ce44195e-ea96-46b2-b9c7-1be149313308' class='' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a98a26e5-f50d-4605-82e1-a47a173b03ab' class='sc-var-data-in' type='checkbox'><label for='data-a98a26e5-f50d-4605-82e1-a47a173b03ab' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='sc-var-attrs'><div class='sc-wrap'><ul class='sc-sections'><li class='sc-section-item sc-subsection'><input id='section-5314a32f-922e-4aeb-803e-149d5064d559' class='sc-section-summary-in' type='checkbox'  checked><label for='section-5314a32f-922e-4aeb-803e-149d5064d559' class='sc-section-summary' >Attributes: <span>(2)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span>b_attr</span></div><div class='sc-var-dims'>()</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>m</div><div class='sc-value-preview sc-preview'><span><div>1.2</div></span></div><input id='attrs-88fc7cc8-d39c-43cf-9bba-cacc255118d8' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-88fc7cc8-d39c-43cf-9bba-cacc255118d8' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b6f7b530-e04c-4a3b-ac3a-f6db66b51041' class='sc-var-data-in' type='checkbox'><label for='data-b6f7b530-e04c-4a3b-ac3a-f6db66b51041' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array(1.2)</pre></li><li class='sc-var-item'><div class='sc-var-name'><span>x_attr</span></div><div class='sc-var-dims'>(x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-e731e48e-5dcf-422d-aa38-211c91f2c334' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-e731e48e-5dcf-422d-aa38-211c91f2c334' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1ea819ab-47ea-4f83-aaa7-394e8c8586af' class='sc-var-data-in' type='checkbox'><label for='data-1ea819ab-47ea-4f83-aaa7-394e8c8586af' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></li></ul></div></li></ul></div></div><pre class='sc-var-data'>Values:<br>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])<br><br>Variances:<br>                       <div>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])</div></pre></li><li class='sc-var-item'><div class='sc-var-name'><span>c</span></div><div class='sc-var-dims'>()</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>kg</div><div class='sc-value-preview sc-preview'><span><div>1.0</div></span></div><input id='attrs-db99cb47-0f5f-4121-a085-938dd7a01f5b' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-db99cb47-0f5f-4121-a085-938dd7a01f5b' class='' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2b4234da-c12d-4367-b30e-7ff094cad48a' class='sc-var-data-in' type='checkbox'><label for='data-2b4234da-c12d-4367-b30e-7ff094cad48a' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array(1.)</pre></li></ul></div></li></ul></div></div></div>
+</div>
+<p>Note that (as usual) Jupyter only shows the last variable mentioned in a cell:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">d</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1
+</pre></div></div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">to_html</span></code> can be used to retain the HTML view, e.g., to show multiple objects in a single cell:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div><!-- Original source from -->
+<!-- https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/html/icons-svg-inline.html -->
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<title>Show/Hide data repr</title>
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<title>Show/Hide attributes</title>
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg><style>/* CSS stylesheet for displaying scipp objects in jupyterlab.
+* Original source from
+* https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/css/style.css
+*/
+
+.sc-wrap {
+  font-size: 14px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+/* The CSS styling for the inline attributes table */
+.sc-var-attrs .sc-wrap{
+  padding-left: 3em;
+}
+
+.sc-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px #ddd;
+}
+
+.sc-header > div,
+.sc-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-obj-type,
+.sc-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.sc-obj-type {
+  color: #555;
+}
+
+.sc-array-name {
+  color: #000;
+}
+
+.sc-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto auto 1fr 20px 20px;
+}
+
+.sc-section-item {
+  display: contents;
+}
+
+.sc-section-item input {
+  display: none;
+}
+
+.sc-section-item input + label {
+  color: #ccc;
+}
+
+.sc-section-item input:enabled + label {
+  cursor: pointer;
+  color: #555;
+}
+
+.sc-section-item input:enabled + label:hover {
+  color: #000;
+}
+
+.sc-section-summary {
+  grid-column: 1 ;
+  color: #555;
+  font-weight: 500;
+}
+
+.sc-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.sc-section-summary-in:disabled + label {
+  color: #555;
+}
+
+.sc-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.sc-section-summary-in:disabled + label:before {
+  color: #ccc;
+}
+
+.sc-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.sc-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.sc-section-summary,
+.sc-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sc-section-inline-details {
+  grid-column: 2 / 5;
+}
+
+.sc-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.sc-section-summary-in:checked ~ .sc-section-details {
+  display: contents;
+}
+
+.sc-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.sc-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.sc-preview {
+  color: #888;
+}
+
+.sc-array-preview,
+.sc-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.sc-array-data,
+.sc-array-in:checked ~ .sc-array-preview {
+  display: none;
+}
+
+.sc-array-in:checked ~ .sc-array-data,
+.sc-array-preview {
+  display: inline-block;
+}
+
+.sc-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.sc-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0!important;
+}
+
+.sc-dim-list:before {
+  content: '(';
+}
+
+.sc-dim-list:after {
+  content: ')';
+}
+
+.sc-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.sc-has-index {
+  font-weight: bold;
+}
+
+.sc-var-list,
+.sc-var-item {
+  display: contents;
+}
+
+.sc-var-item > div,
+.sc-var-item label,
+.sc-var-item > .sc-var-name span {
+  background-color: #fcfcfc;
+  margin-bottom: 0;
+}
+
+.sc-var-item > .sc-var-name:hover span {
+  padding-right: 5px;
+}
+
+.sc-var-list > li:nth-child(odd) > div,
+.sc-var-list > li:nth-child(odd) > label,
+.sc-var-list > li:nth-child(odd) > .sc-var-name span {
+  background-color: #efefef;
+}
+
+.sc-var-name {
+  grid-column: 1;
+}
+
+.sc-var-dims {
+  grid-column: 2;
+}
+
+.sc-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: #555;
+}
+.sc-var-unit{
+  grid-column: 4;
+  text-align: left;
+  color: #222;
+}
+.sc-value-preview {
+  grid-column: 5;
+}
+.sc-var-preview-variances{
+  text-align:right;
+}
+
+.sc-sections .sc-section-item .sc-section-summary,
+.sc-sections .sc-section-item .sc-section-inline-details,
+.sc-section-item .sc-var-list .sc-var-item > div,
+.sc-section-item .sc-var-list .sc-var-item > label,
+.sc-section-details .sc-var-list .sc-var-item > div,
+.sc-section-details .sc-var-list .sc-var-item > label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-var-name,
+.sc-var-dims,
+.sc-var-dtype,
+.sc-var-unit,
+.sc-preview,
+.sc-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.sc-var-name:hover,
+.sc-var-dims:hover,
+.sc-var-dtype:hover,
+.sc-var-unit:hover,
+.sc-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.sc-var-attrs {
+  display: block;
+}
+.sc-var-data {
+  display: none;
+}
+.sc-var-attrs,
+.sc-var-data {
+  background-color: #fff !important;
+  padding-bottom: 5px !important;
+}
+
+.sc-var-attrs-in:checked ~ .sc-var-attrs {
+  display: none;
+}
+.sc-var-data-in:checked ~ .sc-var-data {
+  display: block;
+}
+
+.sc-var-data > table {
+  float: right;
+}
+
+.sc-var-name span,
+.sc-var-data,
+.sc-attrs {
+  padding-left: 25px !important;
+}
+
+.sc-attrs,
+.sc-var-attrs,
+.sc-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.sc-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.sc-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.sc-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.sc-attrs dt:hover span {
+  display: inline-block;
+  background: #fff;
+  padding-right: 10px;
+}
+
+.sc-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.sc-icon-database,
+.sc-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+label.sc-hide-icon svg{
+  opacity: 0;
+}
+
+.sc-standalone-var-name{
+  grid-column: 1/3;
+}
+
+.sc-standalone-var-name span{
+  padding-left: 25px;
+  padding-right:10px;
+}
+</style><div class='sc-wrap'><div class='sc-header'><div class='sc-obj-type'>scipp.DataArrayView (192 Bytes)</div></div><ul class='sc-sections'><li class='sc-section-item'><input id='section-77ac2545-bd29-4e6a-ac55-b0c0b7c04bba' class='sc-section-summary-in' type='checkbox' disabled ><label for='section-77ac2545-bd29-4e6a-ac55-b0c0b7c04bba' class='sc-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='sc-section-inline-details'><ul class='sc-dim-list'><li><span class='sc-has-index'>y</span>: 3</li><li><span class='sc-has-index'>x</span>: 2</li></ul></div><div class='sc-section-details'></div></li><li class='sc-section-item'><input id='section-d45db212-e85b-428d-bdee-e20abd9625b2' class='sc-section-summary-in' type='checkbox'  checked><label for='section-d45db212-e85b-428d-bdee-e20abd9625b2' class='sc-section-summary' >Coordinates: <span>(3)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span class='sc-has-index'>x</span></div><div class='sc-var-dims'>(x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-b933ac94-cb70-49b4-a601-60fd4216444b' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-b933ac94-cb70-49b4-a601-60fd4216444b' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9694963c-a4ae-46c4-9704-d2edf0be1f47' class='sc-var-data-in' type='checkbox'><label for='data-9694963c-a4ae-46c4-9704-d2edf0be1f47' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></span></li><li class='sc-var-item'><div class='sc-var-name'><span class='sc-has-index'>y</span></div><div class='sc-var-dims'>(y [bin-edge])</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>m</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, 0.0, 0.0</div></span></div><input id='attrs-e3c274bc-03dd-4fc7-8127-097c41f28587' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-e3c274bc-03dd-4fc7-8127-097c41f28587' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4d71cfc7-9d13-4cc8-88e6-2711568b37f3' class='sc-var-data-in' type='checkbox'><label for='data-4d71cfc7-9d13-4cc8-88e6-2711568b37f3' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0., 0., 0.])</pre></span></li><li class='sc-var-item'><div class='sc-var-name'><span>y_label</span></div><div class='sc-var-dims'>(y [bin-edge])</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, 0.0, 0.0</div></span></div><input id='attrs-a3bd6785-3afb-4bdd-8f00-d9f175bc0526' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-a3bd6785-3afb-4bdd-8f00-d9f175bc0526' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4e33f253-9205-49bf-b022-958bf4020968' class='sc-var-data-in' type='checkbox'><label for='data-4e33f253-9205-49bf-b022-958bf4020968' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0., 0., 0.])</pre></span></li></ul></div></li><li class='sc-section-item'><input id='section-c468607f-30c6-4827-a9df-47691f979b19' class='sc-section-summary-in' type='checkbox'  checked><label for='section-c468607f-30c6-4827-a9df-47691f979b19' class='sc-section-summary' >Data: <span>(1)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span></span></div><div class='sc-var-dims'>(y, x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>Å</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, ..., 0.0, 0.0</div></span><span><div>σ² = 0.0, 0.0, ..., 0.0, 0.0</div></span></div><input id='attrs-ab19796b-cda1-4e85-97e9-f4f2b4b44595' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-ab19796b-cda1-4e85-97e9-f4f2b4b44595' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6104e4f1-ef18-4874-82ce-57e273db7b52' class='sc-var-data-in' type='checkbox'><label for='data-6104e4f1-ef18-4874-82ce-57e273db7b52' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])<br><br>Variances:<br>                       <div>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])</div></pre></li></ul></div></li><li class='sc-section-item'><input id='section-114e8f9c-c5f7-4eca-9b63-320eabd78864' class='sc-section-summary-in' type='checkbox'  checked><label for='section-114e8f9c-c5f7-4eca-9b63-320eabd78864' class='sc-section-summary' >Attributes: <span>(1)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span>x_attr</span></div><div class='sc-var-dims'>(x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-7aa71d87-6a21-48db-8ee4-38dcf11c4583' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-7aa71d87-6a21-48db-8ee4-38dcf11c4583' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3b89ea27-1047-4ac9-b25b-dc401d9c3f74' class='sc-var-data-in' type='checkbox'><label for='data-3b89ea27-1047-4ac9-b25b-dc401d9c3f74' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></li></ul></div></li></ul></div></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div><!-- Original source from -->
+<!-- https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/html/icons-svg-inline.html -->
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<title>Show/Hide data repr</title>
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<title>Show/Hide attributes</title>
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg><style>/* CSS stylesheet for displaying scipp objects in jupyterlab.
+* Original source from
+* https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/css/style.css
+*/
+
+.sc-wrap {
+  font-size: 14px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+/* The CSS styling for the inline attributes table */
+.sc-var-attrs .sc-wrap{
+  padding-left: 3em;
+}
+
+.sc-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px #ddd;
+}
+
+.sc-header > div,
+.sc-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-obj-type,
+.sc-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.sc-obj-type {
+  color: #555;
+}
+
+.sc-array-name {
+  color: #000;
+}
+
+.sc-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto auto 1fr 20px 20px;
+}
+
+.sc-section-item {
+  display: contents;
+}
+
+.sc-section-item input {
+  display: none;
+}
+
+.sc-section-item input + label {
+  color: #ccc;
+}
+
+.sc-section-item input:enabled + label {
+  cursor: pointer;
+  color: #555;
+}
+
+.sc-section-item input:enabled + label:hover {
+  color: #000;
+}
+
+.sc-section-summary {
+  grid-column: 1 ;
+  color: #555;
+  font-weight: 500;
+}
+
+.sc-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.sc-section-summary-in:disabled + label {
+  color: #555;
+}
+
+.sc-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.sc-section-summary-in:disabled + label:before {
+  color: #ccc;
+}
+
+.sc-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.sc-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.sc-section-summary,
+.sc-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sc-section-inline-details {
+  grid-column: 2 / 5;
+}
+
+.sc-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.sc-section-summary-in:checked ~ .sc-section-details {
+  display: contents;
+}
+
+.sc-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.sc-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.sc-preview {
+  color: #888;
+}
+
+.sc-array-preview,
+.sc-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.sc-array-data,
+.sc-array-in:checked ~ .sc-array-preview {
+  display: none;
+}
+
+.sc-array-in:checked ~ .sc-array-data,
+.sc-array-preview {
+  display: inline-block;
+}
+
+.sc-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.sc-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0!important;
+}
+
+.sc-dim-list:before {
+  content: '(';
+}
+
+.sc-dim-list:after {
+  content: ')';
+}
+
+.sc-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.sc-has-index {
+  font-weight: bold;
+}
+
+.sc-var-list,
+.sc-var-item {
+  display: contents;
+}
+
+.sc-var-item > div,
+.sc-var-item label,
+.sc-var-item > .sc-var-name span {
+  background-color: #fcfcfc;
+  margin-bottom: 0;
+}
+
+.sc-var-item > .sc-var-name:hover span {
+  padding-right: 5px;
+}
+
+.sc-var-list > li:nth-child(odd) > div,
+.sc-var-list > li:nth-child(odd) > label,
+.sc-var-list > li:nth-child(odd) > .sc-var-name span {
+  background-color: #efefef;
+}
+
+.sc-var-name {
+  grid-column: 1;
+}
+
+.sc-var-dims {
+  grid-column: 2;
+}
+
+.sc-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: #555;
+}
+.sc-var-unit{
+  grid-column: 4;
+  text-align: left;
+  color: #222;
+}
+.sc-value-preview {
+  grid-column: 5;
+}
+.sc-var-preview-variances{
+  text-align:right;
+}
+
+.sc-sections .sc-section-item .sc-section-summary,
+.sc-sections .sc-section-item .sc-section-inline-details,
+.sc-section-item .sc-var-list .sc-var-item > div,
+.sc-section-item .sc-var-list .sc-var-item > label,
+.sc-section-details .sc-var-list .sc-var-item > div,
+.sc-section-details .sc-var-list .sc-var-item > label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-var-name,
+.sc-var-dims,
+.sc-var-dtype,
+.sc-var-unit,
+.sc-preview,
+.sc-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.sc-var-name:hover,
+.sc-var-dims:hover,
+.sc-var-dtype:hover,
+.sc-var-unit:hover,
+.sc-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.sc-var-attrs {
+  display: block;
+}
+.sc-var-data {
+  display: none;
+}
+.sc-var-attrs,
+.sc-var-data {
+  background-color: #fff !important;
+  padding-bottom: 5px !important;
+}
+
+.sc-var-attrs-in:checked ~ .sc-var-attrs {
+  display: none;
+}
+.sc-var-data-in:checked ~ .sc-var-data {
+  display: block;
+}
+
+.sc-var-data > table {
+  float: right;
+}
+
+.sc-var-name span,
+.sc-var-data,
+.sc-attrs {
+  padding-left: 25px !important;
+}
+
+.sc-attrs,
+.sc-var-attrs,
+.sc-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.sc-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.sc-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.sc-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.sc-attrs dt:hover span {
+  display: inline-block;
+  background: #fff;
+  padding-right: 10px;
+}
+
+.sc-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.sc-icon-database,
+.sc-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+label.sc-hide-icon svg{
+  opacity: 0;
+}
+
+.sc-standalone-var-name{
+  grid-column: 1/3;
+}
+
+.sc-standalone-var-name span{
+  padding-left: 25px;
+  padding-right:10px;
+}
+</style><div class='sc-wrap'><div class='sc-header'><div class='sc-obj-type'>scipp.DataArrayView (8 Bytes)</div></div><ul class='sc-sections'><li class='sc-section-item'><input id='section-e964f4a6-e209-491b-8795-c901453e5db4' class='sc-section-summary-in' type='checkbox' disabled ><label for='section-e964f4a6-e209-491b-8795-c901453e5db4' class='sc-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='sc-section-inline-details'></div><div class='sc-section-details'></div></li><li class='sc-section-item'><input id='section-70ac74a6-447e-4cee-b03a-fb76c70f0af1' class='sc-section-summary-in' type='checkbox'  checked><label for='section-70ac74a6-447e-4cee-b03a-fb76c70f0af1' class='sc-section-summary' >Data: <span>(1)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span></span></div><div class='sc-var-dims'>()</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>kg</div><div class='sc-value-preview sc-preview'><span><div>1.0</div></span></div><input id='attrs-c70bbf48-7bfb-4ffa-afd3-4c78e5223def' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-c70bbf48-7bfb-4ffa-afd3-4c78e5223def' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3f3dc9ec-4eb3-4937-a854-4dbd7ab5b356' class='sc-var-data-in' type='checkbox'><label for='data-3f3dc9ec-4eb3-4937-a854-4dbd7ab5b356' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array(1.)</pre></li></ul></div></li></ul></div></div></div>
+</div>
+<p>Typing the scipp module name at the end of a cell yields an HTML view of all scipp objects (variables, data arrays, and datasets):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<details open="open"><summary>Variables:(3)</summary><details style="padding-left:2em"><summary>labels</summary><div><!-- Original source from -->
+<!-- https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/html/icons-svg-inline.html -->
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<title>Show/Hide data repr</title>
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<title>Show/Hide attributes</title>
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg><style>/* CSS stylesheet for displaying scipp objects in jupyterlab.
+* Original source from
+* https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/css/style.css
+*/
+
+.sc-wrap {
+  font-size: 14px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+/* The CSS styling for the inline attributes table */
+.sc-var-attrs .sc-wrap{
+  padding-left: 3em;
+}
+
+.sc-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px #ddd;
+}
+
+.sc-header > div,
+.sc-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-obj-type,
+.sc-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.sc-obj-type {
+  color: #555;
+}
+
+.sc-array-name {
+  color: #000;
+}
+
+.sc-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto auto 1fr 20px 20px;
+}
+
+.sc-section-item {
+  display: contents;
+}
+
+.sc-section-item input {
+  display: none;
+}
+
+.sc-section-item input + label {
+  color: #ccc;
+}
+
+.sc-section-item input:enabled + label {
+  cursor: pointer;
+  color: #555;
+}
+
+.sc-section-item input:enabled + label:hover {
+  color: #000;
+}
+
+.sc-section-summary {
+  grid-column: 1 ;
+  color: #555;
+  font-weight: 500;
+}
+
+.sc-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.sc-section-summary-in:disabled + label {
+  color: #555;
+}
+
+.sc-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.sc-section-summary-in:disabled + label:before {
+  color: #ccc;
+}
+
+.sc-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.sc-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.sc-section-summary,
+.sc-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sc-section-inline-details {
+  grid-column: 2 / 5;
+}
+
+.sc-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.sc-section-summary-in:checked ~ .sc-section-details {
+  display: contents;
+}
+
+.sc-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.sc-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.sc-preview {
+  color: #888;
+}
+
+.sc-array-preview,
+.sc-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.sc-array-data,
+.sc-array-in:checked ~ .sc-array-preview {
+  display: none;
+}
+
+.sc-array-in:checked ~ .sc-array-data,
+.sc-array-preview {
+  display: inline-block;
+}
+
+.sc-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.sc-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0!important;
+}
+
+.sc-dim-list:before {
+  content: '(';
+}
+
+.sc-dim-list:after {
+  content: ')';
+}
+
+.sc-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.sc-has-index {
+  font-weight: bold;
+}
+
+.sc-var-list,
+.sc-var-item {
+  display: contents;
+}
+
+.sc-var-item > div,
+.sc-var-item label,
+.sc-var-item > .sc-var-name span {
+  background-color: #fcfcfc;
+  margin-bottom: 0;
+}
+
+.sc-var-item > .sc-var-name:hover span {
+  padding-right: 5px;
+}
+
+.sc-var-list > li:nth-child(odd) > div,
+.sc-var-list > li:nth-child(odd) > label,
+.sc-var-list > li:nth-child(odd) > .sc-var-name span {
+  background-color: #efefef;
+}
+
+.sc-var-name {
+  grid-column: 1;
+}
+
+.sc-var-dims {
+  grid-column: 2;
+}
+
+.sc-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: #555;
+}
+.sc-var-unit{
+  grid-column: 4;
+  text-align: left;
+  color: #222;
+}
+.sc-value-preview {
+  grid-column: 5;
+}
+.sc-var-preview-variances{
+  text-align:right;
+}
+
+.sc-sections .sc-section-item .sc-section-summary,
+.sc-sections .sc-section-item .sc-section-inline-details,
+.sc-section-item .sc-var-list .sc-var-item > div,
+.sc-section-item .sc-var-list .sc-var-item > label,
+.sc-section-details .sc-var-list .sc-var-item > div,
+.sc-section-details .sc-var-list .sc-var-item > label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-var-name,
+.sc-var-dims,
+.sc-var-dtype,
+.sc-var-unit,
+.sc-preview,
+.sc-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.sc-var-name:hover,
+.sc-var-dims:hover,
+.sc-var-dtype:hover,
+.sc-var-unit:hover,
+.sc-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.sc-var-attrs {
+  display: block;
+}
+.sc-var-data {
+  display: none;
+}
+.sc-var-attrs,
+.sc-var-data {
+  background-color: #fff !important;
+  padding-bottom: 5px !important;
+}
+
+.sc-var-attrs-in:checked ~ .sc-var-attrs {
+  display: none;
+}
+.sc-var-data-in:checked ~ .sc-var-data {
+  display: block;
+}
+
+.sc-var-data > table {
+  float: right;
+}
+
+.sc-var-name span,
+.sc-var-data,
+.sc-attrs {
+  padding-left: 25px !important;
+}
+
+.sc-attrs,
+.sc-var-attrs,
+.sc-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.sc-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.sc-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.sc-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.sc-attrs dt:hover span {
+  display: inline-block;
+  background: #fff;
+  padding-right: 10px;
+}
+
+.sc-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.sc-icon-database,
+.sc-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+label.sc-hide-icon svg{
+  opacity: 0;
+}
+
+.sc-standalone-var-name{
+  grid-column: 1/3;
+}
+
+.sc-standalone-var-name span{
+  padding-left: 25px;
+  padding-right:10px;
+}
+</style><div class='sc-wrap'><div class='sc-header'><div class='sc-obj-type'>scipp.Variable (32 Bytes)</div></div><ul class='sc-sections'><li class='sc-section-item'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-standalone-var-name'><span>(y: 4)</span></div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, 0.0, 0.0</div></span></div><input id='attrs-708d2187-c610-4dcf-9110-054006553643' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-708d2187-c610-4dcf-9110-054006553643' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6002a0e3-f1b0-4ed0-aa4a-fc546b2e166f' class='sc-var-data-in' type='checkbox'><label for='data-6002a0e3-f1b0-4ed0-aa4a-fc546b2e166f' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0., 0., 0.])</pre></li></ul></li></ul></div></div></details><details style="padding-left:2em"><summary>x</summary><div><!-- Original source from -->
+<!-- https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/html/icons-svg-inline.html -->
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<title>Show/Hide data repr</title>
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<title>Show/Hide attributes</title>
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg><style>/* CSS stylesheet for displaying scipp objects in jupyterlab.
+* Original source from
+* https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/css/style.css
+*/
+
+.sc-wrap {
+  font-size: 14px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+/* The CSS styling for the inline attributes table */
+.sc-var-attrs .sc-wrap{
+  padding-left: 3em;
+}
+
+.sc-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px #ddd;
+}
+
+.sc-header > div,
+.sc-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-obj-type,
+.sc-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.sc-obj-type {
+  color: #555;
+}
+
+.sc-array-name {
+  color: #000;
+}
+
+.sc-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto auto 1fr 20px 20px;
+}
+
+.sc-section-item {
+  display: contents;
+}
+
+.sc-section-item input {
+  display: none;
+}
+
+.sc-section-item input + label {
+  color: #ccc;
+}
+
+.sc-section-item input:enabled + label {
+  cursor: pointer;
+  color: #555;
+}
+
+.sc-section-item input:enabled + label:hover {
+  color: #000;
+}
+
+.sc-section-summary {
+  grid-column: 1 ;
+  color: #555;
+  font-weight: 500;
+}
+
+.sc-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.sc-section-summary-in:disabled + label {
+  color: #555;
+}
+
+.sc-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.sc-section-summary-in:disabled + label:before {
+  color: #ccc;
+}
+
+.sc-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.sc-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.sc-section-summary,
+.sc-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sc-section-inline-details {
+  grid-column: 2 / 5;
+}
+
+.sc-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.sc-section-summary-in:checked ~ .sc-section-details {
+  display: contents;
+}
+
+.sc-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.sc-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.sc-preview {
+  color: #888;
+}
+
+.sc-array-preview,
+.sc-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.sc-array-data,
+.sc-array-in:checked ~ .sc-array-preview {
+  display: none;
+}
+
+.sc-array-in:checked ~ .sc-array-data,
+.sc-array-preview {
+  display: inline-block;
+}
+
+.sc-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.sc-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0!important;
+}
+
+.sc-dim-list:before {
+  content: '(';
+}
+
+.sc-dim-list:after {
+  content: ')';
+}
+
+.sc-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.sc-has-index {
+  font-weight: bold;
+}
+
+.sc-var-list,
+.sc-var-item {
+  display: contents;
+}
+
+.sc-var-item > div,
+.sc-var-item label,
+.sc-var-item > .sc-var-name span {
+  background-color: #fcfcfc;
+  margin-bottom: 0;
+}
+
+.sc-var-item > .sc-var-name:hover span {
+  padding-right: 5px;
+}
+
+.sc-var-list > li:nth-child(odd) > div,
+.sc-var-list > li:nth-child(odd) > label,
+.sc-var-list > li:nth-child(odd) > .sc-var-name span {
+  background-color: #efefef;
+}
+
+.sc-var-name {
+  grid-column: 1;
+}
+
+.sc-var-dims {
+  grid-column: 2;
+}
+
+.sc-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: #555;
+}
+.sc-var-unit{
+  grid-column: 4;
+  text-align: left;
+  color: #222;
+}
+.sc-value-preview {
+  grid-column: 5;
+}
+.sc-var-preview-variances{
+  text-align:right;
+}
+
+.sc-sections .sc-section-item .sc-section-summary,
+.sc-sections .sc-section-item .sc-section-inline-details,
+.sc-section-item .sc-var-list .sc-var-item > div,
+.sc-section-item .sc-var-list .sc-var-item > label,
+.sc-section-details .sc-var-list .sc-var-item > div,
+.sc-section-details .sc-var-list .sc-var-item > label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-var-name,
+.sc-var-dims,
+.sc-var-dtype,
+.sc-var-unit,
+.sc-preview,
+.sc-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.sc-var-name:hover,
+.sc-var-dims:hover,
+.sc-var-dtype:hover,
+.sc-var-unit:hover,
+.sc-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.sc-var-attrs {
+  display: block;
+}
+.sc-var-data {
+  display: none;
+}
+.sc-var-attrs,
+.sc-var-data {
+  background-color: #fff !important;
+  padding-bottom: 5px !important;
+}
+
+.sc-var-attrs-in:checked ~ .sc-var-attrs {
+  display: none;
+}
+.sc-var-data-in:checked ~ .sc-var-data {
+  display: block;
+}
+
+.sc-var-data > table {
+  float: right;
+}
+
+.sc-var-name span,
+.sc-var-data,
+.sc-attrs {
+  padding-left: 25px !important;
+}
+
+.sc-attrs,
+.sc-var-attrs,
+.sc-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.sc-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.sc-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.sc-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.sc-attrs dt:hover span {
+  display: inline-block;
+  background: #fff;
+  padding-right: 10px;
+}
+
+.sc-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.sc-icon-database,
+.sc-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+label.sc-hide-icon svg{
+  opacity: 0;
+}
+
+.sc-standalone-var-name{
+  grid-column: 1/3;
+}
+
+.sc-standalone-var-name span{
+  padding-left: 25px;
+  padding-right:10px;
+}
+</style><div class='sc-wrap'><div class='sc-header'><div class='sc-obj-type'>scipp.Variable (16 Bytes)</div></div><ul class='sc-sections'><li class='sc-section-item'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-standalone-var-name'><span>(x: 2)</span></div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-30432736-b122-48df-8065-b1e81c2f882c' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-30432736-b122-48df-8065-b1e81c2f882c' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-86d92481-ca8f-464c-9a31-b604c76b18bb' class='sc-var-data-in' type='checkbox'><label for='data-86d92481-ca8f-464c-9a31-b604c76b18bb' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></li></ul></li></ul></div></div></details><details style="padding-left:2em"><summary>y</summary><div><!-- Original source from -->
+<!-- https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/html/icons-svg-inline.html -->
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<title>Show/Hide data repr</title>
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<title>Show/Hide attributes</title>
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg><style>/* CSS stylesheet for displaying scipp objects in jupyterlab.
+* Original source from
+* https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/css/style.css
+*/
+
+.sc-wrap {
+  font-size: 14px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+/* The CSS styling for the inline attributes table */
+.sc-var-attrs .sc-wrap{
+  padding-left: 3em;
+}
+
+.sc-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px #ddd;
+}
+
+.sc-header > div,
+.sc-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-obj-type,
+.sc-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.sc-obj-type {
+  color: #555;
+}
+
+.sc-array-name {
+  color: #000;
+}
+
+.sc-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto auto 1fr 20px 20px;
+}
+
+.sc-section-item {
+  display: contents;
+}
+
+.sc-section-item input {
+  display: none;
+}
+
+.sc-section-item input + label {
+  color: #ccc;
+}
+
+.sc-section-item input:enabled + label {
+  cursor: pointer;
+  color: #555;
+}
+
+.sc-section-item input:enabled + label:hover {
+  color: #000;
+}
+
+.sc-section-summary {
+  grid-column: 1 ;
+  color: #555;
+  font-weight: 500;
+}
+
+.sc-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.sc-section-summary-in:disabled + label {
+  color: #555;
+}
+
+.sc-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.sc-section-summary-in:disabled + label:before {
+  color: #ccc;
+}
+
+.sc-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.sc-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.sc-section-summary,
+.sc-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sc-section-inline-details {
+  grid-column: 2 / 5;
+}
+
+.sc-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.sc-section-summary-in:checked ~ .sc-section-details {
+  display: contents;
+}
+
+.sc-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.sc-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.sc-preview {
+  color: #888;
+}
+
+.sc-array-preview,
+.sc-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.sc-array-data,
+.sc-array-in:checked ~ .sc-array-preview {
+  display: none;
+}
+
+.sc-array-in:checked ~ .sc-array-data,
+.sc-array-preview {
+  display: inline-block;
+}
+
+.sc-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.sc-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0!important;
+}
+
+.sc-dim-list:before {
+  content: '(';
+}
+
+.sc-dim-list:after {
+  content: ')';
+}
+
+.sc-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.sc-has-index {
+  font-weight: bold;
+}
+
+.sc-var-list,
+.sc-var-item {
+  display: contents;
+}
+
+.sc-var-item > div,
+.sc-var-item label,
+.sc-var-item > .sc-var-name span {
+  background-color: #fcfcfc;
+  margin-bottom: 0;
+}
+
+.sc-var-item > .sc-var-name:hover span {
+  padding-right: 5px;
+}
+
+.sc-var-list > li:nth-child(odd) > div,
+.sc-var-list > li:nth-child(odd) > label,
+.sc-var-list > li:nth-child(odd) > .sc-var-name span {
+  background-color: #efefef;
+}
+
+.sc-var-name {
+  grid-column: 1;
+}
+
+.sc-var-dims {
+  grid-column: 2;
+}
+
+.sc-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: #555;
+}
+.sc-var-unit{
+  grid-column: 4;
+  text-align: left;
+  color: #222;
+}
+.sc-value-preview {
+  grid-column: 5;
+}
+.sc-var-preview-variances{
+  text-align:right;
+}
+
+.sc-sections .sc-section-item .sc-section-summary,
+.sc-sections .sc-section-item .sc-section-inline-details,
+.sc-section-item .sc-var-list .sc-var-item > div,
+.sc-section-item .sc-var-list .sc-var-item > label,
+.sc-section-details .sc-var-list .sc-var-item > div,
+.sc-section-details .sc-var-list .sc-var-item > label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-var-name,
+.sc-var-dims,
+.sc-var-dtype,
+.sc-var-unit,
+.sc-preview,
+.sc-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.sc-var-name:hover,
+.sc-var-dims:hover,
+.sc-var-dtype:hover,
+.sc-var-unit:hover,
+.sc-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.sc-var-attrs {
+  display: block;
+}
+.sc-var-data {
+  display: none;
+}
+.sc-var-attrs,
+.sc-var-data {
+  background-color: #fff !important;
+  padding-bottom: 5px !important;
+}
+
+.sc-var-attrs-in:checked ~ .sc-var-attrs {
+  display: none;
+}
+.sc-var-data-in:checked ~ .sc-var-data {
+  display: block;
+}
+
+.sc-var-data > table {
+  float: right;
+}
+
+.sc-var-name span,
+.sc-var-data,
+.sc-attrs {
+  padding-left: 25px !important;
+}
+
+.sc-attrs,
+.sc-var-attrs,
+.sc-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.sc-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.sc-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.sc-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.sc-attrs dt:hover span {
+  display: inline-block;
+  background: #fff;
+  padding-right: 10px;
+}
+
+.sc-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.sc-icon-database,
+.sc-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+label.sc-hide-icon svg{
+  opacity: 0;
+}
+
+.sc-standalone-var-name{
+  grid-column: 1/3;
+}
+
+.sc-standalone-var-name span{
+  padding-left: 25px;
+  padding-right:10px;
+}
+</style><div class='sc-wrap'><div class='sc-header'><div class='sc-obj-type'>scipp.Variable (32 Bytes)</div></div><ul class='sc-sections'><li class='sc-section-item'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-standalone-var-name'><span>(y: 4)</span></div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>m</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, 0.0, 0.0</div></span></div><input id='attrs-b0481acf-f4d4-429f-8766-d2ef5f3d67d5' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-b0481acf-f4d4-429f-8766-d2ef5f3d67d5' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e77d9b08-b449-4812-9926-ad50f9c9f6f0' class='sc-var-data-in' type='checkbox'><label for='data-e77d9b08-b449-4812-9926-ad50f9c9f6f0' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0., 0., 0.])</pre></li></ul></li></ul></div></div></details></details><details open="open"><summary>DataArrays:(0)</summary></details><details open="open"><summary>Datasets:(1)</summary><details style="padding-left:2em"><summary>d</summary><div><!-- Original source from -->
+<!-- https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/html/icons-svg-inline.html -->
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<title>Show/Hide data repr</title>
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<title>Show/Hide attributes</title>
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg><style>/* CSS stylesheet for displaying scipp objects in jupyterlab.
+* Original source from
+* https://github.com/jsignell/xarray/blob/1d960933ab252e0f79f7e050e6c9261d55568057/xarray/static/css/style.css
+*/
+
+.sc-wrap {
+  font-size: 14px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+/* The CSS styling for the inline attributes table */
+.sc-var-attrs .sc-wrap{
+  padding-left: 3em;
+}
+
+.sc-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px #ddd;
+}
+
+.sc-header > div,
+.sc-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-obj-type,
+.sc-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.sc-obj-type {
+  color: #555;
+}
+
+.sc-array-name {
+  color: #000;
+}
+
+.sc-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto auto 1fr 20px 20px;
+}
+
+.sc-section-item {
+  display: contents;
+}
+
+.sc-section-item input {
+  display: none;
+}
+
+.sc-section-item input + label {
+  color: #ccc;
+}
+
+.sc-section-item input:enabled + label {
+  cursor: pointer;
+  color: #555;
+}
+
+.sc-section-item input:enabled + label:hover {
+  color: #000;
+}
+
+.sc-section-summary {
+  grid-column: 1 ;
+  color: #555;
+  font-weight: 500;
+}
+
+.sc-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.sc-section-summary-in:disabled + label {
+  color: #555;
+}
+
+.sc-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.sc-section-summary-in:disabled + label:before {
+  color: #ccc;
+}
+
+.sc-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.sc-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.sc-section-summary,
+.sc-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sc-section-inline-details {
+  grid-column: 2 / 5;
+}
+
+.sc-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.sc-section-summary-in:checked ~ .sc-section-details {
+  display: contents;
+}
+
+.sc-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.sc-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.sc-preview {
+  color: #888;
+}
+
+.sc-array-preview,
+.sc-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.sc-array-data,
+.sc-array-in:checked ~ .sc-array-preview {
+  display: none;
+}
+
+.sc-array-in:checked ~ .sc-array-data,
+.sc-array-preview {
+  display: inline-block;
+}
+
+.sc-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.sc-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0!important;
+}
+
+.sc-dim-list:before {
+  content: '(';
+}
+
+.sc-dim-list:after {
+  content: ')';
+}
+
+.sc-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.sc-has-index {
+  font-weight: bold;
+}
+
+.sc-var-list,
+.sc-var-item {
+  display: contents;
+}
+
+.sc-var-item > div,
+.sc-var-item label,
+.sc-var-item > .sc-var-name span {
+  background-color: #fcfcfc;
+  margin-bottom: 0;
+}
+
+.sc-var-item > .sc-var-name:hover span {
+  padding-right: 5px;
+}
+
+.sc-var-list > li:nth-child(odd) > div,
+.sc-var-list > li:nth-child(odd) > label,
+.sc-var-list > li:nth-child(odd) > .sc-var-name span {
+  background-color: #efefef;
+}
+
+.sc-var-name {
+  grid-column: 1;
+}
+
+.sc-var-dims {
+  grid-column: 2;
+}
+
+.sc-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: #555;
+}
+.sc-var-unit{
+  grid-column: 4;
+  text-align: left;
+  color: #222;
+}
+.sc-value-preview {
+  grid-column: 5;
+}
+.sc-var-preview-variances{
+  text-align:right;
+}
+
+.sc-sections .sc-section-item .sc-section-summary,
+.sc-sections .sc-section-item .sc-section-inline-details,
+.sc-section-item .sc-var-list .sc-var-item > div,
+.sc-section-item .sc-var-list .sc-var-item > label,
+.sc-section-details .sc-var-list .sc-var-item > div,
+.sc-section-details .sc-var-list .sc-var-item > label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sc-var-name,
+.sc-var-dims,
+.sc-var-dtype,
+.sc-var-unit,
+.sc-preview,
+.sc-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.sc-var-name:hover,
+.sc-var-dims:hover,
+.sc-var-dtype:hover,
+.sc-var-unit:hover,
+.sc-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.sc-var-attrs {
+  display: block;
+}
+.sc-var-data {
+  display: none;
+}
+.sc-var-attrs,
+.sc-var-data {
+  background-color: #fff !important;
+  padding-bottom: 5px !important;
+}
+
+.sc-var-attrs-in:checked ~ .sc-var-attrs {
+  display: none;
+}
+.sc-var-data-in:checked ~ .sc-var-data {
+  display: block;
+}
+
+.sc-var-data > table {
+  float: right;
+}
+
+.sc-var-name span,
+.sc-var-data,
+.sc-attrs {
+  padding-left: 25px !important;
+}
+
+.sc-attrs,
+.sc-var-attrs,
+.sc-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.sc-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.sc-attrs dt, dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.sc-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.sc-attrs dt:hover span {
+  display: inline-block;
+  background: #fff;
+  padding-right: 10px;
+}
+
+.sc-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.sc-icon-database,
+.sc-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+label.sc-hide-icon svg{
+  opacity: 0;
+}
+
+.sc-standalone-var-name{
+  grid-column: 1/3;
+}
+
+.sc-standalone-var-name span{
+  padding-left: 25px;
+  padding-right:10px;
+}
+</style><div class='sc-wrap'><div class='sc-header'><div class='sc-obj-type'>scipp.Dataset (320 Bytes)</div></div><ul class='sc-sections'><li class='sc-section-item'><input id='section-ad2249dc-96ec-4038-a0bf-f0bd37c38275' class='sc-section-summary-in' type='checkbox' disabled ><label for='section-ad2249dc-96ec-4038-a0bf-f0bd37c38275' class='sc-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='sc-section-inline-details'><ul class='sc-dim-list'><li><span class='sc-has-index'>x</span>: 2</li><li><span class='sc-has-index'>y</span>: 3</li></ul></div><div class='sc-section-details'></div></li><li class='sc-section-item'><input id='section-fc0968f5-fd64-436d-8fe9-5eb0b379c0d5' class='sc-section-summary-in' type='checkbox'  checked><label for='section-fc0968f5-fd64-436d-8fe9-5eb0b379c0d5' class='sc-section-summary' >Coordinates: <span>(3)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span class='sc-has-index'>x</span></div><div class='sc-var-dims'>(x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-324cb2d9-f3da-41e7-8fc7-9f0a68af5fb5' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-324cb2d9-f3da-41e7-8fc7-9f0a68af5fb5' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-14fa9183-3397-4c54-9dbc-bd6853a75562' class='sc-var-data-in' type='checkbox'><label for='data-14fa9183-3397-4c54-9dbc-bd6853a75562' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></span></li><li class='sc-var-item'><div class='sc-var-name'><span class='sc-has-index'>y</span></div><div class='sc-var-dims'>(y [bin-edge])</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>m</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, 0.0, 0.0</div></span></div><input id='attrs-b8018b4f-b2a5-4274-9ea6-43ae49674967' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-b8018b4f-b2a5-4274-9ea6-43ae49674967' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d81beb65-b5e1-4d79-8056-d71ea050e8ac' class='sc-var-data-in' type='checkbox'><label for='data-d81beb65-b5e1-4d79-8056-d71ea050e8ac' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0., 0., 0.])</pre></span></li><li class='sc-var-item'><div class='sc-var-name'><span>y_label</span></div><div class='sc-var-dims'>(y [bin-edge])</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, 0.0, 0.0</div></span></div><input id='attrs-59f391af-598a-45c4-9a9a-8a64918c2282' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-59f391af-598a-45c4-9a9a-8a64918c2282' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7344bd92-fe92-4c61-a6b1-67a2d83e3dbc' class='sc-var-data-in' type='checkbox'><label for='data-7344bd92-fe92-4c61-a6b1-67a2d83e3dbc' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0., 0., 0.])</pre></span></li></ul></div></li><li class='sc-section-item'><input id='section-a24599cf-fa32-4282-bccf-6125e0cf6734' class='sc-section-summary-in' type='checkbox'  checked><label for='section-a24599cf-fa32-4282-bccf-6125e0cf6734' class='sc-section-summary' >Data: <span>(3)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span>a</span></div><div class='sc-var-dims'>(y, x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>Å</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, ..., 0.0, 0.0</div></span><span><div>σ² = 0.0, 0.0, ..., 0.0, 0.0</div></span></div><input id='attrs-62b3c392-ee94-481a-adce-ce0c80bd9a46' class='sc-var-attrs-in' type='checkbox' ><label for='attrs-62b3c392-ee94-481a-adce-ce0c80bd9a46' class='' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6d073a2b-9bc1-4289-b9f2-4bb39f895346' class='sc-var-data-in' type='checkbox'><label for='data-6d073a2b-9bc1-4289-b9f2-4bb39f895346' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='sc-var-attrs'><div class='sc-wrap'><ul class='sc-sections'><li class='sc-section-item sc-subsection'><input id='section-5337404a-0172-4cf8-bfc9-14003244f09b' class='sc-section-summary-in' type='checkbox'  checked><label for='section-5337404a-0172-4cf8-bfc9-14003244f09b' class='sc-section-summary' >Attributes: <span>(1)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span>x_attr</span></div><div class='sc-var-dims'>(x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-1cdeccea-04c5-4ec5-b4a5-d3d77e66b72d' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-1cdeccea-04c5-4ec5-b4a5-d3d77e66b72d' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ac4eebfc-4795-45dc-8f08-c3c36993fb80' class='sc-var-data-in' type='checkbox'><label for='data-ac4eebfc-4795-45dc-8f08-c3c36993fb80' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></li></ul></div></li></ul></div></div><pre class='sc-var-data'>Values:<br>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])<br><br>Variances:<br>                       <div>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])</div></pre></li><li class='sc-var-item'><div class='sc-var-name'><span>b</span></div><div class='sc-var-dims'>(y, x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>Å</div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0, ..., 0.0, 0.0</div></span><span><div>σ² = 0.0, 0.0, ..., 0.0, 0.0</div></span></div><input id='attrs-48e4aaa0-bd38-44e3-aebe-7eb5d75478b5' class='sc-var-attrs-in' type='checkbox' ><label for='attrs-48e4aaa0-bd38-44e3-aebe-7eb5d75478b5' class='' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2ff1fe10-83b4-4fd2-bb2a-98540b3fabd9' class='sc-var-data-in' type='checkbox'><label for='data-2ff1fe10-83b4-4fd2-bb2a-98540b3fabd9' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='sc-var-attrs'><div class='sc-wrap'><ul class='sc-sections'><li class='sc-section-item sc-subsection'><input id='section-b4f2bd20-b87d-4517-8657-05ea1fc35912' class='sc-section-summary-in' type='checkbox'  checked><label for='section-b4f2bd20-b87d-4517-8657-05ea1fc35912' class='sc-section-summary' >Attributes: <span>(2)</span></label><div class='sc-section-inline-details'></div><div class='sc-section-details'><ul class='sc-var-list'><li class='sc-var-item'><div class='sc-var-name'><span>b_attr</span></div><div class='sc-var-dims'>()</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>m</div><div class='sc-value-preview sc-preview'><span><div>1.2</div></span></div><input id='attrs-a553902b-9a9f-40a8-addf-2519b8912927' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-a553902b-9a9f-40a8-addf-2519b8912927' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2d03906e-c283-48b8-9c4d-5e9131bb23bc' class='sc-var-data-in' type='checkbox'><label for='data-2d03906e-c283-48b8-9c4d-5e9131bb23bc' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array(1.2)</pre></li><li class='sc-var-item'><div class='sc-var-name'><span>x_attr</span></div><div class='sc-var-dims'>(x)</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'></div><div class='sc-value-preview sc-preview'><span><div>0.0, 0.0</div></span></div><input id='attrs-7cb700a8-ecf2-49ce-af00-f2d10377fa17' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-7cb700a8-ecf2-49ce-af00-f2d10377fa17' class='sc-hide-icon' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aaa892d2-7d37-4f69-b858-764617c57fc0' class='sc-var-data-in' type='checkbox'><label for='data-aaa892d2-7d37-4f69-b858-764617c57fc0' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array([0., 0.])</pre></li></ul></div></li></ul></div></div><pre class='sc-var-data'>Values:<br>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])<br><br>Variances:<br>                       <div>array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])</div></pre></li><li class='sc-var-item'><div class='sc-var-name'><span>c</span></div><div class='sc-var-dims'>()</div><div class='sc-var-dtype'>float64</div><div class='sc-var-unit'>kg</div><div class='sc-value-preview sc-preview'><span><div>1.0</div></span></div><input id='attrs-13cf3404-7fe3-43da-a3fa-b76bbe21a727' class='sc-var-attrs-in' type='checkbox' disabled><label for='attrs-13cf3404-7fe3-43da-a3fa-b76bbe21a727' class='' title='Show/Hide attributes'><svg class='icon sc-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8a8dd34f-7dfa-4922-a460-be7d9d0e93ec' class='sc-var-data-in' type='checkbox'><label for='data-8a8dd34f-7dfa-4922-a460-be7d9d0e93ec' title='Show/Hide data repr'><svg class='icon sc-icon-database'><use xlink:href='#icon-database'></use></svg></label><pre class='sc-var-data'>Values:<br>array(1.)</pre></li></ul></div></li></ul></div></div></details></details></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;module &#39;scipp&#39; from &#39;/usr/share/miniconda/envs/scipp-developer/lib/python3.7/scipp/__init__.py&#39;&gt;
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="SVG-representation">
+<h2>SVG representation<a class="headerlink" href="#SVG-representation" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">scipp.show</span></code> works similar to <code class="docutils literal notranslate"><span class="pre">scipp.to_html</span></code>. It should be noted that if a dimension extent is large, <code class="docutils literal notranslate"><span class="pre">show</span></code> will truncate it to avoid generation of massive and unreadable SVGs. Objects with more than three dimensions are not supported and will result in an error message.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<svg width=40em viewBox="-2.3 0 24 14.4"><g transform="translate(0,0)"><g><text x="0" y="0.6"                     style="font-size:0.6px">                     b</text><title>dims=[&#x27;y&#x27;, &#x27;x&#x27;], shape=[3, 2], unit=Å, variances=True</title><g><title>variances</title><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.1" y="2.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.1 2.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.1 2.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.1" y="2.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.1 2.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.1 2.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="3.1" y="2.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.1 2.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.1 2.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.1" y="1.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.1 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.1 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.1" y="1.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.1 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.1 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="3.1" y="1.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.1 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.1 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /></g><text x="2.0" y="4.260000000000001" text-anchor="middle"                          fill="dim-color"                          style="font-size:0.36px">y</text><text x="0.392" y="2.9000000000000004" text-anchor="middle"                     fill="dim-color" style="font-size:0.36px"                     transform="rotate(-90, 0.392, 2.9000000000000004)">                        x</text><g><title>values</title><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="2.9"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 2.9 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 2.9 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.5" y="2.9"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 2.9 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 2.9 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.5" y="2.9"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 2.9 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 2.9 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="1.9"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 1.9 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 1.9 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.5" y="1.9"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 1.9 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 1.9 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.5" y="1.9"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 1.9 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 1.9 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /></g><text x="2.0" y="4.260000000000001" text-anchor="middle"                          fill="dim-color"                          style="font-size:0.36px">y</text><text x="0.392" y="2.9000000000000004" text-anchor="middle"                     fill="dim-color" style="font-size:0.36px"                     transform="rotate(-90, 0.392, 2.9000000000000004)">                        x</text></g><g><text x="0" y="5.0"                     style="font-size:0.6px">                     a</text><title>dims=[&#x27;y&#x27;, &#x27;x&#x27;], shape=[3, 2], unit=Å, variances=True</title><g><title>variances</title><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.1" y="6.7"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.1 6.7 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.1 6.7 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.1" y="6.7"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.1 6.7 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.1 6.7 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="3.1" y="6.7"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.1 6.7 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.1 6.7 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.1" y="5.7"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.1 5.7 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.1 5.7 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.1" y="5.7"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.1 5.7 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.1 5.7 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="3.1" y="5.7"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.1 5.7 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.1 5.7 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /></g><text x="2.0" y="8.66" text-anchor="middle"                          fill="dim-color"                          style="font-size:0.36px">y</text><text x="0.392" y="7.300000000000001" text-anchor="middle"                     fill="dim-color" style="font-size:0.36px"                     transform="rotate(-90, 0.392, 7.300000000000001)">                        x</text><g><title>values</title><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="7.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 7.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 7.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.5" y="7.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 7.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 7.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.5" y="7.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 7.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 7.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="6.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 6.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 6.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.5" y="6.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 6.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 6.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.5" y="6.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 6.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 6.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /></g><text x="2.0" y="8.66" text-anchor="middle"                          fill="dim-color"                          style="font-size:0.36px">y</text><text x="0.392" y="7.300000000000001" text-anchor="middle"                     fill="dim-color" style="font-size:0.36px"                     transform="rotate(-90, 0.392, 7.300000000000001)">                        x</text></g></g><g transform="translate(5.3,8.8)"></g><g transform="translate(-2.3,5.000000000000001)"><g><text x="0" y="0.6"                     style="font-size:0.6px">                     x</text><title>dims=[&#x27;x&#x27;], shape=[2], unit=dimensionless, variances=False</title><g><title>values</title><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="2.3"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 2.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 2.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="1.3"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /></g><text x="0.392" y="2.3" text-anchor="middle"                     fill="dim-color" style="font-size:0.36px"                     transform="rotate(-90, 0.392, 2.3)">                        x</text></g></g><g transform="translate(-2.3,8.8)"><g><text x="0" y="0.6"                     style="font-size:0.6px">                     c</text><title>dims=[], shape=[], unit=kg, variances=False</title><g><title>values</title><rect style="fill:#ffe680;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="1.3"/> <path style="fill:#ffd633;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#cdac29;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /></g></g></g><g transform="translate(0,8.8)"><g><text x="0" y="0.6"                     style="font-size:0.6px">                     y</text><title>dims=[&#x27;y&#x27;], shape=[4], unit=m, variances=False</title><g><title>values</title><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="1.3"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.5" y="1.3"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.5" y="1.3"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="3.5" y="1.3"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.5 1.3 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.5 1.3 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /></g><text x="2.5" y="2.6599999999999997" text-anchor="middle"                          fill="dim-color"                          style="font-size:0.36px">y</text></g><g><text x="0" y="3.4"                     style="font-size:0.6px">                     y_label</text><title>dims=[&#x27;y&#x27;], shape=[4], unit=dimensionless, variances=False</title><g><title>values</title><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="0.5" y="4.1"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 4.1 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 0.5 4.1 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="1.5" y="4.1"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 4.1 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 1.5 4.1 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="2.5" y="4.1"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 4.1 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 2.5 4.1 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /><rect style="fill:#dde9af;fill-opacity:1;stroke:#000;stroke-width:0.05" id="rect" width="1" height="1" x="3.5" y="4.1"/> <path style="fill:#cee969;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.5 4.1 l 0.3 -0.3 h 1 l -0.3 0.3 z" id="path1" /> <path style="fill:#a2b752;stroke:#000;stroke-width:0.05;stroke-linejoin:round" d="m 3.5 4.1 m 1 0 l 0.3 -0.3 v 1 l -0.3 0.3 z" id="path2" /></g><text x="2.5" y="5.46" text-anchor="middle"                          fill="dim-color"                          style="font-size:0.36px">y</text></g></g></svg></div>
+</div>
+</div>
+<div class="section" id="Table-representation">
+<h2>Table representation<a class="headerlink" href="#Table-representation" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">scipp.table</span></code> works similar to <code class="docutils literal notranslate"><span class="pre">scipp.to_html</span></code> and <code class="docutils literal notranslate"><span class="pre">scipp.show</span></code>. Objects with more than one dimension per variable are not supported and are omitted in the output:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ebd3db4bc1c9484d947637ef18163b27"}</script></div>
+</div>
+<p>In such cases slicing can be used to produce tables from higher-dimensional entries:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "43c158eba5514b468ae1de9b2b85cbe8"}</script></div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"1d9e1f517d2642839483336e873a2e33": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "08ddedd098954ffeaace808cd05078c3": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "8e711be385954934aa4597c0fcc63042": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1d9e1f517d2642839483336e873a2e33", "placeholder": "\u200b", "style": "IPY_MODEL_08ddedd098954ffeaace808cd05078c3", "value": "<span style='font-weight:bold;font-size:1.5em;'>Dataset</span>"}}, "c7ef1ff81d1d4a6685cbacdc86d16ad9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7cc349850a2a49bd9c13579495873bd8": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "05334ab5d84c4147a8cd99c70253ae36": {"model_name": "LabelModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "LabelModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "LabelView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c7ef1ff81d1d4a6685cbacdc86d16ad9", "placeholder": "\u200b", "style": "IPY_MODEL_7cc349850a2a49bd9c13579495873bd8", "value": "rows"}}, "583a67296dfc4d18944553bbd5c165f9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f2ca0803c970459aa7c8bb811598f68a": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "fa38de1fcc8d4956a89ac010675f47d2": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_583a67296dfc4d18944553bbd5c165f9", "placeholder": "\u200b", "style": "IPY_MODEL_f2ca0803c970459aa7c8bb811598f68a", "value": "<table style='border-collapse: collapse;'><tr><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right; background-color: #ffe680;text-align: center;' colspan='1'>Data</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='1'>c [kg]</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Value</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>1.0</td></tr></table>"}}, "9644cc9d23a14f0290606f1b7f69d929": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0cfb31fac79a474e82124ea517f76d8d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "11fe3fddcbfb4a5f84cba9afda986b73": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9644cc9d23a14f0290606f1b7f69d929", "placeholder": "\u200b", "style": "IPY_MODEL_0cfb31fac79a474e82124ea517f76d8d", "value": "<span style='font-weight:normal;color:grey;font-style:italic;background-color:#ffffff;text-align:left;font-size:1.2em;padding: 1px;'>0D Variables</span>"}}, "4d1491bd1b924d6b8433518ad2761f8d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4572f803e21540de91b74bb03ffbf188": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_11fe3fddcbfb4a5f84cba9afda986b73", "IPY_MODEL_fa38de1fcc8d4956a89ac010675f47d2"], "layout": "IPY_MODEL_4d1491bd1b924d6b8433518ad2761f8d"}}, "71305dd9eeae4236bb232e049d507a14": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e095f71558f04b7da3addddda8117bf8": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "75e307de71794ac5b45a7334b018506a": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_71305dd9eeae4236bb232e049d507a14", "placeholder": "\u200b", "style": "IPY_MODEL_e095f71558f04b7da3addddda8117bf8", "value": "<table style='border-collapse: collapse;'><tr><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right; background-color: #dde9af;text-align: center;' colspan='1'>Coords</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='1'>x [dimensionless]</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Values</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"></tr></table>"}}, "97770560062944eebe111bbd1000f882": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6a565b5300df44d79f3e4248dee27c1e": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "0cba7d0562ea44ac8a9d07c9987fb701": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_97770560062944eebe111bbd1000f882", "placeholder": "\u200b", "style": "IPY_MODEL_6a565b5300df44d79f3e4248dee27c1e", "value": "<table style='border-collapse: collapse;'><tr><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right; background-color: #dde9af;text-align: center;' colspan='2'>Coords</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='1'>y [m]</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='1'>y_label [dimensionless]</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Values</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Values</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"></tr></table>"}}, "58b743b9920d4cfdb7aaf8607eba3744": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "27e8e46f00e04cd0927ce273d117c5e9": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "ed9dbfd572124cce9cb53070aa5de9b7": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_58b743b9920d4cfdb7aaf8607eba3744", "placeholder": "\u200b", "style": "IPY_MODEL_27e8e46f00e04cd0927ce273d117c5e9", "value": "<span style='font-weight:normal;color:grey;font-style:italic;background-color:#ffffff;text-align:left;font-size:1.2em;padding: 1px;'>1D Variables</span>"}}, "3b31bb10908d4b9e9e112f4800d845a0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "initial"}}, "36750e94db414d029aefad7786c1fcf8": {"model_name": "TabModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "TabModel", "_titles": {"0": "x", "1": "y"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "TabView", "box_style": "", "children": ["IPY_MODEL_75e307de71794ac5b45a7334b018506a", "IPY_MODEL_0cba7d0562ea44ac8a9d07c9987fb701"], "layout": "IPY_MODEL_3b31bb10908d4b9e9e112f4800d845a0", "selected_index": 0}}, "d2eb61d5b3aa4bd8ba9676816622783b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3c713315ca954afc80fcfa29041b654b": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_ed9dbfd572124cce9cb53070aa5de9b7", "IPY_MODEL_36750e94db414d029aefad7786c1fcf8"], "layout": "IPY_MODEL_d2eb61d5b3aa4bd8ba9676816622783b"}}, "a30f6958a9aa4bf6b493900a6be60502": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": "solid 1px", "bottom": null, "display": "flex", "flex": null, "flex_flow": "column", "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "auto"}}, "ebd3db4bc1c9484d947637ef18163b27": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_8e711be385954934aa4597c0fcc63042", "IPY_MODEL_4572f803e21540de91b74bb03ffbf188", "IPY_MODEL_3c713315ca954afc80fcfa29041b654b"], "layout": "IPY_MODEL_a30f6958a9aa4bf6b493900a6be60502"}}, "a6f892cab1a241218d3974ef033c2fce": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0798ff73e85445a5be7cced49ac94fee": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "96d49d6aff674607a0636b0784381761": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a6f892cab1a241218d3974ef033c2fce", "placeholder": "\u200b", "style": "IPY_MODEL_0798ff73e85445a5be7cced49ac94fee", "value": "<span style='font-weight:bold;font-size:1.5em;'>DataArrayView</span>"}}, "c536911db2874f63b3044a3eae2201b9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3f2742a308c64bef9fa0dbea617f0637": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "287082f8f4164092b1194e4fa06215d0": {"model_name": "LabelModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "LabelModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "LabelView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_c536911db2874f63b3044a3eae2201b9", "placeholder": "\u200b", "style": "IPY_MODEL_3f2742a308c64bef9fa0dbea617f0637", "value": "rows"}}, "71de926d700c4a9e904b04c29eabb75e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9a344ff1161a48ca95a2b0e6696fec4d": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "f6cbb7236bd94c4faf17869c2c795643": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_71de926d700c4a9e904b04c29eabb75e", "placeholder": "\u200b", "style": "IPY_MODEL_9a344ff1161a48ca95a2b0e6696fec4d", "value": "<table style='border-collapse: collapse;'><tr><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right; background-color: #ff8080;text-align: center;' colspan='2'>Attrs</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='1'>x_attr [dimensionless]</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='1'>x [dimensionless]</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Value</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Value</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr></table>"}}, "a7d6f412b7e745208cf830aedb665ab6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "95f8f80c7a16457ab7e1db0a70caee81": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "1a8bacbc5fc048a084197e8828f27df2": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a7d6f412b7e745208cf830aedb665ab6", "placeholder": "\u200b", "style": "IPY_MODEL_95f8f80c7a16457ab7e1db0a70caee81", "value": "<span style='font-weight:normal;color:grey;font-style:italic;background-color:#ffffff;text-align:left;font-size:1.2em;padding: 1px;'>0D Variables</span>"}}, "4db697025945460ea0d406140e09251c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8318fb9d46ba4270bbd23dbe921e1499": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_1a8bacbc5fc048a084197e8828f27df2", "IPY_MODEL_f6cbb7236bd94c4faf17869c2c795643"], "layout": "IPY_MODEL_4db697025945460ea0d406140e09251c"}}, "1d33d9f23f0f40b5be0a6029f7ab808e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fb686decaa0e44f493b0bc18827028ef": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "fc66d5d819e2417394c1480d76d49ee4": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1d33d9f23f0f40b5be0a6029f7ab808e", "placeholder": "\u200b", "style": "IPY_MODEL_fb686decaa0e44f493b0bc18827028ef", "value": "<table style='border-collapse: collapse;'><tr><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right; background-color: #dde9af;text-align: center;' colspan='2'>Coords</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right; background-color: #ffe680;text-align: center;' colspan='2'>Data</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='1'>y [m]</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='1'>y_label [dimensionless]</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;' colspan='2'>a [\u00c5]</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Values</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Values</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Values</th><th style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;text-align: center;background-color: #f0f0f0;'>Variances</th></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td style='border: 0px solid white;background-color: #ffffff; height:1.2em;'></td><td style='border: 0px solid white;background-color: #ffffff; height:1.2em;'></td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td><td rowspan='2' style='border: 1px solid black; padding: 0px 5px 0px 5px; text-align: right;'>0.0</td></tr><tr onMouseOver=\"this.style.backgroundColor='#d6eaf8'\" onMouseOut=\"this.style.backgroundColor='#ffffff'\"><td style='border: 0px solid white;background-color: #ffffff; height:1.2em;'></td><td style='border: 0px solid white;background-color: #ffffff; height:1.2em;'></td></tr></table>"}}, "13d7f492dd8c488f9d5b5973ade15347": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "02d177f6367445ddaa4c52aef16120fa": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "3036254c0091448bac915485b3fab3ab": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_13d7f492dd8c488f9d5b5973ade15347", "placeholder": "\u200b", "style": "IPY_MODEL_02d177f6367445ddaa4c52aef16120fa", "value": "<span style='font-weight:normal;color:grey;font-style:italic;background-color:#ffffff;text-align:left;font-size:1.2em;padding: 1px;'>1D Variables</span>"}}, "2b07c470ceaa4e7e910a34cdf5548551": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "initial"}}, "5bea496840074bfd808cfc197ea0c83c": {"model_name": "TabModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "TabModel", "_titles": {"0": "y"}, "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "TabView", "box_style": "", "children": ["IPY_MODEL_fc66d5d819e2417394c1480d76d49ee4"], "layout": "IPY_MODEL_2b07c470ceaa4e7e910a34cdf5548551", "selected_index": 0}}, "25830e62a5f84c5f96f02a223f43ca6c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8f75ab78c1584fb59e9097a384d97897": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_3036254c0091448bac915485b3fab3ab", "IPY_MODEL_5bea496840074bfd808cfc197ea0c83c"], "layout": "IPY_MODEL_25830e62a5f84c5f96f02a223f43ca6c"}}, "747dfa0733e04d84a319c2dba2e42618": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": "solid 1px", "bottom": null, "display": "flex", "flex": null, "flex_flow": "column", "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "auto"}}, "43c158eba5514b468ae1de9b2b85cbe8": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_96d49d6aff674607a0636b0784381761", "IPY_MODEL_8318fb9d46ba4270bbd23dbe921e1499", "IPY_MODEL_8f75ab78c1584fb59e9097a384d97897"], "layout": "IPY_MODEL_747dfa0733e04d84a319c2dba2e42618"}}}, "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="plotting-overview.html" class="btn btn-neutral float-right" title="Plotting Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../user-guide/tips-tricks-and-anti-patterns.html" class="btn btn-neutral float-left" title="Tips, tricks, and anti-patterns" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

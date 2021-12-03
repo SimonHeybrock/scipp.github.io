@@ -1,0 +1,6 @@
+﻿scipp.neutron.scattering\_angle
+===============================
+
+.. currentmodule:: scipp.neutron
+
+.. autofunction:: scattering_angle

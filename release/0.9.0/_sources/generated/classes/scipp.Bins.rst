@@ -1,0 +1,39 @@
+﻿scipp.Bins
+==========
+
+.. currentmodule:: scipp
+
+.. autoclass:: Bins
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Bins.__init__
+      ~Bins.concat
+      ~Bins.concatenate
+      ~Bins.mean
+      ~Bins.size
+      ~Bins.sum
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Bins.attrs
+      ~Bins.constituents
+      ~Bins.coords
+      ~Bins.data
+      ~Bins.masks
+      ~Bins.meta
+   
+   

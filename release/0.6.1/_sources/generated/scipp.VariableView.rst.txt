@@ -1,0 +1,41 @@
+﻿scipp.VariableView
+==================
+
+.. currentmodule:: scipp
+
+.. autoclass:: VariableView
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VariableView.__init__
+      ~VariableView.astype
+      ~VariableView.copy
+      ~VariableView.plot
+      ~VariableView.to_hdf5
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~VariableView.bins
+      ~VariableView.dims
+      ~VariableView.dtype
+      ~VariableView.shape
+      ~VariableView.sizes
+      ~VariableView.unit
+      ~VariableView.value
+      ~VariableView.values
+      ~VariableView.variance
+      ~VariableView.variances
+   
+   

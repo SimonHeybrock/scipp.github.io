@@ -1,0 +1,6 @@
+﻿scipp.neutron.convert
+=====================
+
+.. currentmodule:: scipp.neutron
+
+.. autofunction:: convert

@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ADR 0001: Remove dataset masking support &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ADR 0002: Remove instrument view 2D projection options" href="0002-remove-instrument-view-projection-options.html" />
+    <link rel="prev" title="Architecture Decision Records" href="../architecture-decision-records.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../developer-documentation.html">Developer Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">API Reference</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../architecture-decision-records.html">Architecture Decision Records</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADR 0001: Remove dataset masking support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#context">Context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#decision">Decision</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#consequences">Consequences</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="0002-remove-instrument-view-projection-options.html">ADR 0002: Remove instrument view 2D projection options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0003-refactor-plotting-code-with-mvc-pattern.html">ADR 0003: Refactor plotting code to use Model-View-Controller design pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0004-use-ipympl-backend-for-matplotlib.html">ADR 0004: Use the ipympl backend for Matplotlib figures in Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0005-remove-need-for-bins-property-when-calling-bin-or-histogram.html">ADR 0005: Remove need for <code class="docutils literal notranslate"><span class="pre">bins</span></code> property when calling <code class="docutils literal notranslate"><span class="pre">bin</span></code> or <code class="docutils literal notranslate"><span class="pre">histogram</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="0006-add-readonly-flags.html">ADR 0006: Add read-only flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0007-do-not-support-args-referencing-x-or-y.html">ADR 0007: Do not support arguments referring to <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">y</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../coding-conventions.html">Coding conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constructing_variables.html">C++ API for constructing variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing.html">Customizing Scipp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dependencies.html">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to.html">How To…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tooling.html">Tooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform.html">Transforming data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../variable_implementation.html">Implementation of class Variable</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.7.0">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../developer-documentation.html">Developer Documentation</a> &raquo;</li>
+        
+          <li><a href="../architecture-decision-records.html">Architecture Decision Records</a> &raquo;</li>
+        
+      <li>ADR 0001: Remove dataset masking support</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/reference/developer/adr/0001-remove-dataset-masking-support.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="adr-0001-remove-dataset-masking-support">
+<h1>ADR 0001: Remove dataset masking support<a class="headerlink" href="#adr-0001-remove-dataset-masking-support" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Status: accepted</p></li>
+<li><p>Deciders: Neil, Owen, Simon</p></li>
+<li><p>Date: 2020-07-30</p></li>
+</ul>
+<div class="section" id="context">
+<h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
+<p>Masks for individual items of a dataset (e.g., <code class="docutils literal notranslate"><span class="pre">ds['a'].masks()</span></code>) were initially not supported and are being implemented right now (this is a must-have requirement).
+However, this creates a number of issues that do not appear to be solvable:</p>
+<ul class="simple">
+<li><p>Item masks may shadow dataset masks, i.e., we would need to prevent adding items masks with the same name as the mask in the dataset.</p></li>
+<li><p>Operations on items would need to update the “global” mask of the dataset.
+This is logically wrong, e.g., <code class="docutils literal notranslate"><span class="pre">ds['a']</span> <span class="pre">+=</span> <span class="pre">data_array_with_mask</span></code> would need to modify the mask values of <code class="docutils literal notranslate"><span class="pre">ds</span></code>, influencing <em>all</em> items of <code class="docutils literal notranslate"><span class="pre">ds</span></code>.
+The alternative would be to update only the item masks.
+However, this leads to the shadowing problem, i.e., adding a mask <code class="docutils literal notranslate"><span class="pre">'mask'</span></code> to <code class="docutils literal notranslate"><span class="pre">ds['a'].masks()</span></code> would shadow (“hide”) <code class="docutils literal notranslate"><span class="pre">ds.masks()['mask']</span></code>.
+We can imagine mechanism that would “combine” <code class="docutils literal notranslate"><span class="pre">ds.masks()['mask']</span></code> with <code class="docutils literal notranslate"><span class="pre">ds['a'].masks()['mask']</span></code> when accessing the masks of <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, but this would be highly complicated and brittle and bring limitations such as not being able to modify these masks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataArray.masks()</span></code> is difficult to reason about: Do we need to distinguish between masks that are “item” masks and masks that would become “global” masks when inserted in a dataset?</p></li>
+</ul>
+</div>
+<div class="section" id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">¶</a></h2>
+<p>Remove masking support from <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>, i.e., <code class="docutils literal notranslate"><span class="pre">ds.masks()</span></code> is no longer supported.</p>
+</div>
+<div class="section" id="consequences">
+<h2>Consequences<a class="headerlink" href="#consequences" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="positive">
+<h3>Positive:<a class="headerlink" href="#positive" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Dataset implementation simplifies.</p></li>
+<li><p>Documentation and training needs reduced.</p></li>
+<li><p>We can still do everything we need via item masks.</p></li>
+<li><p>Clear meaning of <code class="docutils literal notranslate"><span class="pre">DataArray.masks()</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="negative">
+<h3>Negative:<a class="headerlink" href="#negative" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It is no longer possible to simply mask elements of all items in a dataset with a single mask.
+The simplest example would be masking a row in a table.
+Instead we would need to mask each row in each column.</p></li>
+<li><p>Certain workflows, such as an existing SANS workflow need to be slighty adapted.
+Previously this had made use of the mask of the detector data to also effect masking of the norm terms.
+Instead we need to add this masks for both data and norm separately.
+This is not a large problem and might even make the code more understandable.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="0002-remove-instrument-view-projection-options.html" class="btn btn-neutral float-right" title="ADR 0002: Remove instrument view 2D projection options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../architecture-decision-records.html" class="btn btn-neutral float-left" title="Architecture Decision Records" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

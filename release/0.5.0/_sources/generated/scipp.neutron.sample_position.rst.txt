@@ -1,0 +1,6 @@
+﻿scipp.neutron.sample\_position
+==============================
+
+.. currentmodule:: scipp.neutron
+
+.. autofunction:: sample_position

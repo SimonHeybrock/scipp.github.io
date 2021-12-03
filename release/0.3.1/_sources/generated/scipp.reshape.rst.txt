@@ -1,0 +1,6 @@
+scipp.reshape
+=============
+
+.. currentmodule:: scipp
+
+.. autofunction:: reshape

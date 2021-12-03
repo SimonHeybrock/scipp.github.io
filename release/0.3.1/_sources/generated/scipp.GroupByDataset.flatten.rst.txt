@@ -1,0 +1,6 @@
+scipp.GroupByDataset.flatten
+============================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataset.flatten

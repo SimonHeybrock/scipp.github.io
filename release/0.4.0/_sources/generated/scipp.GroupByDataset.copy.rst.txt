@@ -1,0 +1,6 @@
+scipp.GroupByDataset.copy
+=========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataset.copy

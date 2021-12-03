@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scipp.GroupByDataArray &mdash; scipp  documentation</title>
+      <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="scipp.GroupByDataset" href="scipp.GroupByDataset.html" />
+    <link rel="prev" title="scipp.Dataset" href="scipp.Dataset.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/api.html">Classes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scipp.Bins.html">scipp.Bins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.DataArray.html">scipp.DataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.Dataset.html">scipp.Dataset</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">scipp.GroupByDataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.GroupByDataset.html">scipp.GroupByDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.Unit.html">scipp.Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.Variable.html">scipp.Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.typing.VariableLike.html">scipp.typing.VariableLike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipp.typing.MetaDataMap.html">scipp.typing.MetaDataMap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html#modules">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/developer-documentation.html">Developer Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.2">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scipp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/api.html">Classes</a> &raquo;</li>
+      <li>scipp.GroupByDataArray</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/generated/classes/scipp.GroupByDataArray.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="scipp-groupbydataarray">
+<h1>scipp.GroupByDataArray<a class="headerlink" href="#scipp-groupbydataarray" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">scipp.</span></span><span class="sig-name descname"><span class="pre">GroupByDataArray</span></span><a class="headerlink" href="#scipp.GroupByDataArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>GroupBy object implementing to split-apply-combine mechanism.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scipp.GroupByDataArray.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.__init__" title="scipp.GroupByDataArray.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.all" title="scipp.GroupByDataArray.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code></a>(self, dim)</p></td>
+<td><p>Element-wise all over the specified dimension within a group.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.any" title="scipp.GroupByDataArray.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">any</span></code></a>(self, dim)</p></td>
+<td><p>Element-wise any over the specified dimension within a group.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.concatenate" title="scipp.GroupByDataArray.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a>(self, dim)</p></td>
+<td><p>Element-wise concatenate over the specified dimension within a group.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.copy" title="scipp.GroupByDataArray.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self, group)</p></td>
+<td><p>Extract group as new data array or dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.max" title="scipp.GroupByDataArray.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(self, dim)</p></td>
+<td><p>Element-wise max over the specified dimension within a group.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.mean" title="scipp.GroupByDataArray.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(self, dim)</p></td>
+<td><p>Element-wise mean over the specified dimension within a group.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.min" title="scipp.GroupByDataArray.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(self, dim)</p></td>
+<td><p>Element-wise min over the specified dimension within a group.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scipp.GroupByDataArray.sum" title="scipp.GroupByDataArray.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(self, dim)</p></td>
+<td><p>Element-wise sum over the specified dimension within a group.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bins</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.all">
+<span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray"><span class="pre">scipp._scipp.core.GroupByDataArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">scipp._scipp.core.Dim</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a></span></span><a class="headerlink" href="#scipp.GroupByDataArray.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element-wise all over the specified dimension within a group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>Dim</em>) – Dimension to reduce when computing the all.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computed all over each group, combined along the dimension specified when calling <a class="reference internal" href="../functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.groupby()</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray">DataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.any">
+<span class="sig-name descname"><span class="pre">any</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray"><span class="pre">scipp._scipp.core.GroupByDataArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">scipp._scipp.core.Dim</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a></span></span><a class="headerlink" href="#scipp.GroupByDataArray.any" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element-wise any over the specified dimension within a group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>Dim</em>) – Dimension to reduce when computing the any.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computed any over each group, combined along the dimension specified when calling <a class="reference internal" href="../functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.groupby()</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray">DataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.concatenate">
+<span class="sig-name descname"><span class="pre">concatenate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray"><span class="pre">scipp._scipp.core.GroupByDataArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">scipp._scipp.core.Dim</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a></span></span><a class="headerlink" href="#scipp.GroupByDataArray.concatenate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element-wise concatenate over the specified dimension within a group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>Dim</em>) – Dimension to reduce when computing the concatenate.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computed concatenate over each group, combined along the dimension specified when calling <a class="reference internal" href="../functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.groupby()</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray">DataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray"><span class="pre">scipp._scipp.core.GroupByDataArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a></span></span><a class="headerlink" href="#scipp.GroupByDataArray.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract group as new data array or dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>group</strong> – Index of groupy to extract</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray">DataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.max">
+<span class="sig-name descname"><span class="pre">max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray"><span class="pre">scipp._scipp.core.GroupByDataArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">scipp._scipp.core.Dim</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a></span></span><a class="headerlink" href="#scipp.GroupByDataArray.max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element-wise max over the specified dimension within a group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>Dim</em>) – Dimension to reduce when computing the max.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computed max over each group, combined along the dimension specified when calling <a class="reference internal" href="../functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.groupby()</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray">DataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.mean">
+<span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray"><span class="pre">scipp._scipp.core.GroupByDataArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">scipp._scipp.core.Dim</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a></span></span><a class="headerlink" href="#scipp.GroupByDataArray.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element-wise mean over the specified dimension within a group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>Dim</em>) – Dimension to reduce when computing the mean.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computed mean over each group, combined along the dimension specified when calling <a class="reference internal" href="../functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.groupby()</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray">DataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.min">
+<span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray"><span class="pre">scipp._scipp.core.GroupByDataArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">scipp._scipp.core.Dim</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a></span></span><a class="headerlink" href="#scipp.GroupByDataArray.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element-wise min over the specified dimension within a group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>Dim</em>) – Dimension to reduce when computing the min.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computed min over each group, combined along the dimension specified when calling <a class="reference internal" href="../functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.groupby()</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray">DataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scipp.GroupByDataArray.sum">
+<span class="sig-name descname"><span class="pre">sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#scipp.GroupByDataArray" title="scipp._scipp.core.GroupByDataArray"><span class="pre">scipp._scipp.core.GroupByDataArray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">scipp._scipp.core.Dim</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp._scipp.core.DataArray"><span class="pre">scipp._scipp.core.DataArray</span></a></span></span><a class="headerlink" href="#scipp.GroupByDataArray.sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element-wise sum over the specified dimension within a group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>Dim</em>) – Dimension to reduce when computing the sum.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The computed sum over each group, combined along the dimension specified when calling <a class="reference internal" href="../functions/scipp.groupby.html#scipp.groupby" title="scipp.groupby"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipp.groupby()</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray">DataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scipp.Dataset.html" class="btn btn-neutral float-left" title="scipp.Dataset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scipp.GroupByDataset.html" class="btn btn-neutral float-right" title="scipp.GroupByDataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 Scipp contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

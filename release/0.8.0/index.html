@@ -1,0 +1,1040 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>scipp - Multi-dimensional data arrays with labeled dimensions &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overview" href="getting-started/overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#">
+          
+
+          
+            
+            <img src="_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/coordinate-transformations.html">Coordinate transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference/api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/api.html#modules">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/developer-documentation.html">Developer Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.8.0">v0.8</option>
+        <option value="https://scipp.github.io/release/0.7.1">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>scipp - Multi-dimensional data arrays with labeled dimensions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p><a class="reference external" href="user-guide/data-structures.html"><img alt="data-structures" src="_images/title-repr-html.png" style="width: 33%;" /></a> <a class="reference external" href="visualization/plotting-overview.html"><img alt="plotting" src="_images/title-plotting.png" style="width: 33%;" /></a> <a class="reference external" href="user-guide/masking.html"><img alt="masking" src="_images/title-masking.png" style="width: 33%;" /></a>
+<a class="reference external" href="user-guide/binned-data/binned-data.html"><img alt="binning" src="_images/title-binning.png" style="width: 33%;" /></a> <a class="reference external" href="user-guide/slicing.html"><img alt="slicing" src="_images/title-show.png" style="width: 33%;" /></a> <a class="reference external" href="https://scipp.github.io/scippneutron"><img alt="scipp-neutron" src="_images/title-instrument-view.png" style="width: 33%;" /></a></p>
+<div class="section" id="scipp-multi-dimensional-data-arrays-with-labeled-dimensions">
+<h1>scipp - Multi-dimensional data arrays with labeled dimensions<a class="headerlink" href="#scipp-multi-dimensional-data-arrays-with-labeled-dimensions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-python-library-enabling-a-modern-and-intuitive-way-of-working-with-scientific-data-in-jupyter-notebooks">
+<h2>A Python library enabling a modern and intuitive way of working with scientific data in Jupyter notebooks<a class="headerlink" href="#a-python-library-enabling-a-modern-and-intuitive-way-of-working-with-scientific-data-in-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<p><strong>scipp</strong> is heavily inspired by <a class="reference external" href="https://xarray.pydata.org">xarray</a>.
+It enriches raw NumPy-like multi-dimensional arrays of data by adding named dimensions and associated coordinates.
+Multiple arrays can be combined into datasets.
+While for many applications xarray is certainly more suitable (and definitely much more matured) than scipp, there is a number of features missing in other situations.
+If your use case requires one or several of the items on the following list, using scipp may be worth considering:</p>
+<ul class="simple">
+<li><p><strong>Physical units</strong> are stored with each data or coord array and are handled in arithmetic operations.</p></li>
+<li><p><strong>Propagation of uncertainties</strong>.</p></li>
+<li><p>Support for <strong>histograms</strong>, i.e., <strong>bin-edge axes</strong>, which are by 1 longer than the data extent.</p></li>
+<li><p>Support for scattered data and <strong>non-destructive binning</strong>.
+This includes first and foremost <strong>event data</strong>, a particular form of sparse data with arrays of random-length lists, with very small list entries.</p></li>
+<li><p>Support for <strong>masks stored with data</strong>.</p></li>
+<li><p>Internals written in C++ for better performance (for certain applications), in combination with Python bindings.</p></li>
+</ul>
+<p>Generic functionality of scipp is provided in the <strong>scipp</strong> Python package.
+In addition, more specific functionality is made available in other packages.
+Currently the only example for this is <a class="reference external" href="https://scipp.github.io/scippneutron">scippneutron</a> for handling data from neutron-scattering experiments.</p>
+</div>
+<div class="section" id="news">
+<h2>News<a class="headerlink" href="#news" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>[September 2021] scipp-0.8.0 <a class="reference internal" href="about/release-notes.html"><span class="doc">has been released</span></a>.
+Check out the <a class="reference internal" href="about/whats-new.html"><span class="doc">What’s new</span></a> notebook for an overview of recent highlights and major changes.</p></li>
+<li><p>Scipp changed from GPLv3 to the more permissive BSD-3 license which fits better into the Python eco system.</p></li>
+<li><p>Looking for <code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code>?
+This submodule has been moved into its own package, <a class="reference external" href="https://scipp.github.io/scippneutron">scippneutron</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="where-can-i-get-help">
+<h2>Where can I get help?<a class="headerlink" href="#where-can-i-get-help" title="Permalink to this headline">¶</a></h2>
+<p>For questions not answered in the documentation
+<a class="reference external" href="https://github.com/scipp/scipp/issues?utf8=%E2%9C%93&amp;q=label%3Aquestion">this page</a>
+provides a forum with discussions on problems already met/solved in the community.</p>
+<p>New questions can be asked by
+<a class="reference external" href="https://github.com/scipp/scipp/issues/new?assignees=&amp;labels=question&amp;template=question.md&amp;title=">opening</a>
+a new <a class="reference external" href="https://github.com/scipp/scipp/issues/new?assignees=&amp;labels=question&amp;template=question.md&amp;title="><img alt="QuestionLabel" src="_images/question.png" /></a> issue.</p>
+</div>
+</div>
+<div class="section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/overview.html#the-data-array-concept">The data array concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/overview.html#physical-units">Physical units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/overview.html#variances-and-propagation-of-uncertainties">Variances and propagation of uncertainties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/overview.html#scattered-data-event-data">Scattered data (event data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/overview.html#histograms-and-bin-edge-coordinates">Histograms and bin-edge coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#conda">Conda</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started/installation.html#with-the-provided-environment-file">With the provided environment file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started/installation.html#without-the-provided-environment-file">Without the provided environment file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#from-source">From source</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/faq.html#specific-help-with-using-scipp">Specific help with using scipp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/faq.html#general">General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started/faq.html#why-is-xarray-not-enough">Why is xarray not enough?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="getting-started/faq.html#why-are-you-not-just-contributing-to-xarray">Why are you not just contributing to xarray?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/faq.html#plotting">Plotting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started/faq.html#how-can-i-set-axis-limits-when-creating-a-plot">How can I set axis limits when creating a plot?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/faq.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting-started/faq.html#i-can-t-import-scipp">I can’t import scipp!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/data-structures.html">Data Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-structures.html#Variable">Variable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/data-structures.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/data-structures.html#0-D-variables-(scalars)">0-D variables (scalars)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-structures.html#DataArray">DataArray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/data-structures.html#id1">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/data-structures.html#Distinction-between-dimension-coords-and-non-dimension-coords,-and-coords-and-attrs">Distinction between dimension coords and non-dimension coords, and coords and attrs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-structures.html#Dataset">Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/slicing.html">Slicing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/slicing.html#Positional-indexing">Positional indexing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/slicing.html#Overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/slicing.html#Variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/slicing.html#Data-arrays">Data arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/slicing.html#Datasets">Datasets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/slicing.html#Label-based-indexing">Label-based indexing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/slicing.html#id1">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/slicing.html#Bin-edge-coordinates">Bin-edge coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/slicing.html#Limitations">Limitations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/computation.html">Computation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/computation.html#General-concepts-and-mechanisms">General concepts and mechanisms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/computation.html#Overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/computation.html#Dimension-matching-and-transposing">Dimension matching and transposing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/computation.html#Propagation-of-uncertainties">Propagation of uncertainties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/computation.html#Broadcasting">Broadcasting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/computation.html#Units">Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/computation.html#Coordinate-and-name-matching">Coordinate and name matching</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/computation.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/computation.html#Trigonometrics">Trigonometrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/computation.html#Other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/masking.html">Masking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/masking.html#Creating-and-manipulating-masks">Creating and manipulating masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/masking.html#Masks-in-data-arrays-and-items-of-dataset">Masks in data arrays and items of dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/masking.html#Operations-with-masked-objects">Operations with masked objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/masking.html#Element-wise-binary-operations">Element-wise binary operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/masking.html#Reduction-operations">Reduction operations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/binned-data.html">Binned Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/binned-data/binned-data.html">Binned Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/binned-data.html#Introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/binned-data.html#From-scattered-to-binned-data">From scattered to binned data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/binned-data.html#Working-with-binned-data">Working with binned data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/binned-data/computation.html">Computation with Binned Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/computation.html#Overview-and-Quick-Reference">Overview and Quick Reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/computation.html#Concepts">Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/computation.html#Bin-centric-arithmetic">Bin-centric arithmetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/computation.html#Event-centric-arithmetic">Event-centric arithmetic</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/binned-data/filtering.html">Filtering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/filtering.html#Preparation">Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/filtering.html#Filtering-based-on-existing-coords">Filtering based on existing coords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/filtering.html#Filtering-based-on-arbitrary-metadata">Filtering based on arbitrary metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/binned-data/histogramming-grouping-and-binning.html">Histogramming, grouping, and binning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/histogramming-grouping-and-binning.html#Overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/histogramming-grouping-and-binning.html#Histogramming">Histogramming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/histogramming-grouping-and-binning.html#Grouping">Grouping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/binned-data/histogramming-grouping-and-binning.html#Binning">Binning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/groupby.html">GroupBy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/groupby.html#Grouping-based-on-label-values">Grouping based on label values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/groupby.html#Grouping-based-on-binned-label-values">Grouping based on binned label values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/groupby.html#Usage-examples">Usage examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/groupby.html#Filtering-a-variable-using-groupby.copy">Filtering a variable using <code class="docutils literal notranslate"><span class="pre">groupby.copy</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/coordinate-transformations.html">Coordinate transformations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/coordinate-transformations.html#Motivation">Motivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/coordinate-transformations.html#transform_coords"><code class="docutils literal notranslate"><span class="pre">transform_coords</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/coordinate-transformations.html#Overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/coordinate-transformations.html#Basic-example">Basic example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/coordinate-transformations.html#Example:-Multi-step-transform-splitting-and-combining-input-coords">Example: Multi-step transform splitting and combining input coords</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/coordinate-transformations.html#Introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/coordinate-transformations.html#Defining-a-transformation-graph">Defining a transformation graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/coordinate-transformations.html#Sample-data">Sample data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/coordinate-transformations.html#Performing-a-transformation">Performing a transformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/coordinate-transformations.html#Post-processing">Post-processing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/reading-and-writing-files.html">Reading and Writing Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/reading-and-writing-files.html#HDF5">HDF5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/reading-and-writing-files.html#NeXus">NeXus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/how_to.html">How to…</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/how_to.html#Create-variables">Create variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/how_to.html#Scalar-variable-using-operators-with-units">Scalar variable using operators with units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/how_to.html#Scalar-variable-from-Python-object">Scalar variable from Python object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/how_to.html#Initialized-with-default-values">Initialized with default values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/how_to.html#From-Python-list-or-NumPy-array">From Python list or NumPy array</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/how_to.html#Create-a-data-array">Create a data array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/how_to.html#Create-an-empty-dataset">Create an empty dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/how_to.html#Add-/-insert-a-data-item,-a-coord,-a-mask,-or-an-attr">Add / insert a data item, a coord, a mask, or an attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/how_to.html#Get-a-data-item,-a-coord,-or-a-mask">Get a data item, a coord, or a mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/how_to.html#Delete-/-remove-a-data-item,-a-coord,-a-mask,-or-an-attr">Delete / remove a data item, a coord, a mask, or an attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/how_to.html#Copy-variables,-data-arrays,-or-dataset">Copy variables, data arrays, or dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/how_to.html#Create-stand-alone-objects-from-(slice)-views">Create stand-alone objects from (slice) views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html#Choose-dimensions-wisely">Choose dimensions wisely</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html#Choose-dimension-order-wisely">Choose dimension order wisely</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html#Avoid-loops">Avoid loops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html#Use-slicing-with-“shifts”">Use slicing with “shifts”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html#Seek-advice-from-numpy">Seek advice from numpy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html#Use-helper-dimensions-or-reshaped-data">Use helper dimensions or reshaped data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/tips-tricks-and-anti-patterns.html#Use-in-place-operations">Use in-place operations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="visualization/representations-and-tables.html">Representations and Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualization/representations-and-tables.html#HTML-represenation">HTML represenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/representations-and-tables.html#SVG-representation">SVG representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/representations-and-tables.html#Table-representation">Table representation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="visualization/plotting-overview.html">Plotting Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting-overview.html#Getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting-overview.html#Plotting-slices-or-items-of-a-dataset">Plotting slices or items of a dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting-overview.html#Plot-a-single-entry-of-a-dataset">Plot a single entry of a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting-overview.html#Plot-a-slice-range">Plot a slice range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting-overview.html#Plot-a-1-D-slice-of-2-D-data">Plot a 1-D slice of 2-D data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting-overview.html#Logarithmic-scale">Logarithmic scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting-overview.html#Axis-labels-and-axis-order">Axis labels and axis order</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="visualization/plotting-in-depth.html">Plotting in depth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html">Plotting 1-D data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Basic-plot">Basic plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#With-error-bars">With error bars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Multiple-variables-on-the-same-axes">Multiple variables on the same axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Customizing-linestyles,-markers-and-colors">Customizing linestyles, markers and colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Logarithmic-scales">Logarithmic scales</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Histograms">Histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Multiple-1D-variables-with-different-dimensions">Multiple 1D variables with different dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Custom-labels-along-x-axis">Custom labels along x axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Plotting-masks">Plotting masks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Plotting-time-series">Plotting time series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-1d-data.html#Saving-figures">Saving figures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting/plotting-2d-data.html">Plotting 2-D data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-2d-data.html#Basic-image-plot">Basic image plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-2d-data.html#Changing-the-colorscale">Changing the colorscale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-2d-data.html#Using-labels-along-some-axis">Using labels along some axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-2d-data.html#Collapsing-dimensions">Collapsing dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-2d-data.html#Image-aspect-ratio">Image aspect ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-2d-data.html#Plotting-masks">Plotting masks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-2d-data.html#Saving-figures">Saving figures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting/plotting-nd-data.html">Plotting N-D data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-nd-data.html#Default-representation">Default representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-nd-data.html#3-D-scatter-plots">3-D scatter plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/plotting-nd-data.html#LAMP’s-Superplot">LAMP’s Superplot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting/customizing-figures.html">Customizing figures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/customizing-figures.html#Modifying-the-returned-Plot-object">Modifying the returned Plot object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/customizing-figures.html#Placing-figures-inside-existing-Matplotlib-axes">Placing figures inside existing Matplotlib axes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualization/plotting/datetime_handling.html">Datetime handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#More-than-100-years">More than 100 years</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-100-years">Less than 100 years</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-4-years">Less than 4 years</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-6-months">Less than 6 months</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-4-days">Less than 4 days</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-4-hours">Less than 4 hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-4-minutes">Less than 4 minutes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-4-seconds">Less than 4 seconds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-4-milliseconds">Less than 4 milliseconds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualization/plotting/datetime_handling.html#Less-than-4-microseconds">Less than 4 microseconds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference/api.html">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.Bins.html">scipp.Bins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.DataArray.html">scipp.DataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.Dataset.html">scipp.Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.GroupByDataArray.html">scipp.GroupByDataArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.GroupByDataset.html">scipp.GroupByDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.Unit.html">scipp.Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.Variable.html">scipp.Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.typing.VariableLike.html">scipp.typing.VariableLike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/classes/scipp.typing.MetaDataMap.html">scipp.typing.MetaDataMap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/api.html#creation-functions">Creation functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.array.html">scipp.array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.arange.html">scipp.arange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.empty.html">scipp.empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.empty_like.html">scipp.empty_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.full.html">scipp.full</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.full_like.html">scipp.full_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.geomspace.html">scipp.geomspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.linspace.html">scipp.linspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.logspace.html">scipp.logspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.matrix.html">scipp.matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.matrices.html">scipp.matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.ones.html">scipp.ones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.ones_like.html">scipp.ones_like</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.scalar.html">scipp.scalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.vector.html">scipp.vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.vectors.html">scipp.vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.zeros.html">scipp.zeros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/functions/scipp.zeros_like.html">scipp.zeros_like</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/api.html#free-functions">Free functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#general">General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.bin.html">scipp.bin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.bins.html">scipp.bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.choose.html">scipp.choose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.collapse.html">scipp.collapse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.histogram.html">scipp.histogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.logical_and.html">scipp.logical_and</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.logical_or.html">scipp.logical_or</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.logical_xor.html">scipp.logical_xor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.merge.html">scipp.merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.rebin.html">scipp.rebin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.slices.html">scipp.slices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.sort.html">scipp.sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.stddevs.html">scipp.stddevs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.to_unit.html">scipp.to_unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.transform_coords.html">scipp.transform_coords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.values.html">scipp.values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.variances.html">scipp.variances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.where.html">scipp.where</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#math">Math</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.abs.html">scipp.abs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.add.html">scipp.add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.ceil.html">scipp.ceil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.cross.html">scipp.cross</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.divide.html">scipp.divide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.dot.html">scipp.dot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.exp.html">scipp.exp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.floor.html">scipp.floor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.floor_divide.html">scipp.floor_divide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.log.html">scipp.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.log10.html">scipp.log10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.mod.html">scipp.mod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.multiply.html">scipp.multiply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.norm.html">scipp.norm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.reciprocal.html">scipp.reciprocal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.round.html">scipp.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.sqrt.html">scipp.sqrt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.subtract.html">scipp.subtract</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#shape">Shape</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.broadcast.html">scipp.broadcast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.concatenate.html">scipp.concatenate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.flatten.html">scipp.flatten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.fold.html">scipp.fold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.transpose.html">scipp.transpose</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#comparison">Comparison</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.allclose.html">scipp.allclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.allsorted.html">scipp.allsorted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.equal.html">scipp.equal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.greater.html">scipp.greater</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.greater_equal.html">scipp.greater_equal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.identical.html">scipp.identical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.isclose.html">scipp.isclose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.islinspace.html">scipp.islinspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.issorted.html">scipp.issorted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.less.html">scipp.less</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.less_equal.html">scipp.less_equal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.not_equal.html">scipp.not_equal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#inf-and-nan-handling"><cite>inf</cite> and <cite>nan</cite> handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.isnan.html">scipp.isnan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.isinf.html">scipp.isinf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.isfinite.html">scipp.isfinite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.isposinf.html">scipp.isposinf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.isneginf.html">scipp.isneginf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.nan_to_num.html">scipp.nan_to_num</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#reduction">Reduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.all.html">scipp.all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.any.html">scipp.any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.cumsum.html">scipp.cumsum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.max.html">scipp.max</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.mean.html">scipp.mean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.min.html">scipp.min</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.nanmax.html">scipp.nanmax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.nanmean.html">scipp.nanmean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.nanmin.html">scipp.nanmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.nansum.html">scipp.nansum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.sum.html">scipp.sum</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#trigonometric">Trigonometric</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.sin.html">scipp.sin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.cos.html">scipp.cos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.tan.html">scipp.tan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.asin.html">scipp.asin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.acos.html">scipp.acos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.atan.html">scipp.atan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.atan2.html">scipp.atan2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#geometric">Geometric</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.geometry.position.html">scipp.geometry.position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.geometry.rotation_matrix_from_quaternion_coeffs.html">scipp.geometry.rotation_matrix_from_quaternion_coeffs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#group-by-split-apply-combine">Group-by (split-apply-combine)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/api.html#id1">Reduction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#counts">Counts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.counts_to_density.html">scipp.counts_to_density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.density_to_counts.html">scipp.density_to_counts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#visualization">Visualization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.show.html">scipp.show</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.show_graph.html">scipp.show_graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.table.html">scipp.table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.to_html.html">scipp.to_html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.plot.html">scipp.plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/api.html#compatibility">Compatibility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.to_dict.html">scipp.to_dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.from_dict.html">scipp.from_dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.compat.from_pandas.html">scipp.compat.from_pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/functions/scipp.compat.from_xarray.html">scipp.compat.from_xarray</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/api.html#modules">Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/modules/scipp.constants.html">scipp.constants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/modules/scipp.constants.physical_constants.html">scipp.constants.physical_constants</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/modules/scipp.spatial.html">scipp.spatial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/modules/scipp.spatial.transform.html">scipp.spatial.transform</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/linear-algebra.html">Linear Algebra</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/linear-algebra.html#Basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/linear-algebra.html#Example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/dtype.html">Data types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/dtype.html#Dates-and-Times">Dates and Times</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/dtype.html#Operations">Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/dtype.html#Time-zones">Time zones</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/units.html">Physical units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/units.html#Supported-Units">Supported Units</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/units.html#Base-Units">Base Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/units.html#Derived-units">Derived units</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/runtime-configuration.html">Runtime Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/runtime-configuration.html#List-of-configuration-options">List of configuration options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/runtime-configuration.html#config.plot"><code class="docutils literal notranslate"><span class="pre">config.plot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/runtime-configuration.html#config.colors:"><code class="docutils literal notranslate"><span class="pre">config.colors</span></code>:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/runtime-configuration.html#Other">Other</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/developer-documentation.html">Developer Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/getting-started.html">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/getting-started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/getting-started.html#getting-the-code-building-and-installing">Getting the code, building, and installing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/getting-started.html#running-the-unit-tests">Running the unit tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/getting-started.html#building-documentation">Building Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/getting-started.html#precommit-hooks">Precommit Hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/getting-started.html#using-scipp-as-a-c-library">Using scipp as a C++ library</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/architecture-decision-records.html">Architecture Decision Records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0001-remove-dataset-masking-support.html">ADR 0001: Remove dataset masking support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0002-remove-instrument-view-projection-options.html">ADR 0002: Remove instrument view 2D projection options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0003-refactor-plotting-code-with-mvc-pattern.html">ADR 0003: Refactor plotting code to use Model-View-Controller design pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0004-use-ipympl-backend-for-matplotlib.html">ADR 0004: Use the ipympl backend for Matplotlib figures in Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0005-remove-need-for-bins-property-when-calling-bin-or-histogram.html">ADR 0005: Remove need for <code class="docutils literal notranslate"><span class="pre">bins</span></code> property when calling <code class="docutils literal notranslate"><span class="pre">bin</span></code> or <code class="docutils literal notranslate"><span class="pre">histogram</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0006-add-readonly-flags.html">ADR 0006: Add read-only flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0007-do-not-support-args-referencing-x-or-y.html">ADR 0007: Do not support arguments referring to <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0008-consistent-multi-dimensional-coords.html">ADR 0008: Consistent multi-dimensional coords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/adr/0009-handle-dimensionless-as-non-counts.html">ADR 0009: Handle dimensionless as non-counts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/coding-conventions.html">Coding conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/coding-conventions.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/coding-conventions.html#integer-types">Integer types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/coding-conventions.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/concepts.html">Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/concepts.html#DataArray-and-Dataset-meta-data-handling">DataArray and Dataset meta data handling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/constructing_variables.html">C++ API for constructing variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/customizing.html">Customizing Scipp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/customizing.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/customizing.html#custom-dtypes">Custom dtypes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/dependencies.html">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/dependencies.html#conda-packages">Conda packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/dependencies.html#conan">Conan</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/deployment.html">Deployment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/deployment.html#documentation-on-github-pages">Documentation on Github Pages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/how-to.html">How To…</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/how-to.html#test-a-trivial-python-export">Test a trivial Python export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/tooling.html">Tooling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/tooling.html#misc">Misc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/tooling.html#compilers">Compilers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/tooling.html#static-analysis-and-formatters">Static Analysis and Formatters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/transform.html">Transforming data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/transform.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/transform.html#basic-usage">Basic usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/transform.html#recommended-usage">Recommended usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/developer/variable_implementation.html">Implementation of class Variable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/variable_implementation.html#type-erasure">Type erasure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/variable_implementation.html#views-and-variables">Views and variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/variable_implementation.html#variableconstview">VariableConstView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/developer/variable_implementation.html#binned-variables">Binned variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/introduction.html">1-D datasets and tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/introduction.html#Getting-started">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#What-is-a-Dataset?">What is a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Creating-a-dataset">Creating a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Using-Dataset-as-a-table">Using <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> as a table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Exercise-1">Exercise 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Solution-1">Solution 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Exercise-2">Exercise 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Solution-2">Solution 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Appending-rows-and-columns">Appending rows and columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Exercise-3">Exercise 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Solution-3">Solution 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Interaction-with-numpy-and-scalars">Interaction with <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and scalars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Exercise-4">Exercise 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Solution-4">Solution 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Exercise-5">Exercise 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/introduction.html#Solution-5">Solution 5</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/multi-d-datasets.html">Multi-dimensional datasets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/multi-d-datasets.html#Creation,-slicing,-and-visualization">Creation, slicing, and visualization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/multi-d-datasets.html#Exercise-1">Exercise 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/multi-d-datasets.html#Solution-1">Solution 1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/multi-d-datasets.html#More-advanced-operations-with-multi-dimensional-datasets">More advanced operations with multi-dimensional datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/multi-d-datasets.html#Exercise-2">Exercise 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/multi-d-datasets.html#Solution-2">Solution 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/multi-d-datasets.html#Interaction-with-numpy">Interaction with <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/multi-d-datasets.html#Exercise-3">Exercise 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/multi-d-datasets.html#Solution-3">Solution 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about/about.html">About scipp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/about.html#development">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/about.html#references-and-citations">References and citations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/about.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/about.html#source-code-and-development">Source code and development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about/whats-new.html">What’s new in scipp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/whats-new.html#General">General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Bound-method-equivalents-to-many-free-functions">Bound method equivalents to many free functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Python-like-shallow/deep-copy-mechanism">Python-like shallow/deep copy mechanism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Indexing">Indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Support-for-datetime64">Support for datetime64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Operations">Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Shape-operations">Shape operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Vectors-and-matrices">Vectors and matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Coordinate-transformations">Coordinate transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Physical-constants">Physical constants</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/whats-new.html#Plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/whats-new.html#Binned-data">Binned data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/whats-new.html#Buffer-and-meta-data-access">Buffer and meta data access</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/whats-new.html#Performance">Performance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about/roadmap.html">Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/roadmap.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/roadmap.html#upcoming-milestones">Upcoming milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/roadmap.html#future-direction-and-plans">Future direction and plans</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about/contributing.html">Contributing to scipp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/contributing.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/contributing.html#scope">Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/contributing.html#security">Security</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about/release-notes.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#since-v0-8">Since v0.8</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#features">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#breaking-changes">Breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#bugfixes">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#contributors">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-8-0-september-2021">v0.8.0 (September 2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id2">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id19">Breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id35">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id39">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-7-0-june-2021">v0.7.0 (June 2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id40">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id53">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id55">Breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id59">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-6-1-april-2021">v0.6.1 (April 2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id60">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-6-0-march-2021">v0.6.0 (March 2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id63">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id79">Breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id82">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-5-0-january-2021">v0.5.0 (January 2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id83">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id84">Breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id85">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-4-july-2020">v0.4 (July 2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id86">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#noteable-bug-fixes">Noteable bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id87">Breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/release-notes.html#id88">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-3-march-2020">v0.3 (March 2020)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-2-december-2019">v0.2 (December 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#v0-1-september-2019">v0.1 (September 2019)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/release-notes.html#contributing-organizations">Contributing Organizations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="getting-started/overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

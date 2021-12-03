@@ -1,0 +1,955 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Neutron Data &mdash; scipp  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Classes" href="../python-reference/api.html" />
+    <link rel="prev" title="Neutron Data Quick Start" href="neutron-diffraction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quick-start.html">Quick start</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/event-data.html">Event data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/how_to.html">How to…</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-in-depth.html">Advanced plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/customizing-figures.html">Customizing figures</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-d-datasets.html">Multi-dimensional datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neutron-diffraction.html">Neutron Data Quick Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Neutron Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Loading-Nexus-files">Loading Nexus files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Understanding-the-contents-of-the-created-dataset">Understanding the contents of the created dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Dimensions-and-coordinates">Dimensions and coordinates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Spectrum">Spectrum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Time-of-flight">Time-of-flight</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Non-dimension-coordinates">Non-dimension coordinates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Position">Position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Beamline-geometry">Beamline geometry</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Event-data">Event data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#From-events-to-histogram">From events to histogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Fake-instrument-view">Fake instrument view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Monitors">Monitors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-1">Exercise 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Solution-1">Solution 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Adding-new-dimensions">Adding new dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Unit-conversion">Unit conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Summing-and-normalizing">Summing and normalizing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-2-(advanced)">Exercise 2 (advanced)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/runtime-configuration.html">Runtime Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Neutron-scattering</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/overview.html">Overview: scipp.neutron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/diffraction.html">Diffraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/from-mantid-to-scipp.html">From Mantid to Scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/instrument-view.html">Instrument view</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/customizing.html">Customizing Scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/how-to.html">How To…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/tooling.html">Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/transform.html">Transforming data with custom operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/constructing_variables.html">C++ API for constructing variables</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Neutron Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/neutron-data.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p><a class="reference external" href="https://raw.githubusercontent.com/scipp/scipp/master/docs/tutorials/neutron-data.ipynb">Download this Jupyter notebook</a></p>
+<hr class="docutils" />
+<div class="section" id="Neutron-Data">
+<h1>Neutron Data<a class="headerlink" href="#Neutron-Data" title="Permalink to this headline">¶</a></h1>
+<p>This is the continuation from <a class="reference external" href="https://scipp.github.io/tutorials/multi-d-datasets.html">Multi-dimensional datasets</a> tutorial. Note that this notebooks requires <a class="reference external" href="https://www.mantidproject.org/Main_Page">Mantid</a> and data files that are, e.g., contained in the <a class="reference external" href="https://hub.docker.com/r/scipp/scipp-jupyter-demo">Docker</a> image of scipp. Therefore, outputs are unfortunately not available on the published documentation.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipp</span> <span class="k">as</span> <span class="nn">sc</span>
+<span class="kn">from</span> <span class="nn">scipp.plot</span> <span class="kn">import</span> <span class="n">plot</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Loading-Nexus-files">
+<h2>Loading Nexus files<a class="headerlink" href="#Loading-Nexus-files" title="Permalink to this headline">¶</a></h2>
+<p>Scipp does not support native loading of <a class="reference external" href="https://www.nexusformat.org/">Nexus</a> files at this point. However, it can leverage Mantid to do this:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">events</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="c1"># Load only a single bank to reduce memory consumption, so this runs on a laptop</span>
+<span class="n">events</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+    <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;PG3_4844_event.nxs&#39;</span><span class="p">,</span>
+    <span class="n">load_pulse_times</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">mantid_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;BankName&#39;</span><span class="p">:</span> <span class="s1">&#39;bank184&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;LoadMonitors&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span> <span class="c1"># Mantid does not load monitors by default</span>
+<span class="n">events</span><span class="p">[</span><span class="s1">&#39;vanadium&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+    <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;PG3_4866_event.nxs&#39;</span><span class="p">,</span>
+    <span class="n">load_pulse_times</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">mantid_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;BankName&#39;</span><span class="p">:</span> <span class="s1">&#39;bank184&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;LoadMonitors&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<p>Note that internally this calls <code class="docutils literal notranslate"><span class="pre">Load</span></code> or <code class="docutils literal notranslate"><span class="pre">LoadEventNexus</span></code> provided by Mantid. Scipp then converts from Mantid’s <code class="docutils literal notranslate"><span class="pre">EventWorkspace</span></code> and <code class="docutils literal notranslate"><span class="pre">Workspace2D</span></code> to <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>. Currently not all information from the Mantid workspaces is preserved in the data array.</p>
+</div>
+<div class="section" id="Understanding-the-contents-of-the-created-dataset">
+<h2>Understanding the contents of the created dataset<a class="headerlink" href="#Understanding-the-contents-of-the-created-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The dataset with loaded sample and vanadium data looks as follows:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">events</span>
+</pre></div>
+</div>
+</div>
+<p>We give a short discussion of each of the entries to familiarize ourselves with how data from a Mantid workspace is mapped onto a data array or dataset.</p>
+<div class="section" id="Dimensions-and-coordinates">
+<h3>Dimensions and coordinates<a class="headerlink" href="#Dimensions-and-coordinates" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Spectrum">
+<h4>Spectrum<a class="headerlink" href="#Spectrum" title="Permalink to this headline">¶</a></h4>
+<p>In most Mantid workspaces each spectrum corresponds to data measured at a detector pixel, i.e., at a specific position or region in space. If that is the case, scipp used <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> for this dimension.</p>
+<p>Note that using the generic <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> should be avoided in other cases. For example, after converting data to <code class="docutils literal notranslate"><span class="pre">Q</span></code> we need to avoid having “compatible” dimensions of a data and would use <code class="docutils literal notranslate"><span class="pre">Q</span></code> as a dimension instead. The double meaning of what a “spectrum” actually is in Mantid is thus avoided.</p>
+<p>The spectrum dimension comes with a coordinate:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">events</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;spectrum&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Time-of-flight">
+<h4>Time-of-flight<a class="headerlink" href="#Time-of-flight" title="Permalink to this headline">¶</a></h4>
+<p>In contrast to a <code class="docutils literal notranslate"><span class="pre">EventWorkspace</span></code> in Mantid, a dataset does not necessarily come with a time-of-flight (TOF) coordinate (bin edges) on top of the TOF values for the events. Therefore dimension <code class="docutils literal notranslate"><span class="pre">tof</span></code> does not have a corresponding <em>dense</em> coordinate. See below for <em>sparse</em> TOF coordinates.</p>
+</div>
+</div>
+<div class="section" id="Non-dimension-coordinates">
+<h3>Non-dimension coordinates<a class="headerlink" href="#Non-dimension-coordinates" title="Permalink to this headline">¶</a></h3>
+<p>Scipp stores auxiliary coordinate “labels” as non-dimension coordinates. Dimension and non-dimension coordinates (and not attributes) are used to ensure that information is compatible in operations involving multiple data arrays or dataset.</p>
+<p>This actually happended internally when we first loaded the files for <code class="docutils literal notranslate"><span class="pre">'sample'</span></code> and <code class="docutils literal notranslate"><span class="pre">'vanadium'</span></code> and inserted them into the same dataset: if the files had had different spectrum numbers or spectrum positions the insertion of the <code class="docutils literal notranslate"><span class="pre">'vanadium'</span></code> data would have failed due to incompatible coordinates.</p>
+<div class="section" id="Position">
+<h4>Position<a class="headerlink" href="#Position" title="Permalink to this headline">¶</a></h4>
+<p>Positions are an auxiliary coordinate for dimension <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, in other words they could be used to “label” the spectrum coordinate, e.g., in an a plot. The main purpose of storing postions as labels instead of, e.g., attributes is to ensure that operations between data with mismatching detector positions fail and thus prevent mistakes.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">events</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>The position coordinate stores the positions of all spectra. Each position is a 3-component vector (X, Y, Z).</p>
+</div>
+<div class="section" id="Beamline-geometry">
+<h4>Beamline geometry<a class="headerlink" href="#Beamline-geometry" title="Permalink to this headline">¶</a></h4>
+<p>Apart from positions of spectra we require additional geometry information for various components in a neutron beamline (instrument). This is stored as labels such as <code class="docutils literal notranslate"><span class="pre">'source_position'</span></code> and <code class="docutils literal notranslate"><span class="pre">'sample_position'</span></code>. We instead recommend the use of helper functions such as <code class="docutils literal notranslate"><span class="pre">sample_position</span></code> which will be discussed below:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">events</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;sample_position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<p>We emphazise the importance of storing this information as coordinates. This ensures that we cannot accidentally combine data obtained with, e.g., different sample positions.</p>
+<p><em>Bonus note: If we ever</em> <strong>do</strong> <em>want to combine data with different samples we can either remove this information from the dataset, or change it to an</em> <strong>attribute</strong>.</p>
+<p>For convenient and standardized access, as well as access of derived information such as scattering angles, a number of helper functions is provided. For example:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">sample_position</span><span class="p">(</span><span class="n">events</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># copy is a temporary hack since const view lacks some properties</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">scattering_angle</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>For a full list of available beamline-geometry helpers please refer to the <a class="reference external" href="https://scipp.github.io/additional-modules/scipp-neutron.html#beamline-geometry">documentation</a>.</p>
+<p><em>Bonus note: For the most part, the structure of ``ComponentInfo`` (and ``DetectorInfo``) in Mantid is easily represented by a ``Dataset``, i.e., very little change is required. For example, scanning is simply handled by an extra dimension of, e.g., the position and rotation variables. By using ``Dataset`` to handle this, we can use exactly the same tools and do not need to implement or learn a new API.</em></p>
+</div>
+</div>
+<div class="section" id="Attributes">
+<h3>Attributes<a class="headerlink" href="#Attributes" title="Permalink to this headline">¶</a></h3>
+<p>Attributes allow for storing information with data in a way that leaves it untouched in normal operations. This is used for storing meta-data that does not require processing alongside normal data. For neutron data key examples are: run information, sample information, and neutron monitors. Scipp simply stores Mantid’s <code class="docutils literal notranslate"><span class="pre">Run</span></code> and <code class="docutils literal notranslate"><span class="pre">Sample</span></code> objects in the <code class="docutils literal notranslate"><span class="pre">&quot;run&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;sample&quot;</span></code> attributes. Monitors are stored, per dataset item (<code class="docutils literal notranslate"><span class="pre">sample</span></code>, <code class="docutils literal notranslate"><span class="pre">vanadium</span></code>), in an attribute named
+<code class="docutils literal notranslate"><span class="pre">&quot;monitorN&quot;</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the monitor number.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">events</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;run&#39;</span><span class="p">])</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">events</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">])</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">events</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;monitor1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>Note that these are attributes of the sample (or vanadium). A dataset itself can also have attributes, but in this case it does not. Each of the attributes above is a 0-D variable, the easiest way to access this value is the <code class="docutils literal notranslate"><span class="pre">value</span></code> property:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">mantid_run</span> <span class="o">=</span> <span class="n">events</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;run&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The run contains the following properties:</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mantid_run</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+<span class="n">mantid_sample</span> <span class="o">=</span> <span class="n">events</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sample name: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mantid_sample</span><span class="o">.</span><span class="n">getName</span><span class="p">()))</span>
+
+<span class="c1"># Each monitor (just 1 in this case) is stored as a data array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Monitor:&#39;</span><span class="p">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">events</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;monitor1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Event-data">
+<h3>Event data<a class="headerlink" href="#Event-data" title="Permalink to this headline">¶</a></h3>
+<p>Neutron events are stored as <strong>sparse data</strong> in contrast to the regular gridded (“dense”) data of, e.g., histogrammed data. See <a class="reference external" href="https://scipp.github.io/user-guide/sparse-data.html">the scipp documentation</a> for more information.</p>
+<p>The number of neutrons detected at each position is different and thus scipp has no fixed definition for the length of the “sparse” dimension. This looks as follows:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">events</span><span class="p">[</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>This data structure is to be interpreted as follows:</p>
+<ul class="simple">
+<li><p>Each position sees a different number of events, and events arrive at random time. Therefore, there is a time-of-flight for <em>every pixel</em>, for <em>every event</em>, and for <em>every data item</em> (<code class="docutils literal notranslate"><span class="pre">'vanadium'</span></code> and <code class="docutils literal notranslate"><span class="pre">'sample'</span></code>). This <strong>sparse coordinate</strong> has the following properties:</p>
+<ul>
+<li><p>The sparse coord for <code class="docutils literal notranslate"><span class="pre">tof</span></code> is associated with a data item and is not global for the dataset.</p></li>
+<li><p>The sparse coord for <code class="docutils literal notranslate"><span class="pre">tof</span></code> depends on dimension <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>.</p></li>
+<li><p>The sparse coord for <code class="docutils literal notranslate"><span class="pre">tof</span></code> has a different length for each spectrum.</p></li>
+</ul>
+</li>
+<li><p>Extra information such as pulse times are stored as sparse labels. What was said above for sparse coords also applies to sparse labels. The length at each position matches the corresponding length of the sparse coordinate.</p></li>
+<li><p>Values and variances are optional. They would represent weight and weight uncertainties of events. If they are not present an implicit weight of <code class="docutils literal notranslate"><span class="pre">1</span></code> is assumed, i.e., each coord value corresponds to a single neutron.</p></li>
+</ul>
+<p>The time-of-flight values for an individual pixel could be accessed as follows:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">events</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">][</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="From-events-to-histogram">
+<h3>From events to histogram<a class="headerlink" href="#From-events-to-histogram" title="Permalink to this headline">¶</a></h3>
+<p>We histogram the event data:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">bins</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;tof&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1000.0</span><span class="p">,</span> <span class="mf">20000.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">us</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">bins</span><span class="p">)</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Fake-instrument-view">
+<h3>Fake instrument view<a class="headerlink" href="#Fake-instrument-view" title="Permalink to this headline">¶</a></h3>
+<p>Just for fun, we can quickly generate a crude “instrument view”. In this case this works since we have only a single panel. If there were multiple panels, they could be handled as an extra dimension.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">panel</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="c1"># 154 and 7 are the extents of the panel</span>
+<span class="n">panel</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;tof&#39;</span><span class="p">],</span> <span class="p">(</span><span class="mi">154</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">379</span><span class="p">))</span>
+<span class="n">panel</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">]</span>
+<span class="c1"># Note that the scale is meaningless, could use real instrument parameters</span>
+<span class="n">panel</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">154</span><span class="p">))</span>
+<span class="n">panel</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+<span class="c1"># Move TOF slider around 12000 to see diffraction lines moving across the panel</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">panel</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">,</span> <span class="mi">180</span><span class="p">:</span><span class="mi">260</span><span class="p">],</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tof&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Monitors">
+<h3>Monitors<a class="headerlink" href="#Monitors" title="Permalink to this headline">¶</a></h3>
+<p>If loaded, monitors are available as an attribute named <code class="docutils literal notranslate"><span class="pre">&quot;monitorN&quot;</span></code>. For demonstration purposes we can add some fake monitors to demonstrate the versatility of <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>. Storing each monitor as a separate variable that contains a nested data array gives us complete freedom and flexibility. Another approach would be to use a single 1-D variable containing monitor data arrays as elements.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Histogram-mode beam monitor</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">20000.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">)</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">beam</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;tof&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">counts</span><span class="p">,</span> <span class="n">variances</span><span class="o">=</span><span class="n">counts</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">counts</span><span class="p">),</span>
+    <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tof&#39;</span><span class="p">:</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;tof&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">edges</span><span class="p">)})</span>
+
+<span class="c1"># Event-mode transmission monitor</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;tof&#39;</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="n">sc</span><span class="o">.</span><span class="n">Dimensions</span><span class="o">.</span><span class="n">Sparse</span><span class="p">])</span>
+<span class="n">events</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">123456</span><span class="p">)</span>
+<span class="n">transmission</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tof&#39;</span><span class="p">:</span> <span class="n">events</span><span class="p">})</span>
+
+<span class="c1"># Beam profile monitor</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">counts</span><span class="p">),</span>
+    <span class="n">coords</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)),</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
+    <span class="p">})</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span>
+    <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span><span class="o">-</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">counts</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">transmission</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;transmission&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">transmission</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;beam&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">beam</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;profile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">profile</span><span class="p">)</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#Exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Normalize the sample data to the monitor in the <code class="docutils literal notranslate"><span class="pre">&quot;monitor1&quot;</span></code> attribute. This involves a couple of steps: 1. Normalization in time-of-flight does not make sense. Convert to, e.g., wavelength. 2. The data and the monitor have mismatching bins. Rebin to common binning. 3. Normalize.</p>
+</div>
+<div class="section" id="Solution-1">
+<h3>Solution 1<a class="headerlink" href="#Solution-1" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">],</span> <span class="s1">&#39;tof&#39;</span><span class="p">,</span> <span class="s1">&#39;wavelength&#39;</span><span class="p">)</span>
+<span class="c1"># Using bins of first spectrum here, other choices are just as valid</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">rebin</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s1">&#39;wavelength&#39;</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;wavelength&#39;</span><span class="p">][</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">mon</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;monitor1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+<span class="n">mon</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">mon</span><span class="p">,</span> <span class="s1">&#39;tof&#39;</span><span class="p">,</span> <span class="s1">&#39;wavelength&#39;</span><span class="p">)</span>
+<span class="n">mon</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">rebin</span><span class="p">(</span><span class="n">mon</span><span class="p">,</span> <span class="s1">&#39;wavelength&#39;</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;wavelength&#39;</span><span class="p">])</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">mon</span><span class="p">)</span>
+<span class="n">sample_over_beam</span> <span class="o">=</span> <span class="n">sample</span> <span class="o">/</span> <span class="n">mon</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">sample_over_beam</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We could now continue with the normalized data, but in the following we do not.</p>
+</div>
+<div class="section" id="Adding-new-dimensions">
+<h3>Adding new dimensions<a class="headerlink" href="#Adding-new-dimensions" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span>
+<span class="n">temp_scan</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">sample</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">dimensionless</span><span class="p">),</span> <span class="s1">&#39;temperature&#39;</span><span class="p">)</span>
+<span class="n">temp_scan</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">temp_scan</span><span class="p">,</span> <span class="n">temp_scan</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.64</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">dimensionless</span><span class="p">),</span> <span class="s1">&#39;temperature&#39;</span><span class="p">)</span>
+<span class="n">temp_scan</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">([</span><span class="s1">&#39;temperature&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mf">4.3</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">,</span> <span class="mf">273.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plot</span><span class="p">(</span><span class="n">temp_scan</span><span class="p">[</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">:],</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="s1">&#39;tof&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plot</span><span class="p">(</span><span class="n">temp_scan</span><span class="p">[</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="n">collapse</span><span class="o">=</span><span class="s1">&#39;tof&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Unit-conversion">
+<h3>Unit conversion<a class="headerlink" href="#Unit-conversion" title="Permalink to this headline">¶</a></h3>
+<p>Unit conversion is available in the <code class="docutils literal notranslate"><span class="pre">scipp.neutron</span></code> submodule. Converting a data array or dataset to a different unit implies changing one of the dimensions and its coordinate. Conversion can also be done with sparse data (events), but we are using the histogrammed data here:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">d</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">neutron</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s1">&#39;tof&#39;</span><span class="p">,</span> <span class="s1">&#39;d-spacing&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Plotting cannot handle ragged coordinates at this point, rebin to edges of first spectrum</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">rebin</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s1">&#39;d-spacing&#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;d-spacing&#39;</span><span class="p">][</span><span class="s1">&#39;spectrum&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Summing-and-normalizing">
+<h3>Summing and normalizing<a class="headerlink" href="#Summing-and-normalizing" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">summed</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s1">&#39;spectrum&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">summed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">normalized</span> <span class="o">=</span> <span class="n">summed</span><span class="p">[</span><span class="s1">&#39;sample&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">summed</span><span class="p">[</span><span class="s1">&#39;vanadium&#39;</span><span class="p">]</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">normalized</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-2-(advanced)">
+<h3>Exercise 2 (advanced)<a class="headerlink" href="#Exercise-2-(advanced)" title="Permalink to this headline">¶</a></h3>
+<p>Instead of loading only a single bank, load multiple, e.g., <code class="docutils literal notranslate"><span class="pre">bank124</span></code>, <code class="docutils literal notranslate"><span class="pre">bank144</span></code>, <code class="docutils literal notranslate"><span class="pre">bank164</span></code>, and <code class="docutils literal notranslate"><span class="pre">bank184</span></code>. Modify everything in this notebook to work with the new multi-bank data, obtaining a separate focussed diffraction spectrum for each bank.</p>
+<p>There is more than one option to solve this: 1. Concatenate the loaded data into a single dataset, resulting in more or larger dimensions. 2. Merge the loaded data into a single dataset, resulting in differently named variables for each bank. 3. Call the existing code as-is for each bank, working, e.g., for a Python <code class="docutils literal notranslate"><span class="pre">list</span></code> of datasets.</p>
+<p>Each of the approaches has its advantages and drawbacks.</p>
+<p>Here we recommend option 1, which in itself can be implemented in one of two ways: - Concatenate along a new <code class="docutils literal notranslate"><span class="pre">bank</span></code> dimension. - Concatenate along the existing dimension <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>.</p>
+<p><em>Note: You will likely experience some small problems with plotting, in particular issues with multi-dimensional coordinates in the first case (we suggest to slice manually until this is supported), and large gaps in the second case (can be avoided by adding a helper-coordinate).</em></p>
+<p><em>Bonus note for option 3: Unlike Mantid workspaces, datasets can safely be used in combination with Python containers. Do not try this with workspaces, since they are entangled with the ``AnalysisDataService``.</em></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../python-reference/api.html" class="btn btn-neutral float-right" title="Classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="neutron-diffraction.html" class="btn btn-neutral float-left" title="Neutron Data Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Scipp contributors
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

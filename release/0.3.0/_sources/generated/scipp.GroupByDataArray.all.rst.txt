@@ -1,0 +1,6 @@
+scipp.GroupByDataArray.all
+==========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataArray.all

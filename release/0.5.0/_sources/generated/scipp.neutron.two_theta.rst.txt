@@ -1,0 +1,6 @@
+﻿scipp.neutron.two\_theta
+========================
+
+.. currentmodule:: scipp.neutron
+
+.. autofunction:: two_theta

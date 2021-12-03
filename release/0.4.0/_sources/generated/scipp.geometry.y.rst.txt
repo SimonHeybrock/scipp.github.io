@@ -1,0 +1,6 @@
+scipp.geometry.y
+================
+
+.. currentmodule:: scipp
+
+.. autofunction:: geometry.y

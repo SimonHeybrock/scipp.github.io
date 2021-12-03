@@ -1,0 +1,6 @@
+﻿scipp.GroupByDataArray.mean
+===========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataArray.mean

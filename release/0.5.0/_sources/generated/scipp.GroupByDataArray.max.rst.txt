@@ -1,0 +1,6 @@
+﻿scipp.GroupByDataArray.max
+==========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataArray.max

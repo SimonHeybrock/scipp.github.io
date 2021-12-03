@@ -1,0 +1,39 @@
+scipp.Dataset
+=============
+
+.. currentmodule:: scipp
+
+.. autoclass:: Dataset
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Dataset.__init__
+      ~Dataset.clear
+      ~Dataset.copy
+      ~Dataset.items
+      ~Dataset.keys
+      ~Dataset.rename_dims
+      ~Dataset.values
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Dataset.attrs
+      ~Dataset.coords
+      ~Dataset.dims
+      ~Dataset.labels
+      ~Dataset.masks
+      ~Dataset.shape
+   
+   

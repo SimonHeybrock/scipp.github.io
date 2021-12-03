@@ -1,0 +1,6 @@
+﻿scipp.plot.plot
+===============
+
+.. currentmodule:: scipp.plot
+
+.. autofunction:: plot

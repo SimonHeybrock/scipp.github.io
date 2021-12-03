@@ -1,0 +1,6 @@
+scipp.neutron.l2
+================
+
+.. currentmodule:: scipp.neutron
+
+.. autofunction:: l2

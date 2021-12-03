@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Overview &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
+    <link rel="prev" title="scipp - Multi-dimensional data arrays with labeled dimensions" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-2021.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-data-array-concept">The data array concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physical-units">Physical units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variances-and-propagation-of-uncertainties">Variances and propagation of uncertainties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scattered-data-event-data">Scattered data (event data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#histograms-and-bin-edge-coordinates">Histograms and bin-edge coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick start</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-1d-data.html">Plotting 1-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-2d-data.html">Plotting 2-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-nd-data.html">Plotting N-D data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/customizing-figures.html">Customizing figures</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/neutron-diffraction.html">Neutron Powder Diffraction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/runtime-configuration.html">Runtime Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Neutron-scattering</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/overview.html">Overview: scipp.neutron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/diffraction.html">Diffraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/from-mantid-to-scipp.html">From Mantid to Scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/instrument-view.html">Instrument view</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/tooling.html">Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/coding-conventions.html">Coding conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/how-to.html">How To…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/transform.html">Transforming data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/constructing_variables.html">C++ API for constructing variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/variable_implementation.html">Implementation of class Variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/customizing.html">Customizing Scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/architecture-decision-records.html">Architecture Decision Records</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="https://scipp.github.io" selected>latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/getting-started/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="overview">
+<span id="id1"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-data-array-concept">
+<h2>The data array concept<a class="headerlink" href="#the-data-array-concept" title="Permalink to this headline">¶</a></h2>
+<p>The core data structure of scipp is <a class="reference internal" href="../generated/scipp.DataArray.html#scipp.DataArray" title="scipp.DataArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipp.DataArray</span></code></a>.
+A data array is essentially a multi-dimensional array with associated dicts of coordinates, masks, and attributes.
+For a more detailed explanation we refer to the <a class="reference external" href="../user-guide/data-structures.html#DataArray">documentation of DataArray</a>.</p>
+<p>Scipp labels dimensions and their associated coordinates with labels such as <code class="docutils literal notranslate"><span class="pre">'x'</span></code>, <code class="docutils literal notranslate"><span class="pre">'temperature'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'wavelength'</span></code>.</p>
+<p>Operations between data arrays “align” data items based on their names, dimension labels, and coordinate values.
+That is, if names or coordinates do not match, operations fail.
+Missing dimensions in the operands are automatically <a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html">broadcast</a>.
+In general scipp does not support automatic re-alignment of data.</p>
+<p>Data arrays with aligned coordinates can be combined into datasets.
+A dataset is essentially a dict-like container of data arrays with common associated coordinates.</p>
+</div>
+<div class="section" id="physical-units">
+<h2>Physical units<a class="headerlink" href="#physical-units" title="Permalink to this headline">¶</a></h2>
+<p>Data in a data array as well as coordinates are associated with a physical unit.
+The unit is accessed using the <code class="docutils literal notranslate"><span class="pre">unit</span></code> property.
+All operations take the unit into account:</p>
+<ul class="simple">
+<li><p>Operations fail if the units of coordinates do not match.</p></li>
+<li><p>Operations such as addition fail if the units of the data items do not match.</p></li>
+<li><p>Operations such as multiplication produce an output dataset with a new unit for each data item, e.g., <span class="math notranslate nohighlight">\(m^{2}\)</span> results from multiplication of two data items with unit <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="variances-and-propagation-of-uncertainties">
+<h2>Variances and propagation of uncertainties<a class="headerlink" href="#variances-and-propagation-of-uncertainties" title="Permalink to this headline">¶</a></h2>
+<p>Data in a data array as well as coordinates support optional variances in addition to their values.
+The variances are accessed using the <code class="docutils literal notranslate"><span class="pre">variances</span></code> property and have the same shape and dtype as the <code class="docutils literal notranslate"><span class="pre">values</span></code> array.
+All operations take the variances into account:</p>
+<ul class="simple">
+<li><p>Operations fail if the variances of coordinates are not identical, element by element.
+For the future, we are considering supporting inexact matching based on variances of coordinates but currently this is not implemented.</p></li>
+<li><p>Operations such as addition or multiplication propagate the errors to the output.
+An overview of the method can be found in <a class="reference external" href="https://en.wikipedia.org/wiki/Propagation_of_uncertainty">Wikipedia: Propagation of uncertainty</a>.
+The implemented mechanism assumes uncorrelated data.</p></li>
+</ul>
+</div>
+<div class="section" id="scattered-data-event-data">
+<h2>Scattered data (event data)<a class="headerlink" href="#scattered-data-event-data" title="Permalink to this headline">¶</a></h2>
+<p>Scipp supports event data in form of arrays of variable-length tables.
+Conceptually, we distinguish <em>dense</em> and <em>binned</em> data.</p>
+<ul class="simple">
+<li><p>Dense data is the common case of a regular, e.g., 2-D, grid of data points.</p></li>
+<li><p>Binned (event) data (as supported by scipp) is semi-regular data, i.e., a N-D array/grid of variable-length tables.
+That is, only the internal “dimension” of the tables (event lists) are irregular.</p></li>
+</ul>
+<p>The target application of this is measuring random <em>events</em> in an array of detector pixels.
+In contrast to a regular image sensor, which may produce a 2-D image at fixed time intervals (which could be handled as 3-D data), each detector pixel will see a different event rate (photons or neutrons) and is “read out” at uncorrelated times.</p>
+<p>Scipp handles such event data by supporting <em>binned data</em>, which we explicitly distinguish from <em>histogrammed data</em>.
+Binned data can be converted into histogrammed data by summing over all the events in a bin.</p>
+</div>
+<div class="section" id="histograms-and-bin-edge-coordinates">
+<h2>Histograms and bin-edge coordinates<a class="headerlink" href="#histograms-and-bin-edge-coordinates" title="Permalink to this headline">¶</a></h2>
+<p>Coordinates for one or more of the dimensions in a data array can represent bin edges.
+The extent of the coordinate in that dimension exceeds the data extent (in that dimension) by 1.
+Bin-edge coordinates frequently arise when we histogram event-based data.
+The event data described above can be used to produce such a histogram.</p>
+<p>Bin-edge coordinates are handled naturally by operations with datasets.
+Most operations on individual data elements are unaffected.
+Other operations such as <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> take the edges into account and ensure that the resulting concatenated edge coordinate is well-defined.
+There are also a number of operations specific to data with bin-edges, such as <code class="docutils literal notranslate"><span class="pre">rebin</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="scipp - Multi-dimensional data arrays with labeled dimensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

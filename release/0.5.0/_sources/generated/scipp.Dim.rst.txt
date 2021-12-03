@@ -1,0 +1,49 @@
+﻿scipp.Dim
+=========
+
+.. currentmodule:: scipp
+
+.. autoclass:: Dim
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Dim.__init__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Dim.DSpacing
+      ~Dim.Detector
+      ~Dim.Energy
+      ~Dim.EnergyTransfer
+      ~Dim.Group
+      ~Dim.Invalid
+      ~Dim.Position
+      ~Dim.Q
+      ~Dim.QSquared
+      ~Dim.Qx
+      ~Dim.Qy
+      ~Dim.Qz
+      ~Dim.Row
+      ~Dim.ScatteringAngle
+      ~Dim.Spectrum
+      ~Dim.Temperature
+      ~Dim.Time
+      ~Dim.Tof
+      ~Dim.Wavelength
+      ~Dim.X
+      ~Dim.Y
+      ~Dim.Z
+   
+   

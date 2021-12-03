@@ -1,0 +1,6 @@
+scipp.GroupByDataset.sum
+========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataset.sum

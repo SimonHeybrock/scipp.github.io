@@ -1,0 +1,6 @@
+﻿scipp.is\_equal
+===============
+
+.. currentmodule:: scipp
+
+.. autofunction:: is_equal

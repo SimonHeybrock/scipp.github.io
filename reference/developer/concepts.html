@@ -1,0 +1,2070 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concepts &#8212; scipp  documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="C++ API for constructing variables" href="constructing_variables.html" />
+    <link rel="prev" title="Coding conventions" href="coding-conventions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo-large-v4.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../getting-started/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../getting-started/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../getting-started/quick-start.html">
+   Quick start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../getting-started/faq.html">
+   Frequently Asked Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/data-structures.html">
+   Data Structures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/slicing.html">
+   Slicing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/computation.html">
+   Computation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/masking.html">
+   Masking
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../user-guide/binned-data.html">
+   Binned Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user-guide/binned-data/binned-data.html">
+     Binned Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user-guide/binned-data/computation.html">
+     Computation with Binned Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user-guide/binned-data/filtering.html">
+     Filtering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user-guide/binned-data/histogramming-grouping-and-binning.html">
+     Histogramming, grouping, and binning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/coordinate-transformations.html">
+   Coordinate transformations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/reading-and-writing-files.html">
+   Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/how_to.html">
+   How to…
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../user-guide/tips-tricks-and-anti-patterns.html">
+   Tips, tricks, and anti-patterns
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../visualization/representations-and-tables.html">
+   Representations and Tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../visualization/plotting-overview.html">
+   Plotting Overview
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../visualization/plotting-in-depth.html">
+   Plotting in depth
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../visualization/plotting/plotting-1d-data.html">
+     Plotting 1-D data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../visualization/plotting/plotting-2d-data.html">
+     Plotting 2-D data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../visualization/plotting/plotting-nd-data.html">
+     Plotting N-D data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../visualization/plotting/customizing-figures.html">
+     Customizing figures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../visualization/plotting/datetime_handling.html">
+     Datetime handling
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../classes.html">
+   Classes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.Bins.html">
+     scipp.Bins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.DataArray.html">
+     scipp.DataArray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.Dataset.html">
+     scipp.Dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.GroupByDataArray.html">
+     scipp.GroupByDataArray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.GroupByDataset.html">
+     scipp.GroupByDataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.Unit.html">
+     scipp.Unit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.Variable.html">
+     scipp.Variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.typing.VariableLike.html">
+     scipp.typing.VariableLike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/classes/scipp.typing.MetaDataMap.html">
+     scipp.typing.MetaDataMap
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../creation-functions.html">
+   Creation functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.array.html">
+     scipp.array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.arange.html">
+     scipp.arange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.empty.html">
+     scipp.empty
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.empty_like.html">
+     scipp.empty_like
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.full.html">
+     scipp.full
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.full_like.html">
+     scipp.full_like
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.geomspace.html">
+     scipp.geomspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.linspace.html">
+     scipp.linspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.logspace.html">
+     scipp.logspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.matrix.html">
+     scipp.matrix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.matrices.html">
+     scipp.matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.ones.html">
+     scipp.ones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.ones_like.html">
+     scipp.ones_like
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.scalar.html">
+     scipp.scalar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.vector.html">
+     scipp.vector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.vectors.html">
+     scipp.vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.zeros.html">
+     scipp.zeros
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.zeros_like.html">
+     scipp.zeros_like
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../free-functions.html">
+   Free functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.bin.html">
+     scipp.bin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.bins.html">
+     scipp.bins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.bins_like.html">
+     scipp.bins_like
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.choose.html">
+     scipp.choose
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.collapse.html">
+     scipp.collapse
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.histogram.html">
+     scipp.histogram
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.logical_and.html">
+     scipp.logical_and
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.logical_or.html">
+     scipp.logical_or
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.logical_xor.html">
+     scipp.logical_xor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.lookup.html">
+     scipp.lookup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.merge.html">
+     scipp.merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.rebin.html">
+     scipp.rebin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.reduce.html">
+     scipp.reduce
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.slices.html">
+     scipp.slices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.sort.html">
+     scipp.sort
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.stddevs.html">
+     scipp.stddevs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.to_unit.html">
+     scipp.to_unit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.transform_coords.html">
+     scipp.transform_coords
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.values.html">
+     scipp.values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.variances.html">
+     scipp.variances
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.where.html">
+     scipp.where
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.abs.html">
+     scipp.abs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.add.html">
+     scipp.add
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.ceil.html">
+     scipp.ceil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.cross.html">
+     scipp.cross
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.divide.html">
+     scipp.divide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.dot.html">
+     scipp.dot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.erf.html">
+     scipp.erf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.erfc.html">
+     scipp.erfc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.exp.html">
+     scipp.exp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.floor.html">
+     scipp.floor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.floor_divide.html">
+     scipp.floor_divide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.log.html">
+     scipp.log
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.log10.html">
+     scipp.log10
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.mod.html">
+     scipp.mod
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.multiply.html">
+     scipp.multiply
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.norm.html">
+     scipp.norm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.reciprocal.html">
+     scipp.reciprocal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.round.html">
+     scipp.round
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.sqrt.html">
+     scipp.sqrt
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.subtract.html">
+     scipp.subtract
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.broadcast.html">
+     scipp.broadcast
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.concat.html">
+     scipp.concat
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.concatenate.html">
+     scipp.concatenate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.flatten.html">
+     scipp.flatten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.fold.html">
+     scipp.fold
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.transpose.html">
+     scipp.transpose
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.allclose.html">
+     scipp.allclose
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.allsorted.html">
+     scipp.allsorted
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.equal.html">
+     scipp.equal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.greater.html">
+     scipp.greater
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.greater_equal.html">
+     scipp.greater_equal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.identical.html">
+     scipp.identical
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.isclose.html">
+     scipp.isclose
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.islinspace.html">
+     scipp.islinspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.issorted.html">
+     scipp.issorted
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.less.html">
+     scipp.less
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.less_equal.html">
+     scipp.less_equal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.not_equal.html">
+     scipp.not_equal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.isnan.html">
+     scipp.isnan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.isinf.html">
+     scipp.isinf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.isfinite.html">
+     scipp.isfinite
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.isposinf.html">
+     scipp.isposinf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.isneginf.html">
+     scipp.isneginf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.nan_to_num.html">
+     scipp.nan_to_num
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.all.html">
+     scipp.all
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.any.html">
+     scipp.any
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.cumsum.html">
+     scipp.cumsum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.max.html">
+     scipp.max
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.mean.html">
+     scipp.mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.min.html">
+     scipp.min
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.nanmax.html">
+     scipp.nanmax
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.nanmean.html">
+     scipp.nanmean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.nanmin.html">
+     scipp.nanmin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.nansum.html">
+     scipp.nansum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.sum.html">
+     scipp.sum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.sin.html">
+     scipp.sin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.cos.html">
+     scipp.cos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.tan.html">
+     scipp.tan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.asin.html">
+     scipp.asin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.acos.html">
+     scipp.acos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.atan.html">
+     scipp.atan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.atan2.html">
+     scipp.atan2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.geometry.position.html">
+     scipp.geometry.position
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.geometry.rotation_matrix_from_quaternion_coeffs.html">
+     scipp.geometry.rotation_matrix_from_quaternion_coeffs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.groupby.html">
+     scipp.groupby
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.counts_to_density.html">
+     scipp.counts_to_density
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.density_to_counts.html">
+     scipp.density_to_counts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.show.html">
+     scipp.show
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.show_graph.html">
+     scipp.show_graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.table.html">
+     scipp.table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.to_html.html">
+     scipp.to_html
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.plot.html">
+     scipp.plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.to_dict.html">
+     scipp.to_dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.from_dict.html">
+     scipp.from_dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.compat.from_pandas.html">
+     scipp.compat.from_pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.compat.from_xarray.html">
+     scipp.compat.from_xarray
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.get_logger.html">
+     scipp.get_logger
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../generated/functions/scipp.display_logs.html">
+     scipp.display_logs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules.html">
+   Modules
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../generated/modules/scipp.constants.html">
+     scipp.constants
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.constants.physical_constants.html">
+       scipp.constants.physical_constants
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../generated/modules/scipp.spatial.html">
+     scipp.spatial
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../generated/modules/scipp.spatial.transform.html">
+       scipp.spatial.transform
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../generated/modules/scipp.spatial.transform.as_rotvec.html">
+         scipp.spatial.transform.as_rotvec
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../generated/modules/scipp.spatial.transform.from_rotvec.html">
+         scipp.spatial.transform.from_rotvec
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../generated/modules/scipp.logging.html">
+     scipp.logging
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.clear_log_widget.html">
+       scipp.logging.clear_log_widget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.display_logs.html">
+       scipp.logging.display_logs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.get_log_widget.html">
+       scipp.logging.get_log_widget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.get_logger.html">
+       scipp.logging.get_logger
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.get_widget_handler.html">
+       scipp.logging.get_widget_handler
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.make_log_widget.html">
+       scipp.logging.make_log_widget
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.make_stream_handler.html">
+       scipp.logging.make_stream_handler
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.make_widget_handler.html">
+       scipp.logging.make_widget_handler
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../generated/modules/scipp.logging.WidgetHandler.html">
+       scipp.logging.WidgetHandler
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linear-algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dtype.html">
+   Data types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../units.html">
+   Physical units
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../error-propagation.html">
+   Propagation of uncertainties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ownership-mechanism-and-readonly-flags.html">
+   Ownership mechanism and readonly flags
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../logging.html">
+   Logging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../runtime-configuration.html">
+   Runtime Configuration
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../developer-documentation.html">
+   Developer Documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api.html">
+     API Reference
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="architecture-decision-records.html">
+     Architecture Decision Records
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0001-remove-dataset-masking-support.html">
+       ADR 0001: Remove dataset masking support
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0002-remove-instrument-view-projection-options.html">
+       ADR 0002: Remove instrument view 2D projection options
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0003-refactor-plotting-code-with-mvc-pattern.html">
+       ADR 0003: Refactor plotting code to use Model-View-Controller design pattern
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0004-use-ipympl-backend-for-matplotlib.html">
+       ADR 0004: Use the ipympl backend for Matplotlib figures in Jupyter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0005-remove-need-for-bins-property-when-calling-bin-or-histogram.html">
+       ADR 0005: Remove need for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bins
+        </span>
+       </code>
+       property when calling
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bin
+        </span>
+       </code>
+       or
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         histogram
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0006-add-readonly-flags.html">
+       ADR 0006: Add read-only flags
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0007-do-not-support-args-referencing-x-or-y.html">
+       ADR 0007: Do not support arguments referring to
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         x
+        </span>
+       </code>
+       or
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         y
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0008-consistent-multi-dimensional-coords.html">
+       ADR 0008: Consistent multi-dimensional coords
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0009-handle-dimensionless-as-non-counts.html">
+       ADR 0009: Handle dimensionless as non-counts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="adr/0010-acknowledge-stability-and-maintainability-tasks.html">
+       ADR 0010: Acknowledge stability and maintainability tasks
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="coding-conventions.html">
+     Coding conventions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="constructing_variables.html">
+     C++ API for constructing variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="customizing.html">
+     Customizing Scipp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dependencies.html">
+     Dependencies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="deployment.html">
+     Deployment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="how-to.html">
+     How To…
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="multi_dimensional_indexing.html">
+     Multi-Dimensional Indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tooling.html">
+     Tooling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transform.html">
+     Transforming data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variable_implementation.html">
+     Implementation of class Variable
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/introduction.html">
+   1-D datasets and tables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/multi-d-datasets.html">
+   Multi-dimensional datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/about.html">
+   About scipp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/whats-new.html">
+   What’s new in scipp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/roadmap.html">
+   Roadmap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/contributing.html">
+   Contributing to scipp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/release-notes.html">
+   Release Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<!-- Minimally modifed from original theme to specify "download" attribute in <a> so ipynb is downloaded instead of opened by browser. -->
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/reference/developer/concepts.ipynb" download><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/scipp/scipp"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/scipp/scipp/issues/new?title=Issue%20on%20page%20%2Freference/developer/concepts.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/scipp/scipp/edit/main/docs/reference/developer/concepts.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Here, we override the default launchbuttons.html by replacing it with our
+     version selection menu, since we do not intend to use the launchbuttons.
+     This allows us to add the version selection menu in some unused white space
+     that is always visible. -->
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" style="font-size: 1em;padding-top:0.33rem;">Scipp version
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-buttons" style="transform:translate(10%);">
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io"><button type="button"
+                class="btn btn-secondary topbarbtn">latest</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.9.0"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.9</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.8.4"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.8</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.7.1"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.7</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.6.1"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.6</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.5.0"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.5</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.4.0"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.4</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/release/0.3.0"><button type="button"
+                class="btn btn-secondary topbarbtn">v0.3</button></a>
+    </div>
+</div>
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" style="font-size: 1em;padding-top:0.33rem;">Related projects
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-buttons" style="transform:translate(10%);">
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io"><button type="button"
+                class="btn btn-secondary topbarbtn">scipp</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/scippneutron"><button type="button"
+                class="btn btn-secondary topbarbtn">scippneutron</button></a>
+        <a class="dropdown-buttons"
+            href="https://scipp.github.io/ess"><button type="button"
+                class="btn btn-secondary topbarbtn">ess</button></a>
+    </div>
+</div>
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#DataArray-and-Dataset-meta-data-handling">
+   DataArray and Dataset meta data handling
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="Concepts">
+<h1>Concepts<a class="headerlink" href="#Concepts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="DataArray-and-Dataset-meta-data-handling">
+<h2>DataArray and Dataset meta data handling<a class="headerlink" href="#DataArray-and-Dataset-meta-data-handling" title="Permalink to this headline">¶</a></h2>
+<p>This section describes details about how coords (and masks) of datasets and data arrays behave when slicing, combining, or inserting.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipp</span> <span class="k">as</span> <span class="nn">sc</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">da</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+                  <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="n">x</span><span class="p">},</span>
+                  <span class="n">masks</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="n">sc</span><span class="o">.</span><span class="n">less</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">one</span><span class="p">)})</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="n">da</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<p>Consider a data array <code class="docutils literal notranslate"><span class="pre">da</span></code> and a dataset <code class="docutils literal notranslate"><span class="pre">ds</span></code> with an aligned coord and an aligned mask. The following conditions must hold:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span> <span class="c1"># range slice preserves coord</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span> <span class="c1"># range slice preserves coord</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span> <span class="c1"># point slice converts coord to attr</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span> <span class="c1"># point slice preserves masks as aligned</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">][</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span> <span class="c1"># cannot have attr (unaligned coord) in dataset</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">][</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span>
+
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">][</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span>
+</pre></div>
+</div>
+</div>
+<p>In operations, coords are compared:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ok</span>
+</pre></div>
+</div>
+</div>
+<p>Mismatching attrs (“unaligned coords”) are dropped:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">da</span> <span class="o">+</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">da</span> <span class="o">+</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Masks are ORed, there is no concept of “unaligned masks”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">assert</span> <span class="ow">not</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">da</span> <span class="o">+</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">da</span> <span class="o">+</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>A missing attr is interpreted as mismatch to ensure that:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Insertion order does not matter for attrs:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="n">ds1</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">ds2</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">ds1</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">ds1</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">ds2</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">ds2</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+<span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">ds1</span><span class="p">,</span> <span class="n">ds2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Insert into dataset with mismatching attrs drops attr:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># Drops &#39;x&#39; from &#39;a&#39;</span>
+<span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="c1"># shadowing is NOT supported</span>
+</pre></div>
+</div>
+</div>
+<p>Masks of dataset items are independent:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">masked1</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">masked1</span><span class="o">.</span><span class="n">masks</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">less</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">one</span><span class="p">)</span>
+<span class="n">masked2</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">masked2</span><span class="o">.</span><span class="n">masks</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">less</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">one</span><span class="p">)</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">masked1</span><span class="p">,</span> <span class="n">masked2</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">masked1</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">masked2</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">masks</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>If there is no coord it is preserved for all items. Adding a coord later makes the <code class="docutils literal notranslate"><span class="pre">meta</span></code> property invalid because of ambiguous name shadowing:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">coords</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span>
+<span class="k">assert</span> <span class="s1">&#39;x&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># introduce shadowing</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span> <span class="c1"># raises because of shadowing</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">assert</span> <span class="n">ok</span>
+<span class="k">del</span> <span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">edges</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">da</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">edges</span>
+<span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:],</span> <span class="s1">&#39;x&#39;</span><span class="p">),</span> <span class="n">da</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;x&#39;</span><span class="p">),</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;x&#39;</span><span class="p">),</span> <span class="n">da</span><span class="p">)</span>
+<span class="n">da_yx</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:],</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span> <span class="c1"># create 2-D coord</span>
+<span class="k">assert</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">da_yx</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">sc</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">da</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:],</span> <span class="s1">&#39;y&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>2-D coords for a dimension prevent operations between slices that are not along that dimension:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">da_2d</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span>
+    <span class="n">coords</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])),</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="n">sc</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])})</span>
+
+<span class="n">da_2d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">da_2d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># Same as with 1-D coord: x-coord differs but not aligned due to slice.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># &#39;y&#39; sliced, so &#39;x&#39; coord is aligned and yields different values from slices of 2-D coord.</span>
+    <span class="n">da_2d</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">da_2d</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ok</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">coords</span></code> always refers to (aligned) coords in dataset, cannot add or erase via item since a new coord dict is created when getting a dataset item:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;fail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="k">except</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArrayError</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ok</span>
+<span class="k">assert</span> <span class="s1">&#39;fail&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">coords</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;xx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="k">assert</span> <span class="s1">&#39;xx&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">del</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;xx&#39;</span><span class="p">]</span>
+<span class="k">except</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArrayError</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ok</span>
+<span class="k">assert</span> <span class="s1">&#39;xx&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">coords</span>
+</pre></div>
+</div>
+</div>
+<p>The same mechanism applies for coords, masks, and attrs of slices:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">da</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;fail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="k">except</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArrayError</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ok</span>
+<span class="k">assert</span> <span class="s1">&#39;fail&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">da</span><span class="o">.</span><span class="n">coords</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">meta</span></code> contains dataset coordinates as well as item attributes, cannot add or erase, since ambiguous:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;fail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="k">except</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArrayError</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ok</span>
+<span class="k">assert</span> <span class="s1">&#39;fail&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="k">assert</span> <span class="s1">&#39;attr&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">del</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">]</span>
+<span class="k">except</span> <span class="n">sc</span><span class="o">.</span><span class="n">DataArrayError</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">ok</span>
+<span class="k">assert</span> <span class="s1">&#39;attr&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span>
+</pre></div>
+</div>
+</div>
+<p>Attributes are independent for each item, and show up in <code class="docutils literal notranslate"><span class="pre">meta</span></code> of the items:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">m</span>
+<span class="k">assert</span> <span class="s1">&#39;attr&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span>
+<span class="k">assert</span> <span class="s1">&#39;attr&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span>
+<span class="k">assert</span> <span class="s1">&#39;attr&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">meta</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">sc</span><span class="o">.</span><span class="n">identical</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">],</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;attr&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="coding-conventions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Coding conventions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="constructing_variables.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">C++ API for constructing variables</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Scipp contributors<br/>
+        
+            &copy; Copyright 2021 Scipp contributors.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

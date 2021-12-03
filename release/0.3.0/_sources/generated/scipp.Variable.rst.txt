@@ -1,0 +1,38 @@
+scipp.Variable
+==============
+
+.. currentmodule:: scipp
+
+.. autoclass:: Variable
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Variable.__init__
+      ~Variable.astype
+      ~Variable.copy
+      ~Variable.rename_dims
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Variable.dims
+      ~Variable.dtype
+      ~Variable.shape
+      ~Variable.unit
+      ~Variable.value
+      ~Variable.values
+      ~Variable.variance
+      ~Variable.variances
+   
+   

@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting Started &mdash; scipp  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="prev" title="Developer Documentation" href="../developer-documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/quick-start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/binned-data.html">Binned Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/reading-and-writing-files.html">Reading and Writing Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/how_to.html">How to…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/tips-tricks-and-anti-patterns.html">Tips, tricks, and anti-patterns</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/plotting-in-depth.html">Plotting in depth</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#creation-functions">Creation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runtime-configuration.html">Runtime Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../developer-documentation.html">Developer Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-the-code-building-and-installing">Getting the code, building, and installing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#additional-build-options">Additional build options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-unit-tests">Running the unit tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-documentation">Building Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#precommit-hooks">Precommit Hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-scipp-as-a-c-library">Using scipp as a C++ library</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture-decision-records.html">Architecture Decision Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coding-conventions.html">Coding conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructing_variables.html">C++ API for constructing variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing.html">Customizing Scipp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to.html">How To…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tooling.html">Tooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">Transforming data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_implementation.html">Implementation of class Variable</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/about.html">About scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/whats-new.html">What’s new in scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/contributing.html">Contributing to scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+    <div style="height: 32px; position: fixed; bottom: 0; left: 15px;">
+      Select version:&nbsp;
+      <select onchange="location = this.value;"
+              style="height: 30px; color: #27a54b; background-color: #403d3d;
+                    border: 0px; box-shadow: none;">
+        <option value="" selected>Pick version</option>
+        <option value="https://scipp.github.io">latest (unstable)</option>
+        <option value="https://scipp.github.io/release/0.7.0">v0.7</option>
+        <option value="https://scipp.github.io/release/0.6.1">v0.6</option>
+        <option value="https://scipp.github.io/release/0.5.0">v0.5</option>
+        <option value="https://scipp.github.io/release/0.4.0">v0.4</option>
+        <option value="https://scipp.github.io/release/0.3.0">v0.3</option>
+      </select>
+    </div>
+  
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../developer-documentation.html">Developer Documentation</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/reference/developer/getting-started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>The only non-optional pre-dependency for building scipp is <code class="docutils literal notranslate"><span class="pre">boost</span></code>.
+We recommend using the provided <code class="docutils literal notranslate"><span class="pre">scipp-developer.yml</span></code> for installing this and other dependencies in a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment (see below).
+Alternatively you can refer to this file for a full list of dependencies.</p>
+<p>Other dependencies such as <code class="docutils literal notranslate"><span class="pre">pybind11</span></code> are downloaded automatically when running <code class="docutils literal notranslate"><span class="pre">cmake</span></code>.</p>
+<p>See <a class="reference internal" href="tooling.html"><span class="doc">Tooling</span></a> for compilers and other required tools.</p>
+</div>
+<div class="section" id="getting-the-code-building-and-installing">
+<h2>Getting the code, building, and installing<a class="headerlink" href="#getting-the-code-building-and-installing" title="Permalink to this headline">¶</a></h2>
+<p>Note that this assumes you will end up with a directory structure similar to the following.
+If you want something different be sure to modify paths as appropriate.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|--</span> <span class="n">scipp</span> <span class="p">(</span><span class="n">source</span> <span class="n">code</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|--</span> <span class="n">build</span> <span class="p">(</span><span class="n">build</span> <span class="n">directory</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|--</span> <span class="n">install</span> <span class="p">(</span><span class="n">Python</span> <span class="n">library</span> <span class="n">installation</span><span class="p">)</span>
+<span class="o">|</span>   <span class="o">|--</span> <span class="o">...</span>
+<span class="o">|--</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>To build and install the library:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update Git submodules</span>
+git submodule init
+git submodule update
+
+<span class="c1"># Create build and library install directories</span>
+mkdir build
+mkdir install
+<span class="nb">cd</span> build
+
+<span class="c1"># Create Conda environment with dependencies and development tools</span>
+conda env create -f ../scipp-developer.yml            <span class="c1"># For Linux</span>
+conda activate scipp-developer
+</pre></div>
+</div>
+<p>To build a debug version of the library:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake <span class="se">\</span>
+  -GNinja <span class="se">\</span>
+  -DCMAKE_BUILD_TYPE<span class="o">=</span>Debug <span class="se">\</span>
+  -DPYTHON_EXECUTABLE<span class="o">=</span><span class="k">$(</span><span class="nb">command</span> -v python3<span class="k">)</span> <span class="se">\</span>
+  -DCMAKE_INSTALL_PREFIX<span class="o">=</span>../install <span class="se">\</span>
+  -DCMAKE_INTERPROCEDURAL_OPTIMIZATION<span class="o">=</span>OFF <span class="se">\</span>
+  -DDYNAMIC_LIB<span class="o">=</span>ON <span class="se">\</span>
+  ..
+
+<span class="c1"># C++ unit tests</span>
+cmake --build . --target all-tests
+
+<span class="c1"># Benchmarks</span>
+cmake --build . --target all-benchmarks
+
+<span class="c1"># Install Python library</span>
+cmake --build . --target install
+</pre></div>
+</div>
+<p>Alternatively, to build a release version with all optimizations enabled:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake <span class="se">\</span>
+  -GNinja <span class="se">\</span>
+  -DPYTHON_EXECUTABLE<span class="o">=</span><span class="k">$(</span><span class="nb">command</span> -v python3<span class="k">)</span> <span class="se">\</span>
+  -DCMAKE_INSTALL_PREFIX<span class="o">=</span>../install <span class="se">\</span>
+  -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\</span>
+  ..
+
+cmake --build . --target all-tests
+cmake --build . --target all-benchmarks
+cmake --build . --target install
+</pre></div>
+</div>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">scipp</span></code> Python module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../python
+<span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:../install python3
+</pre></div>
+</div>
+<p>In Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipp</span> <span class="k">as</span> <span class="nn">sc</span>
+</pre></div>
+</div>
+<div class="section" id="additional-build-options">
+<h3>Additional build options<a class="headerlink" href="#additional-build-options" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-DDYNAMIC_LIB</span></code> forces the shared libraries building, that also decreases link time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DENABLE_THREAD_LIMIT</span></code> limits the maximum number of threads that TBB can use. This defaults to the maximum number of cores identified on your build system. You may then optionally apply an artificial limit via <code class="docutils literal notranslate"><span class="pre">-DTHREAD_LIMIT</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DDISABLE_MULTI_THREADING</span></code> disable multi-threading. By default, multi-threading is enabled if TBB was found. If this option is set to <code class="docutils literal notranslate"><span class="pre">ON</span></code>, it overrides that.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DPRECOMPILED_HEADERS</span></code> toggle usage of precompiled headers. <code class="docutils literal notranslate"><span class="pre">ON</span></code> by default.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="running-the-unit-tests">
+<h2>Running the unit tests<a class="headerlink" href="#running-the-unit-tests" title="Permalink to this headline">¶</a></h2>
+<p>Executables for the unit tests can be found in the build directory as <code class="docutils literal notranslate"><span class="pre">build/XYZ/test/scipp-XYZ-test</span></code>, where <code class="docutils literal notranslate"><span class="pre">XYZ</span></code> is the Scipp component under test (e.g. <code class="docutils literal notranslate"><span class="pre">core</span></code>).
+<code class="docutils literal notranslate"><span class="pre">all-tests</span></code> can be used to build all tests at the same time. Note that simply running <code class="docutils literal notranslate"><span class="pre">ctest</span></code> also works, but currently it seems to have an issue with gathering templated tests, so calling the test binaries manually is recommended (and much faster).</p>
+<p>To run the Python tests, run (in the <code class="docutils literal notranslate"><span class="pre">python/</span></code> directory):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> python
+<span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:./install python3 -m pytest
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-documentation">
+<h2>Building Documentation<a class="headerlink" href="#building-documentation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>run <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span> <span class="pre">--target</span> <span class="pre">docs</span></code> from your build directory.</p></li>
+<li><p>This will build the documentation and put it on <code class="docutils literal notranslate"><span class="pre">&lt;build</span> <span class="pre">dir&gt;/docs</span></code>.</p></li>
+<li><p>If rebuilding the documentation is slow it can be quicker to remove the docs build directory and start a fresh build.</p></li>
+</ul>
+</div>
+<div class="section" id="precommit-hooks">
+<h2>Precommit Hooks<a class="headerlink" href="#precommit-hooks" title="Permalink to this headline">¶</a></h2>
+<p>If you wish, you can install precommit hooks for flake8 and yapf. In the source directory run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit install
+pre-commit run --all-files
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-scipp-as-a-c-library">
+<h2>Using scipp as a C++ library<a class="headerlink" href="#using-scipp-as-a-c-library" title="Permalink to this headline">¶</a></h2>
+<p>Using Scipp as a C++ library is not recommened at this point as the API (and ABI) is not stable and documentation is sparse.
+Nonetheless, it can be used as a <code class="docutils literal notranslate"><span class="pre">cmake</span></code> package as follows.
+In your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">Scipp</span> <span class="s">0.5</span> <span class="s">REQUIRED</span><span class="p">)</span> <span class="c"># replace with required version</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">mytarget</span> <span class="s">PUBLIC</span> <span class="s">scipp::dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If scipp was install using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, <code class="docutils literal notranslate"><span class="pre">cmake</span></code> should find it automatically.
+If you build and installed scipp from source use, e.g.,:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DCMAKE_PREFIX_PATH<span class="o">=</span>&lt;your_scipp_install_dir&gt;
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;your_scipp_install_dir&gt;</span></code> should point to the <code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> that was used when building <code class="docutils literal notranslate"><span class="pre">scipp</span></code>.
+Alternative set the <code class="docutils literal notranslate"><span class="pre">Scipp_DIR</span></code> or <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code> (environment) variables to this path.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../developer-documentation.html" class="btn btn-neutral float-left" title="Developer Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021 Scipp contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+    <style>
+      .wy-nav-content { max-width: 1100px; }
+    </style>
+  
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+scipp.GroupByDataArray.min
+==========================
+
+.. currentmodule:: scipp
+
+.. automethod:: GroupByDataArray.min

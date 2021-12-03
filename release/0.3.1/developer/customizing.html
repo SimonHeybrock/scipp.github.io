@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Customizing Scipp &mdash; scipp  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How To…" href="how-to.html" />
+    <link rel="prev" title="API Reference" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-large-v4.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quick-start.html">Quick start</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-structures.html">Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/slicing.html">Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/computation.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/masking.html">Masking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/event-data.html">Event data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/how_to.html">How to…</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visualization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/representations-and-tables.html">Representations and Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-overview.html">Plotting Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/plotting-in-depth.html">Advanced plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/customizing-figures.html">Customizing figures</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/introduction.html">1-D datasets and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/multi-d-datasets.html">Multi-dimensional datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/neutron-diffraction.html">Neutron Data Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/neutron-data.html">Neutron Data</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/api.html#free-functions">Free functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/dtype.html">Data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/units.html">Physical units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/error-propagation.html">Propagation of uncertainties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-reference/runtime-configuration.html">Runtime Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Neutron-scattering</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/overview.html">Overview: scipp.neutron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/groupby.html">GroupBy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/diffraction.html">Diffraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/from-mantid-to-scipp.html">From Mantid to Scipp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipp-neutron/instrument-view.html">Instrument view</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customizing Scipp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#units-systems-and-dimension-labels">Units systems and dimension labels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#selecting-an-existing-system">Selecting an existing system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-system">Creating a new system</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#container-used-for-sparse-data">Container used for sparse data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-types">Custom types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#built-in-types">Built-in types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how-to.html">How To…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tooling.html">Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transform.html">Transforming data with custom operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructing_variables.html">C++ API for constructing variables</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/release-notes.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scipp</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Customizing Scipp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/developer/customizing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="customizing-scipp">
+<span id="customizing"></span><h1>Customizing Scipp<a class="headerlink" href="#customizing-scipp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>A number of concepts and components of <strong>scipp</strong> can and should be customized to the needs of higher-level libraries or to a particular use case.
+At this point we support compile-time customization of:</p>
+<ul class="simple">
+<li><p>Available units and unit combinations</p></li>
+<li><p>Dimension labels</p></li>
+<li><p>The underlying container used for sparse data.</p></li>
+<li><p>New or custom types that can be stored as elements in a <code class="docutils literal notranslate"><span class="pre">Variable</span></code>.</p></li>
+<li><p>The built-in types that can be support in operations and by the <code class="docutils literal notranslate"><span class="pre">transform</span></code> algorithms.</p></li>
+</ul>
+<p>Some of these are adaptable more readily than others, which require more in-depth changes.</p>
+<p>Source code for scipp is hosted in a github repository <a class="reference external" href="https://github.com/scipp/scipp">here</a>.</p>
+</div>
+<div class="section" id="units-systems-and-dimension-labels">
+<h2>Units systems and dimension labels<a class="headerlink" href="#units-systems-and-dimension-labels" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to select an existing system or to add a new one.</p>
+<div class="section" id="selecting-an-existing-system">
+<h3>Selecting an existing system<a class="headerlink" href="#selecting-an-existing-system" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">cmake</span></code> flag <code class="docutils literal notranslate"><span class="pre">SCIPP_UNITS_SYSTEM</span></code> is used to select the system of units (and dimension labels).
+Currently the following options are available:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dummy</span></code>.
+For unit-testing only.
+This is incomplete and not useful in practice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Neutron</span></code>.
+The system used in <code class="docutils literal notranslate"><span class="pre">scipp-neutron</span></code>.
+This contains some SI units as well as a unit for “counts” and some particle-physics-related units like <code class="docutils literal notranslate"><span class="pre">meV</span></code> and <code class="docutils literal notranslate"><span class="pre">meV/c</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="creating-a-new-system">
+<h3>Creating a new system<a class="headerlink" href="#creating-a-new-system" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Create files following the same pattern as <code class="docutils literal notranslate"><span class="pre">units/include/scipp/units/dummy.h</span></code> and <code class="docutils literal notranslate"><span class="pre">units/dummy.cpp</span></code>.
+Adapt the namespace name in both header and source and rename the <code class="docutils literal notranslate"><span class="pre">SCIPP_UNITS_DUMMY</span></code> macro.
+This macro is used for inlining the namespace, enabling <code class="docutils literal notranslate"><span class="pre">Variable</span></code> and the rest of <code class="docutils literal notranslate"><span class="pre">scipp-core</span></code> to pick up the selected unit automatically.</p></li>
+<li><p>In the header file:</p>
+<ol class="loweralpha simple">
+<li><p>Adapt the <code class="docutils literal notranslate"><span class="pre">supported_units</span></code> helper.
+This must list all units and unit combinations that are to be supported (this is a shortcoming of the current implementation, which is based on the compile-time units library <code class="docutils literal notranslate"><span class="pre">boost-units</span></code>).
+For an example of how more complex (heterogeneous) systems can be created see <code class="docutils literal notranslate"><span class="pre">units/include/scipp/units/neutron.h</span></code>.</p></li>
+<li><p>Adapt the <code class="docutils literal notranslate"><span class="pre">counts_unit</span></code> helper.
+This is used to define the unit for “counts”, e.g., the number of detector neutrons, or measurements with a certain value.
+When working with sparse data that is histogrammed later (or data that is a histogram in the first place) it is recommended to use something other than <code class="docutils literal notranslate"><span class="pre">dimensionless</span></code> here.
+Otherwise operations like <code class="docutils literal notranslate"><span class="pre">rebin</span></code> cannot correctly distinguish data that represents counts or densities of counts from other data.</p></li>
+<li><p>Adapt the dimensions labels in the call to the macro <code class="docutils literal notranslate"><span class="pre">SCIPP_UNITS_DECLARE_DIMENSIONS</span></code>.</p></li>
+</ol>
+</li>
+<li><p>Include the new header in <code class="docutils literal notranslate"><span class="pre">units/include/scipp/units/unit.h</span></code>.</p></li>
+<li><p>Adapt the documentation of <code class="docutils literal notranslate"><span class="pre">SCIPP_UNITS_SYSTEM</span></code> in <code class="docutils literal notranslate"><span class="pre">units/CMakeLists.txt</span></code>.</p></li>
+</ol>
+<p>To select the new system during compilation, use the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> flag <code class="docutils literal notranslate"><span class="pre">-DSCIPP_UNITS_SYSTEM=NewSystem</span></code>.
+This will define the macro <code class="docutils literal notranslate"><span class="pre">SCIPP_UNITS_NEWSYSTEM</span></code>.</p>
+</div>
+</div>
+<div class="section" id="container-used-for-sparse-data">
+<h2>Container used for sparse data<a class="headerlink" href="#container-used-for-sparse-data" title="Permalink to this headline">¶</a></h2>
+<p>This is currently defined in the header <code class="docutils literal notranslate"><span class="pre">core/include/scipp/core/variable.h</span></code> with the helper <code class="docutils literal notranslate"><span class="pre">sparse_container</span></code>.
+This has to be set to a vector-like type, such as <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> or <code class="docutils literal notranslate"><span class="pre">boost::container::small_vector</span></code>.
+In the latter case the small-size of the vector can be used to balance performance/locality against memory overhead.</p>
+</div>
+<div class="section" id="custom-types">
+<h2>Custom types<a class="headerlink" href="#custom-types" title="Permalink to this headline">¶</a></h2>
+<p>To do.
+See <a class="reference external" href="https://github.com/scipp/scipp/issues/265">https://github.com/scipp/scipp/issues/265</a>.</p>
+</div>
+<div class="section" id="built-in-types">
+<h2>Built-in types<a class="headerlink" href="#built-in-types" title="Permalink to this headline">¶</a></h2>
+<p>The helper <code class="docutils literal notranslate"><span class="pre">VariableConceptHandle</span></code> in the header <code class="docutils literal notranslate"><span class="pre">core/include/scipp/core/variable.h</span></code> is used to list all types that can be supported in calls to <code class="docutils literal notranslate"><span class="pre">transform</span></code> (and its in-place variants) for <code class="docutils literal notranslate"><span class="pre">Variable</span></code>.
+Essentially adding a type here will add another alternative to the variant in <code class="docutils literal notranslate"><span class="pre">Variable</span></code> that is used to hold data.</p>
+<p><strong>Note</strong></p>
+<p>It is <em>not</em> required to add all types here.
+<code class="docutils literal notranslate"><span class="pre">Variable</span></code> can also hold arbitrary other types, as long as the relevant code has been instantiated.
+What is described above is only relevant if a higher level of integration (beyond simply holding data and supporting slicing) is required.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="how-to.html" class="btn btn-neutral float-right" title="How To…" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Scipp contributors
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
